@@ -8,22 +8,25 @@
 				outline: none;
 				text-decoration: none;
 				color: black;
+
 			}
 			a:visited {
 				color: black;
 			}
-			.galleryItem {
+			a.galleryLink {
+				display: inline-block;
 				width: 300px;
 				height: 300px;
+				margin: 10px
+			}
+			.galleryItem {
+				width: 100%;
+				height: 100%;
 				border-radius: 150px;
-				//position: relative;
                                 font-size: 20;
 				padding: auto;
 				color: transparent;
 				display: inline-block;
-				margin: 10px;
-
-				
 			}
 			.galleryItem:hover {
 				opacity: 0.5;
@@ -39,54 +42,54 @@
 		</style>
 	</head>
 	<body>
-		<div style="text-align: center; border-bottom: 2px; width: 100%"">
-			<a href ="index.html">
+		<a href ="index.html">
+			<div style="text-align: center; border-bottom: 2px; width: 100%"">
 				<img src= "img/logo.svg" style ="width:150px; margin: 0 auto;">
 				</img></br>
 				Lux pro Ars.
-			</a>
 			<hr>
-		</div>
+			</div>
+		</a>
 		</br>
 	
 		<div style="text-align: center; width = auto; horizontal-align: middle; margin-left : auto; margin-right: auto; ">
-			<a href="bnw.html">
+			<a class=galleryLink href="bnw.html">
 				<div class =galleryItem style="background: url(img/bnwCover.jpg) no-repeat;">
 					<p>B&W.</p>
 				</div>
 			</a>
 
-			<a href="portrait.html">
+			<a class=galleryLink href="portrait.html">
 				<div class =galleryItem style="background: url(img/portraitCover.jpg) no-repeat;">
 					<p>Portrait.</p>
 				</div>
 			</a>
 
-			<a href="tunnel.html">
+			<a class=galleryLink href="tunnel.html">
 				<div class =galleryItem style="background: url(img/architectureCover.jpg) no-repeat;">
 					<p>Tunnels and passages.</p>
 				</div>
 			</a>
 
-			<a href="macro.html">
+			<a class=galleryLink href="macro.html">
 				<div class =galleryItem style="background: url(img/macroCover.jpg) no-repeat;">
 					<p>Macro.</p>
 				</div>
 			</a>
 
-			<a href="still_life.html">
+			<a class=galleryLink href="still_life.html">
 				<div class =galleryItem style="background: url(img/stillCover.jpg) no-repeat;">
 					<p>Still life.</p>
 				</div>
 			</a>
 
-			<a href="lux.html">
+			<a class=galleryLink href="lux.html">
 				<div class =galleryItem style="background: url(img/lightCover.jpg) no-repeat;">
 					<p>Lux.</p>
 				</div>
 			</a>
 
-			<a href="tribute.html">
+			<a class=galleryLink href="tribute.html">
 				<div class =galleryItem style="background: url(img/Hubble.gif) no-repeat;">
 					<p>Tribute.</p>
 				</div>
