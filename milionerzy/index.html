@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+
+    body {
+      background-color: black; color: white;
+      font-weight: bold; font-size: 20pt;}
+
+    #questionBar {
+      position: absolute;
+      top: 2%; left: 5%; height:30%; width:88%;
+      background-color: darkblue;
+    }
+
+    .button {
+      position: absolute; height:30%; width:43%;
+      background-color: darkblue;}
+
+    #questionText, .buttonText, #messageText {
+      position: relative; float: left; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);}
+
+    #b1{top: 34%; left: 5%}
+    #b2{top: 34%; left: 50%}
+    #b3{top: 66%; left: 5%}
+    #b4{top: 66%; left: 50%}
+
+    #messagePopup { 
+      position: absolute;
+      top: 34%; left: 5%;
+      width: 88%; height: 63%;
+      background-color: darkblue;
+      visibility: hidden;
+    }
+
+  </style>
+  <script src="load_questions.js"></script>
+  <script src="utils.js"></script>
+  <script>
+    function initApp() {
+      setButtonsCallbacks();
+      startQuizRound();
+    };
+    window.onload = initApp;
+  </script>
+</head>
+<body>
+<div id="questionBar"> <div id="questionText">  </div></div>
+<div class="button" id="b1"> <div class="buttonText">  </div></div>
+<div class="button" id="b2"> <div class="buttonText">  </div></div>
+<div class="button" id="b3"> <div class="buttonText">  </div></div>
+<div class="button" id="b4"> <div class="buttonText">  </div></div>
+<div id="messagePopup"><div id="messageText">text </div></div>
+</body>
+</html>
