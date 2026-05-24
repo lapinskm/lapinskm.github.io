@@ -1,0 +1,59 @@
+html {
+	overflow-y: scroll;
+}
+body {
+	background-color: #111;
+	color: #ddd;
+}
+a.galleryLink {
+	display: inline-block;
+	width: 300px;
+	height: 300px;
+	margin: 10px
+}
+.galleryItem {
+	width: 100%;
+	height: 100%;
+	border-radius: 150px;
+	font-size: 20;
+	padding: auto;
+	color: transparent;
+	display: inline-block;
+}
+.galleryItem:hover {
+	opacity: 0.5;
+	color: white;
+}
+.galleryItem p {
+	margin: 0;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.galleryItem:hover p {
+	text-shadow:
+		0 0 4px #000,
+		0 0 8px #000,
+		0 0 12px #000;
+}
+
+@media (hover: none) {
+	.galleryItem {
+		opacity: 0.5;
+		color: white;
+	}
+	.galleryItem p {
+		text-shadow:
+			0 0 4px #000,
+			0 0 8px #000,
+			0 0 12px #000;
+	}
+	.galleryItem:hover {
+		opacity: 1;
+		color: transparent;
+	}
+	.galleryItem:hover p {
+		text-shadow: none;
+	}
+}

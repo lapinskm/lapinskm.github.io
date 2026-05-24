@@ -1,37 +1,61 @@
 <html>
 	<head>
-		<meta charset="utf-8">
+		<link rel="stylesheet" href="html/gallery.css">
+		<link rel="stylesheet" href="html/index.css">
 		<style>
-			html {
-				overflow-y: scroll;
+			.about-wrap {
+				max-width: 700px;
+				margin: 4em auto;
+				padding: 0 2em;
+				line-height: 1.8;
+				font-size: 1.1em;
 			}
-			a {
-				outline: none;
-				text-decoration: none;
-				color: black;
+			.about-portrait {
+				display: block;
+				width: 150px;
+				height: 150px;
+				border-radius: 75px;
+				object-fit: cover;
+				margin: 0 auto 1.5em;
 			}
-			a:visited {
-				color: black;
+			.about-wrap p {
+				margin-bottom: 1.5em;
+				opacity: 0.85;
+				text-align: justify;
+			}
+			.about-signature {
+				margin-top: 2em;
+				font-size: 1.2em;
+				letter-spacing: 0.15em;
+				opacity: 0.6;
 			}
 		</style>
 	</head>
-
 	<body>
-		<a href ="index.html">
-			<div style="text-align: center; border-bottom: 2px;">
-				<img src="img/logo.svg" style="width:150px">
-				</img></br>
-				Lux pro Ars.
-				<hr>
-			</div>
-		</a>
-		<div style="text-align: center;">
-			<img src= "img/MLapinski.jpg" style ="width:50%"></img>
-			</br>
-			Marcin Łapiński </br>
-			e-mail: lapinskm@gmail.com</br>
-			<a href="http://vashthestampede.deviantart.com">vashthestampede.deviantart.com</a></br>
-			<a href="https://www.instagram.com/crummarkinds">https://www.instagram.com/crummarkinds</a>
+		<div class="site-header">
+			<a href="index.html">
+				<div class="galleryItem" style="background: url(html/corpus.jpg) no-repeat center; background-size: cover; width: 150px; height: 150px; border-radius: 75px; margin: 0 auto;"></div>
+				<span class="site-title">CORPUS</span>
+			</a></br>
+			<span class="site-subtitle">ABOUT</span>
+			<hr>
+		</div>
+
+		<div class="about-wrap">
+			<img src="html/author.jpg" class="about-portrait">
+
+			<p>I am a self-taught photographer working at the intersection of the visible and the felt. By day I work in computer vision — training machines to see. By night, or in the quiet hours between, I make photographs that try to do something machines cannot: to produce awe.</p>
+
+						<p>CORPUS is a project crystalizing slowly through many years — the oldest photographs are from around 2015. It grew from a long fascination with the body as both biological fact and philosophical question — with skin, bone, how they emerge from inanimate matter and how it later allow emotion and higher thought emerge from it to try give it direction and meaning. </p>
+
+			<p>The nudes in this work are photographs of myself, my partner, and friends who trusted me with their image. I am a feminist, and that shapes how I work: no one here is an object. Everyone chose to be seen.</p>
+
+			<p>I am drawn to subjects that make me feel small — glaciers, fossils, skulls, feathers, skin at close range. I look for the same feeling in other people's art. If something in these images stops you for a moment longer than you expected, that is exactly what I was after.</p>
+
+			<p class="about-signature">Marcin Łapiński</p>
+		</div>
+
+		<div style="text-align: center">
 			<hr>
 		</div>
 	</body>

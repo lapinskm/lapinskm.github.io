@@ -1,0 +1,6 @@
+DEFAULT_COLOR="darkblue";
+CLICKED_COLOR="darkorange";
+WIN_COLOR="darkgreen";
+FAIL_COLOR="darkred";
+SHOW_DELAY=2000;
+RELOAD_DELAY=1500;
