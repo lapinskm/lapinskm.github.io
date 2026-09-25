@@ -1,0 +1,1178 @@
+{
+  "processing steps": [
+    "unknown/manual",
+    "naive generator (generate_mentions.py) with entity list derived from prior mentions + aliases",
+    "validator (validate_mentions.py) run; fixed 2 unmarked matches (Weroniki Truszczyńskiej, N/EVO N)",
+    "Grok refinement with transcript context: added grammatical notes, ASR/typo notes, alias notes for Bestia z Tokio, spelling variants (Myciński/Meciński, Kuczewskiej/Koczewska, Idea/Ida, Krym/Krispin etc.); retained multi-word and inflected forms; no multi-line spans requiring split in this transcript",
+    "Claude (Sonnet 4.6) review: ran validate_mentions.py (Rule A/B/C all passed with no changes needed); additionally read the full transcript end-to-end to check for mentions missed by all prior passes"
+  ],
+  "notes": "This episode's prior passes (naive generator + Grok refinement) already left a clean, well-annotated result: validate_mentions.py's Rule A (name/ID consistency), Rule B (transcript alignment), and Rule C (unmarked known-alias occurrences) all pass with zero issues, and a full manual read-through of the transcript did not surface any additional real mentions beyond what was already captured. One fragment was reviewed and deliberately left unmarked: 'Do Een napisałem wiadomość' at [33:32]/[33:34] -- 'Een' doesn't match any entity name/alias and is too garbled to confidently resolve (possibly a mis-transcription of 'do niej' rather than a name at all), so it was not guessed at rather than risking a false attribution.",
+  "source_transcript": "Perseusz_03_transcript_j5KYNpxylX0.txt",
+  "video_id": "j5KYNpxylX0",
+  "episode": 3,
+  "mentions": [
+    {
+      "Timestamp": "[01:09]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika Truszczyńska"
+    },
+    {
+      "Timestamp": "[01:14]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika Truszczyńska"
+    },
+    {
+      "Timestamp": "[01:25]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[01:30]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:42]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronikę"
+    },
+    {
+      "Timestamp": "[02:06]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronice"
+    },
+    {
+      "Timestamp": "[02:13]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[02:15]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[02:26]",
+      "person_id": "78",
+      "person_name": "Maciej",
+      "exact mention": "Maćka z Hong"
+    },
+    {
+      "Timestamp": "[02:28]",
+      "person_id": "78",
+      "person_name": "Maciej",
+      "exact mention": "Kongu",
+      "notes": "Part of 'Maćka z Hong Kongu' referring to Maciej"
+    },
+    {
+      "Timestamp": "[02:28]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronikę z Szanghaju"
+    },
+    {
+      "Timestamp": "[02:59]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniką"
+    },
+    {
+      "Timestamp": "[03:14]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[03:17]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńska"
+    },
+    {
+      "Timestamp": "[03:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią Meciński"
+    },
+    {
+      "Timestamp": "[04:20]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[04:23]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńska"
+    },
+    {
+      "Timestamp": "[04:26]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[04:51]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[04:55]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[04:57]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko"
+    },
+    {
+      "Timestamp": "[05:10]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[05:37]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[05:39]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki"
+    },
+    {
+      "Timestamp": "[05:45]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[06:16]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki"
+    },
+    {
+      "Timestamp": "[06:17]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńskiej"
+    },
+    {
+      "Timestamp": "[06:34]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronka"
+    },
+    {
+      "Timestamp": "[06:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[06:44]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Kuczewskiej",
+      "notes": "Misspelled surname variant of Hanna Koczewska (Kuczewskiej ~ Koczewskiej)"
+    },
+    {
+      "Timestamp": "[06:48]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki"
+    },
+    {
+      "Timestamp": "[07:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonziarz"
+    },
+    {
+      "Timestamp": "[07:19]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki Truszczyńskiej"
+    },
+    {
+      "Timestamp": "[07:21]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[07:23]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[07:37]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki Truszczyńskiej"
+    },
+    {
+      "Timestamp": "[07:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarzem"
+    },
+    {
+      "Timestamp": "[07:58]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika Truszczyńska"
+    },
+    {
+      "Timestamp": "[08:13]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[08:15]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńska"
+    },
+    {
+      "Timestamp": "[08:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[08:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[08:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[08:38]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[08:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[08:41]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[08:44]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[08:58]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[08:59]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńska"
+    },
+    {
+      "Timestamp": "[09:12]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki Truszczyńskiej"
+    },
+    {
+      "Timestamp": "[09:42]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[09:43]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńska"
+    },
+    {
+      "Timestamp": "[09:59]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[10:05]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[10:10]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[10:15]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[10:40]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki"
+    },
+    {
+      "Timestamp": "[10:42]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny"
+    },
+    {
+      "Timestamp": "[10:45]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[10:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[11:26]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimpera"
+    },
+    {
+      "Timestamp": "[11:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[11:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu Goziarz"
+    },
+    {
+      "Timestamp": "[12:02]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki"
+    },
+    {
+      "Timestamp": "[12:04]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńskiej"
+    },
+    {
+      "Timestamp": "[12:06]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki"
+    },
+    {
+      "Timestamp": "[12:09]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńskiej"
+    },
+    {
+      "Timestamp": "[12:39]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[13:02]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[13:10]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin"
+    },
+    {
+      "Timestamp": "[13:12]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Sobczak"
+    },
+    {
+      "Timestamp": "[13:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[13:54]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Variant/typo of Kryspin Sobczak"
+    },
+    {
+      "Timestamp": "[13:56]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Sobczak"
+    },
+    {
+      "Timestamp": "[14:06]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krym",
+      "notes": "Variant/typo of Kryspin Sobczak"
+    },
+    {
+      "Timestamp": "[14:15]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krytpin Sobczak",
+      "notes": "Variant/typo of Kryspin Sobczak"
+    },
+    {
+      "Timestamp": "[14:33]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalenę Gwóźdź"
+    },
+    {
+      "Timestamp": "[14:47]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[15:02]",
+      "person_id": "24",
+      "person_name": "Ida Mokwa",
+      "exact mention": "Ida"
+    },
+    {
+      "Timestamp": "[15:04]",
+      "person_id": "24",
+      "person_name": "Ida Mokwa",
+      "exact mention": "Mokwa"
+    },
+    {
+      "Timestamp": "[15:09]",
+      "person_id": "24",
+      "person_name": "Ida Mokwa",
+      "exact mention": "Ida"
+    },
+    {
+      "Timestamp": "[15:49]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki"
+    },
+    {
+      "Timestamp": "[15:52]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniką"
+    },
+    {
+      "Timestamp": "[16:11]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[16:44]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronice"
+    },
+    {
+      "Timestamp": "[17:01]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[17:43]",
+      "person_id": "24",
+      "person_name": "Ida Mokwa",
+      "exact mention": "Ida"
+    },
+    {
+      "Timestamp": "[17:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiem"
+    },
+    {
+      "Timestamp": "[17:51]",
+      "person_id": "24",
+      "person_name": "Ida Mokwa",
+      "exact mention": "Ida"
+    },
+    {
+      "Timestamp": "[17:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiem"
+    },
+    {
+      "Timestamp": "[17:57]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[18:14]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[18:22]",
+      "person_id": "24",
+      "person_name": "Ida Mokwa",
+      "exact mention": "Idea",
+      "notes": "ASR/typo variant of 'Ida' (Ida Mokwa); context confirms reference to Ida"
+    },
+    {
+      "Timestamp": "[18:24]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronice"
+    },
+    {
+      "Timestamp": "[18:52]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[19:24]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[19:49]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewy"
+    },
+    {
+      "Timestamp": "[19:56]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewy"
+    },
+    {
+      "Timestamp": "[19:56]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "bestia",
+      "notes": "Alias 'Bestia z Tokio' for Krzysztof Gonciarz (ironic nickname from Wykop)"
+    },
+    {
+      "Timestamp": "[20:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "bestia z Tokio",
+      "notes": "Alias 'Bestia z Tokio' for Krzysztof Gonciarz (ironic nickname from Wykop)"
+    },
+    {
+      "Timestamp": "[20:34]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Evy"
+    },
+    {
+      "Timestamp": "[21:04]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarzem"
+    },
+    {
+      "Timestamp": "[21:08]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[21:50]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewy"
+    },
+    {
+      "Timestamp": "[21:57]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewy"
+    },
+    {
+      "Timestamp": "[22:12]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewy"
+    },
+    {
+      "Timestamp": "[22:17]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[22:28]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[22:50]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[22:58]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[23:26]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[23:26]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika Truszczyńska"
+    },
+    {
+      "Timestamp": "[23:30]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[23:30]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "N",
+      "notes": "Refers to Ewa Nowakowska (often 'Ewa N')"
+    },
+    {
+      "Timestamp": "[23:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[23:46]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewą"
+    },
+    {
+      "Timestamp": "[23:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[23:58]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[24:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem"
+    },
+    {
+      "Timestamp": "[24:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarzem"
+    },
+    {
+      "Timestamp": "[24:20]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[24:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem"
+    },
+    {
+      "Timestamp": "[24:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzem"
+    },
+    {
+      "Timestamp": "[24:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[25:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[25:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[25:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[26:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[26:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[26:20]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[26:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[26:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[26:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza"
+    },
+    {
+      "Timestamp": "[26:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[26:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[26:53]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[26:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[27:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[27:02]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[27:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[27:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[27:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[27:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[27:39]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[27:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[27:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię Meciński"
+    },
+    {
+      "Timestamp": "[27:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[27:59]",
+      "person_id": "21",
+      "person_name": "Zosia",
+      "exact mention": "Zosia"
+    },
+    {
+      "Timestamp": "[28:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[28:33]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[29:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Myciński",
+      "notes": "Spelling variant of Katarzyna Meciński / Meciński"
+    },
+    {
+      "Timestamp": "[29:34]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[30:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[30:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[30:04]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[30:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[30:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[30:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[30:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[30:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    },
+    {
+      "Timestamp": "[30:39]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa N",
+      "notes": "Refers to Ewa Nowakowska (often 'Ewa N')"
+    },
+    {
+      "Timestamp": "[30:50]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[31:04]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[31:07]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika Truszczyńska"
+    },
+    {
+      "Timestamp": "[31:11]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[31:19]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[31:23]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[32:30]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki Truszczyńskiej",
+      "notes": "Grammatical inflection (genitive) of Weronika Truszczyńska"
+    },
+    {
+      "Timestamp": "[32:49]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[32:52]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńska"
+    },
+    {
+      "Timestamp": "[33:07]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika Truszczyńska"
+    },
+    {
+      "Timestamp": "[33:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[33:51]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Variant/typo of Kryspin Sobczak"
+    },
+    {
+      "Timestamp": "[33:51]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńska"
+    },
+    {
+      "Timestamp": "[34:17]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "N",
+      "notes": "Short form / initial from 'Ewa N' / 'EVO N' referring to Ewa Nowakowska; context of prior 'Ewa N' mentions and message addressed to her"
+    },
+    {
+      "Timestamp": "[34:29]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimpera"
+    },
+    {
+      "Timestamp": "[34:32]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimper"
+    },
+    {
+      "Timestamp": "[34:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Avil Gonciarz",
+      "notes": "Phonetic/ASR variant or stylized 'avil' for Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[34:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[34:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[34:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[34:50]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimper"
+    },
+    {
+      "Timestamp": "[34:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[35:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Spelling variant of Katarzyna Meciński / Meciński"
+    },
+    {
+      "Timestamp": "[35:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Ksztof"
+    },
+    {
+      "Timestamp": "[35:22]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[35:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[35:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[35:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katerzyna",
+      "notes": "Spelling variant of Katarzyna Meciński / Meciński"
+    },
+    {
+      "Timestamp": "[35:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[36:20]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    }
+  ]
+}

@@ -1,0 +1,763 @@
+[
+  {
+    "id": 1,
+    "name": "Krzysztof Gonciarz",
+    "aliases": [
+      "Krzysiek",
+      "Evil Gonciarz",
+      "Krzysiu",
+      "Top Polak",
+      "Bestia z Tokio",
+      "Chris"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Daria Dąbrowska",
+    "aliases": []
+  },
+  {
+    "id": 3,
+    "name": "Julia Wieliczko",
+    "aliases": [
+      "Julka",
+      "Lucy Wieliczko",
+      "Lucy",
+      "Dziewczyna o psim gównie w miejscu serca",
+      "Dziewczyna z lotniska"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Hanna Koczewska",
+    "aliases": [
+      "Hania"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Paulina T",
+    "aliases": [
+      "Paulina W",
+      "Paula Czerwińska",
+      "Alicja Namęcka",
+      "Lord King"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "V",
+    "aliases": [
+      "W"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Katarzyna Meciński",
+    "aliases": [
+      "Kasia",
+      "Kaśka",
+      "Kasha",
+      "Kasia Meciński"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Jakub Łysiak",
+    "aliases": [
+      "Wąsik",
+      "Kuba Wąsik",
+      "Kuba Łysiak Wąsik"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Karolina Domaracka",
+    "aliases": [
+      "fanka piwka",
+      "tropicielka narcyzów"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Hanna Zagulska",
+    "aliases": [
+      "prawomocnie skazana pomawiaczka",
+      "Aredhell 999",
+      "Arethel 91",
+      "Stalker Satan",
+      "Bellschnickel"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Kryspin Sobczak",
+    "aliases": [
+      "montażystka Krzysztofa Gonciarza",
+      "Crispin"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Weronika Truszczyńska",
+    "aliases": []
+  },
+  {
+    "id": 13,
+    "name": "Ewa Wyczółkowska",
+    "aliases": []
+  },
+  {
+    "id": 14,
+    "name": "Manuela Gretkowska",
+    "aliases": []
+  },
+  {
+    "id": 15,
+    "name": "Pola Gretkowska",
+    "aliases": []
+  },
+  {
+    "id": 16,
+    "name": "Sylwester Wardenga",
+    "aliases": [
+      "Sylwek",
+      "Poncjusz Piłat"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Adam Robert Zimmermann",
+    "aliases": [
+      "Naruciak"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Stuart Burton",
+    "aliases": [
+      "Stuu",
+      "Polski Pingwin"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Dominik Boss",
+    "aliases": []
+  },
+  {
+    "id": 20,
+    "name": "Iza",
+    "aliases": []
+  },
+  {
+    "id": 21,
+    "name": "Zosia",
+    "aliases": []
+  },
+  {
+    "id": 22,
+    "name": "Łukasz",
+    "aliases": []
+  },
+  {
+    "id": 23,
+    "name": "Magdalena Gwóźdź",
+    "aliases": [
+      "redaktor Gwóźdź"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Ida Mokwa",
+    "aliases": []
+  },
+  {
+    "id": 25,
+    "name": "Ewa Nowakowska",
+    "aliases": [
+      "menedżerka z Tofu"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Tomasz Działowy",
+    "aliases": [
+      "Gimper",
+      "Gimpson"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Julia Bojaruniec",
+    "aliases": [
+      "Prostracja"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Tomasz Bagiński",
+    "aliases": [
+      "Revo"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Ewa Racławska",
+    "aliases": [
+      "psycholoszka",
+      "żona Naruciaka"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Matylda Kozakiewicz",
+    "aliases": []
+  },
+  {
+    "id": 31,
+    "name": "Tomek",
+    "aliases": []
+  },
+  {
+    "id": 32,
+    "name": "Sohajo",
+    "aliases": []
+  },
+  {
+    "id": 33,
+    "name": "Nika",
+    "aliases": []
+  },
+  {
+    "id": 34,
+    "name": "Kuba Wątor",
+    "aliases": [
+      "Kuba Vontor"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Olciak",
+    "aliases": [
+      "Ola"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Laura Klaus",
+    "aliases": []
+  },
+  {
+    "id": 37,
+    "name": "Jakub Chuptyś",
+    "aliases": [
+      "Gargamel"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Natalia",
+    "aliases": []
+  },
+  {
+    "id": 39,
+    "name": "Rienka Kasperowicz",
+    "aliases": []
+  },
+  {
+    "id": 40,
+    "name": "Maja Staśko",
+    "aliases": []
+  },
+  {
+    "id": 41,
+    "name": "Paweł Pączek",
+    "aliases": [
+      "pierwszy flet filharmonii feministycznej",
+      "narzeczony Mai Staśko"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Maja Mikołajczyk",
+    "aliases": []
+  },
+  {
+    "id": 43,
+    "name": "Anna Maria Żukowska",
+    "aliases": []
+  },
+  {
+    "id": 44,
+    "name": "Olga Legosz",
+    "aliases": [
+      "Nomad Mom"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Robert Fidura",
+    "aliases": [
+      "Wiktor Porycki"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Konopski",
+    "aliases": []
+  },
+  {
+    "id": 47,
+    "name": "Kawiak",
+    "aliases": []
+  },
+  {
+    "id": 48,
+    "name": "Małgorzata Major",
+    "aliases": []
+  },
+  {
+    "id": 49,
+    "name": "Jarosław Jabrzyk",
+    "aliases": [
+      "redaktor naczelny superwizjera",
+      "Pan Jabrzyk"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Remigiusz Maciaszek",
+    "aliases": [
+      "Rock",
+      "Rock Alone"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Agata Fąk",
+    "aliases": [
+      "Fagata"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Kuba Franczyk",
+    "aliases": [
+      "Booker"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Kamag",
+    "aliases": [
+      "Kamaga"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Noriaki",
+    "aliases": []
+  },
+  {
+    "id": 55,
+    "name": "Pavbits",
+    "aliases": []
+  },
+  {
+    "id": 56,
+    "name": "Stala",
+    "aliases": [
+      "Tala"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Wojciech Urbański",
+    "aliases": [
+      "Wojtek"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Kuba Wojewódzki",
+    "aliases": []
+  },
+  {
+    "id": 59,
+    "name": "Olga Kleczkowska",
+    "aliases": []
+  },
+  {
+    "id": 60,
+    "name": "Justyna Sukanek",
+    "aliases": []
+  },
+  {
+    "id": 61,
+    "name": "Piotr Kmita",
+    "aliases": []
+  },
+  {
+    "id": 62,
+    "name": "Jaś Kapela",
+    "aliases": []
+  },
+  {
+    "id": 63,
+    "name": "Marcinek",
+    "aliases": []
+  },
+  {
+    "id": 64,
+    "name": "Adrian",
+    "aliases": [
+      "Adrien"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Mike",
+    "aliases": []
+  },
+  {
+    "id": 66,
+    "name": "Karen",
+    "aliases": []
+  },
+  {
+    "id": 67,
+    "name": "Ewa Red Lipstick Monster",
+    "aliases": [
+      "Red Lipstick Monster"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Jerzy Kalina",
+    "aliases": []
+  },
+  {
+    "id": 69,
+    "name": "Krzysztof Stanowski",
+    "aliases": []
+  },
+  {
+    "id": 70,
+    "name": "Dariusz Matecki",
+    "aliases": []
+  },
+  {
+    "id": 71,
+    "name": "Maria Sadowska",
+    "aliases": []
+  },
+  {
+    "id": 72,
+    "name": "Paweł Fomiczewski",
+    "aliases": [
+      "Zbrodnia i Kara",
+      "Paweł z kanału Zbrodnia i Kara"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Jakub Dymek",
+    "aliases": []
+  },
+  {
+    "id": 74,
+    "name": "Marcin Kozak",
+    "aliases": [
+      "doktoranta UW"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Piolo",
+    "aliases": [
+      "Pioloka"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Luiza Działowska",
+    "aliases": [
+      "Urzekotka"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Aniela Olszewska",
+    "aliases": [
+      "Angela",
+      "Angel",
+      "Anielka",
+      "Angela Olszewska"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Maciej",
+    "aliases": [
+      "Maciek",
+      "Maciek z Hong Kongu",
+      "life_of_maciek"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Jaśmina",
+    "aliases": []
+  },
+  {
+    "id": 80,
+    "name": "Michał Sińczak",
+    "aliases": [
+      "Bezdomny Pelikan",
+      "Pelikan",
+      "Homeless Pelican"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Wiktoria",
+    "aliases": []
+  },
+  {
+    "id": 82,
+    "name": "Michał",
+    "aliases": []
+  },
+  {
+    "id": 83,
+    "name": "Joanna Okuniewska",
+    "aliases": []
+  },
+  {
+    "id": 84,
+    "name": "Kamil Rudol",
+    "aliases": []
+  },
+  {
+    "id": 85,
+    "name": "Szymon Adam Opolski",
+    "aliases": [
+      "menedżera Szymona"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Aleg",
+    "aliases": []
+  },
+  {
+    "id": 87,
+    "name": "Maciek Adamczak",
+    "aliases": [
+      "reżyser Maciek Adamczak"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Ewa Jarzyna",
+    "aliases": [
+      "Boska Matka Szmatka",
+      "pani Ewa z Gdańska",
+      "pani Ewa",
+      "Ewa Jarzyna ze Szczecina"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Ola Łomsza",
+    "aliases": [
+      "Olac"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Karolina Korwin Piotrowska",
+    "aliases": []
+  },
+  {
+    "id": 91,
+    "name": "Natalia Lao",
+    "aliases": []
+  },
+  {
+    "id": 92,
+    "name": "Klaudia Nietrzepka",
+    "aliases": []
+  },
+  {
+    "id": 93,
+    "name": "Patrycja Wieczorkiewicz",
+    "aliases": []
+  },
+  {
+    "id": 94,
+    "name": "Natalia Walok",
+    "aliases": []
+  },
+  {
+    "id": 95,
+    "name": "Sulej",
+    "aliases": []
+  },
+  {
+    "id": 96,
+    "name": "Kubik",
+    "aliases": []
+  },
+  {
+    "id": 97,
+    "name": "Marcin Dubiel",
+    "aliases": []
+  },
+  {
+    "id": 98,
+    "name": "Bartek Fetysz",
+    "aliases": []
+  },
+  {
+    "id": 99,
+    "name": "Suzy Menkes",
+    "aliases": []
+  },
+  {
+    "id": 100,
+    "name": "Gośka Rozenek Majdan",
+    "aliases": []
+  },
+  {
+    "id": 101,
+    "name": "Adam Malarski",
+    "aliases": []
+  },
+  {
+    "id": 102,
+    "name": "Krzysztof Adamczyk",
+    "aliases": [
+      "Krzysztof Adamczyk 1689"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Mateusz",
+    "aliases": [
+      "fotograf Mateusz"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Dominik Więcek",
+    "aliases": []
+  },
+  {
+    "id": 105,
+    "name": "Aleksandra Herzyk",
+    "aliases": []
+  },
+  {
+    "id": 106,
+    "name": "Magdalena Antosiewicz",
+    "aliases": []
+  },
+  {
+    "id": 107,
+    "name": "Oskar",
+    "aliases": []
+  },
+  {
+    "id": 108,
+    "name": "Krzychu",
+    "aliases": [
+      "prawdziwy Krzychu"
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Amelia Wiśniewska",
+    "aliases": []
+  },
+  {
+    "id": 110,
+    "name": "Justyna Mazur",
+    "aliases": []
+  },
+  {
+    "id": 111,
+    "name": "Andrzej Wajda",
+    "aliases": []
+  },
+  {
+    "id": 112,
+    "name": "Konrad Krasuski",
+    "aliases": []
+  },
+  {
+    "id": 113,
+    "name": "Marcin Sołuski",
+    "aliases": []
+  },
+  {
+    "id": 114,
+    "name": "Alicja Sołuski",
+    "aliases": []
+  },
+  {
+    "id": 115,
+    "name": "Liter Kara",
+    "aliases": []
+  },
+  {
+    "id": 116,
+    "name": "Michał Gała",
+    "aliases": []
+  },
+  {
+    "id": 117,
+    "name": "Amadeusz Ferrari",
+    "aliases": []
+  },
+  {
+    "id": 118,
+    "name": "Boxdel",
+    "aliases": []
+  },
+  {
+    "id": 119,
+    "name": "Jabson",
+    "aliases": []
+  },
+  {
+    "id": 120,
+    "name": "Paweł Kostowski",
+    "aliases": []
+  },
+  {
+    "id": 121,
+    "name": "Irena",
+    "aliases": []
+  },
+  {
+    "id": 122,
+    "name": "Katina",
+    "aliases": []
+  },
+  {
+    "id": 123,
+    "name": "Mateusz Morawiecki",
+    "aliases": [
+      "pan Morawiecki"
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Nazwijmy go Maciek",
+    "aliases": [
+      "Maciek"
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "processing steps": [
+    "pre-existing draft mentions list (empty flat-list format; originating tool/process not specified)",
+    "Claude (Sonnet 4.6) verification with validator (validate_mentions.py; Rule A/B/C all pass trivially on the empty list) plus a full manual read-through of the transcript and a scan for any capitalized proper nouns, confirming no additions were needed"
+  ],
+  "notes": "This episode is a short (~8.5 minute), solo reflective/artistic monologue -- a season-finale-style piece by Krzysztof Gonciarz addressed to his past and future self, framed around a short film about time and identity, followed by a direct-to-camera wrap-up thanking viewers and announcing a return to Patronite crowdfunding. No other person is named or referred to anywhere in the transcript, and Krzysztof Gonciarz himself is never named in the third person either (he speaks entirely in first person). The only proper nouns present are a place name ('Islandii'/Iceland), a platform name ('Patronitea', a typo of 'Patronite'), and the show's own title ('Perseusz'/'Perseusza'), none of which are people. The pre-existing empty mentions list is therefore correct and required no additions; this was confirmed both by the validator (which passes trivially with zero entries) and by a manual read-through with a regex scan for any capitalized words that could indicate a missed name.",
+  "source_transcript": "Perseusz_18_transcript_9fx9x1wj65Y.txt",
+  "video_id": "9fx9x1wj65Y",
+  "episode": 18,
+  "mentions": []
+}

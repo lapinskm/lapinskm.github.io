@@ -1,0 +1,3079 @@
+{
+  "processing steps": [
+    "naive generator (generate_mentions.py, max_edit_distance=3, bare name-segment matching enabled) pass against mentioned_people_with_ids.json",
+    "Claude (Sonnet 4.6) refinement with naive generator and validator"
+  ],
+  "notes": "Refined from the naive draft (3899 candidate entries, 3571 flagged FUZZY MATCH) using the same methodology as episodes 28-29. Core cast confirmed via clean exact/segment matches: Katarzyna Meciński, Hanna Zagulska, Daria Dąbrowska, Katina, Aniela Olszewska, Jakub Łysiak, Krzysztof Gonciarz, Konrad Krasuski, Weronika Truszczyńska, Magdalena Gwóźdź, Ewa Wyczółkowska, Krzysztof Stanowski, Tomasz Działowy, Szymon Adam Opolski, Julia Wieliczko. Ambiguous bare first names were resolved per-instance via context rather than blanket rule, since some names (Krzysztof, Hanna, Kuba) are shared by multiple real characters in this episode: every bare 'Krzysztof'/'Krzysztofa' found resolves to Krzysztof Gonciarz (id 1) -- Stanowski is always named with his surname when discussed; almost every bare 'Hanna'/'Hania'/'Hanny' resolves to Hanna Zagulska (id 10), except a single multi-line 'Hanny .../ Koczewskiej' at [01:18:28]/[01:18:32], the only genuine Hanna Koczewska reference in the whole episode; 'Kuba' at [02:34:43]/[02:42:55]/[26:46] resolves to Jakub Łysiak (id 8, alias 'Wąsik') via multi-line surname splits and shared storyline, even though the naive generator's candidate list for bare 'Kuba' never included id 8 (he has no bare 'Kuba' alias listed) -- these three were added as missed mentions. Two false positives were dropped: 'Jezus Maria' at [01:13:40] (idiom, not a Maria mention) and 'maja 16' at [43:18] (the month of May, not Maja Mikołajczyk/Staśko). One case was excluded rather than guessed: an unidentified 'Marcin' at [01:31:18] who translated a post, with no surname or other context pointing to any of the three candidate Marcin entities. Two low-confidence ambiguous cases remain flagged in-line: 'Michał' at [00:53]/[00:55] in a chaotic fast-cut intro montage (assigned to generic 'Michał', id 82, as the most neutral guess), and 'Ola' at [02:34:48]/[02:35:23] (assigned to Olciak, id 35, for consistency with the same unresolved case in earlier episodes). As before, the large majority of the 3571 FUZZY MATCH candidates were common Polish words coincidentally close in edit-distance to a name (e.g. 'jak'->Jakub, 'masz'->Tomasz, 'Polska/polski'->Opolski, 'sylwestra' [New Year's Eve, genitive]-> Sylwester Wardenga) and were discarded; only genuine inflections/ASR-typos of names actually discussed here were kept.",
+  "source_transcript": "Perseusz_30_transcript_7bNJo1m5IaU.txt",
+  "video_id": "7bNJo1m5IaU",
+  "episode": 30,
+  "mentions": [
+    {
+      "Timestamp": "[00:53]",
+      "person_id": "82",
+      "person_name": "Michał",
+      "exact mention": "Michał",
+      "notes": "AMBIGUOUS: appears in a chaotic, fast-cut intro montage ('Michał Michał Weronika...') with no surname or other disambiguating context; could be Michał (id 82), Michał Gała (id 116), or Michał Sińczak (id 80). Kept as generic 'Michał' (id 82) as the most neutral guess; low confidence."
+    },
+    {
+      "Timestamp": "[00:55]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika",
+      "notes": "SEGMENT MATCH: 'Weronika' is a bare first- or last-name segment of 'Weronika Truszczyńska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[00:55]",
+      "person_id": "82",
+      "person_name": "Michał",
+      "exact mention": "Michał",
+      "notes": "AMBIGUOUS: appears in a chaotic, fast-cut intro montage ('Michał Michał Weronika...') with no surname or other disambiguating context; could be Michał (id 82), Michał Gała (id 116), or Michał Sińczak (id 80). Kept as generic 'Michał' (id 82) as the most neutral guess; low confidence."
+    },
+    {
+      "Timestamp": "[01:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[03:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[04:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[04:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[04:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[04:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii",
+      "notes": "Grammatical inflection / short form of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[04:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej",
+      "notes": "Grammatical inflection / short form of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[04:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[04:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[04:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[05:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[05:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Maciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[05:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Maciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[06:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[07:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[08:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[08:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Jaciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[08:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśce",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[09:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[09:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Weciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[10:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[11:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynie",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[11:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[12:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[12:34]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[12:34]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczółkowskiej",
+      "notes": "Grammatical inflection of 'Ewa Wyczółkowska'."
+    },
+    {
+      "Timestamp": "[12:59]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[13:06]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katina"
+    },
+    {
+      "Timestamp": "[13:20]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katina"
+    },
+    {
+      "Timestamp": "[14:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[14:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[14:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[14:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[14:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[14:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[14:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[15:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[16:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[16:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[16:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[16:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[17:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[18:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciski",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[18:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[18:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[19:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[19:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[19:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[20:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[21:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[21:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[21:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mysiński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[21:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[22:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynie",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[22:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[23:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[23:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[23:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[23:22]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[24:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kamieciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[24:44]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Gwóźdź",
+      "notes": "SEGMENT MATCH: 'Gwóźdź' is a bare first- or last-name segment of 'Magdalena Gwóźdź' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[24:44]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny Gwóźdź",
+      "notes": "Grammatical inflection of 'Magdalena Gwóźdź'."
+    },
+    {
+      "Timestamp": "[24:44]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny",
+      "notes": "Grammatical inflection of 'Magdalena Gwóźdź'."
+    },
+    {
+      "Timestamp": "[24:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "SEGMENT MATCH: 'Daria' is a bare first- or last-name segment of 'Daria Dąbrowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[24:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[25:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[25:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[25:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyno Meciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[25:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyno",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[26:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[26:46]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba",
+      "notes": "Missed by naive generator: bare 'Kuba' for Jakub Łysiak, same storyline ('wyprowadziła się z Polski z wąsikiem')."
+    },
+    {
+      "Timestamp": "[27:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katerzyna",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[27:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarz",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[27:31]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannę",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[27:33]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[28:39]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "SEGMENT MATCH: 'Hanna' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Hanna' is a name/alias for 2 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[28:39]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[28:39]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[29:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[29:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[29:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[29:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[30:07]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[30:07]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej",
+      "notes": "Second occurrence of 'Zagulskiej' repeated on the same line ('A propos Zagulskiej, wątek Zagulskiej w')."
+    },
+    {
+      "Timestamp": "[30:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[30:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Macińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[30:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Maciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[30:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[30:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Domeciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[30:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[30:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[30:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[30:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[30:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[31:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[31:21]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannę",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[31:42]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "SEGMENT MATCH: 'Hanna' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Hanna' is a name/alias for 2 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[31:42]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[31:42]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[31:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[31:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[31:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[31:53]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[32:03]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "SEGMENT MATCH: 'Hanna' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Hanna' is a name/alias for 2 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[32:03]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[32:03]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[32:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Konciarzem",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[32:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[32:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[33:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[33:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[33:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mieciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[34:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[34:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[34:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[35:11]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "SEGMENT MATCH: 'Krzysztof' is a bare first- or last-name segment of 'Krzysztof Gonciarz' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Krzysztof' is a name/alias for 3 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[35:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mycińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[35:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[35:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "SEGMENT MATCH: 'Daria' is a bare first- or last-name segment of 'Daria Dąbrowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[35:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "SEGMENT MATCH: 'Dąbrowska' is a bare first- or last-name segment of 'Daria Dąbrowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[35:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[35:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[35:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[35:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Meciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[35:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[35:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "SEGMENT MATCH: 'Daria' is a bare first- or last-name segment of 'Daria Dąbrowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[35:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "SEGMENT MATCH: 'Dąbrowska' is a bare first- or last-name segment of 'Daria Dąbrowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[36:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[36:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "SEGMENT MATCH: 'Daria' is a bare first- or last-name segment of 'Daria Dąbrowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[36:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "SEGMENT MATCH: 'Dąbrowska' is a bare first- or last-name segment of 'Daria Dąbrowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[36:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[36:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[36:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[36:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[36:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[37:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[37:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[37:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[38:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[38:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[38:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[38:41]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewa Wyczółkowska"
+    },
+    {
+      "Timestamp": "[38:41]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewa",
+      "notes": "SEGMENT MATCH: 'Ewa' is a bare first- or last-name segment of 'Ewa Wyczółkowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Ewa' is a name/alias for 6 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[38:41]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczółkowska",
+      "notes": "SEGMENT MATCH: 'Wyczółkowska' is a bare first- or last-name segment of 'Ewa Wyczółkowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[38:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynie",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[38:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[39:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[39:54]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Gwóźdź",
+      "notes": "SEGMENT MATCH: 'Gwóźdź' is a bare first- or last-name segment of 'Magdalena Gwóźdź' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[39:54]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny Gwóźdź",
+      "notes": "Grammatical inflection of 'Magdalena Gwóźdź'."
+    },
+    {
+      "Timestamp": "[39:54]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny",
+      "notes": "Grammatical inflection of 'Magdalena Gwóźdź'."
+    },
+    {
+      "Timestamp": "[40:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[40:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[40:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[40:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[40:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darie",
+      "notes": "Grammatical inflection / short form of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[40:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[42:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[42:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[43:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[43:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Mecińskiej",
+      "notes": "Missed by naive generator: dative-case inflection of full name 'Kasia Meciński' ('wpłynęły od Kasi Mecińskiej')."
+    },
+    {
+      "Timestamp": "[44:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[45:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[46:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[46:39]",
+      "person_id": "67",
+      "person_name": "Ewa Red Lipstick Monster",
+      "exact mention": "Monster",
+      "notes": "SEGMENT MATCH: 'Monster' is a bare first- or last-name segment of 'Ewa Red Lipstick Monster' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[47:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynie",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[47:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[48:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[48:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[48:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[48:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[50:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[50:57]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[51:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[51:21]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katina"
+    },
+    {
+      "Timestamp": "[53:32]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Kariny",
+      "notes": "Grammatical inflection / typo variant of 'Katina'."
+    },
+    {
+      "Timestamp": "[57:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[57:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[57:28]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katina"
+    },
+    {
+      "Timestamp": "[58:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[58:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[59:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:00:16]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katinie",
+      "notes": "Grammatical inflection / typo variant of 'Katina'."
+    },
+    {
+      "Timestamp": "[01:00:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:00:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:00:30]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katina"
+    },
+    {
+      "Timestamp": "[01:00:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:01:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:01:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:02:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:02:56]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:02:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:02:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:02:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:03:07]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "SEGMENT MATCH: 'Krzysztof' is a bare first- or last-name segment of 'Krzysztof Gonciarz' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Krzysztof' is a name/alias for 3 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[01:03:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:03:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:03:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:03:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:05:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:05:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:06:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:06:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:06:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:07:14]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:07:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:08:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:09:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:09:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:09:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:09:38]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "SEGMENT MATCH: 'Hanna' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Hanna' is a name/alias for 2 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[01:09:38]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[01:09:38]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:09:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:09:47]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "SEGMENT MATCH: 'Hanna' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Hanna' is a name/alias for 2 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[01:09:47]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagórska",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:09:47]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagórska",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:10:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:10:15]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela",
+      "notes": "SEGMENT MATCH: 'Aniela' is a bare first- or last-name segment of 'Aniela Olszewska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:10:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:10:44]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimpera",
+      "notes": "Grammatical inflection of alias 'Gimper' for Tomasz Działowy."
+    },
+    {
+      "Timestamp": "[01:11:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:11:28]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimper"
+    },
+    {
+      "Timestamp": "[01:11:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:11:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:11:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Mecińskiej",
+      "notes": "Missed by naive generator: dative-case inflection of full name 'Kasia Meciński' ('nowy statement Kasi Mecińskiej')."
+    },
+    {
+      "Timestamp": "[01:11:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:11:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:11:56]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:12:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:12:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Meciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:12:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:12:29]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela",
+      "notes": "SEGMENT MATCH: 'Aniela' is a bare first- or last-name segment of 'Aniela Olszewska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:12:31]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimpera",
+      "notes": "Grammatical inflection of alias 'Gimper' for Tomasz Działowy."
+    },
+    {
+      "Timestamp": "[01:12:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:12:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Zmieciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:13:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:13:34]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela",
+      "notes": "SEGMENT MATCH: 'Aniela' is a bare first- or last-name segment of 'Aniela Olszewska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:14:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:14:15]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielazewska",
+      "notes": "Missed by naive generator: ASR conflated 'Aniela' and 'Olszewska' into one garbled word ('żebyśmy mieli jasność. Anielazewska jest')."
+    },
+    {
+      "Timestamp": "[01:14:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:14:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:14:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:16:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "SEGMENT MATCH: 'Daria' is a bare first- or last-name segment of 'Daria Dąbrowska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:16:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:16:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka",
+      "notes": "Second occurrence of 'Kaśka' repeated on the same line ('Kaśka i Daria siedzą w knajpie i Kaśka')."
+    },
+    {
+      "Timestamp": "[01:16:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii",
+      "notes": "Grammatical inflection / short form of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[01:17:07]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:17:07]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katina"
+    },
+    {
+      "Timestamp": "[01:17:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:17:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:17:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:17:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:17:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:17:50]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Konradowi",
+      "notes": "Missed by naive generator: dative-case inflection of 'Konrad' Krasuski ('Oberwało się również Konradowi')."
+    },
+    {
+      "Timestamp": "[01:17:51]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Krasuski",
+      "notes": "SEGMENT MATCH: 'Krasuski' is a bare first- or last-name segment of 'Konrad Krasuski' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:17:51]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Krasuskiemu",
+      "notes": "Missed by naive generator: dative-case inflection of 'Krasuski' ('Krasuskiemu i kanałowi zero')."
+    },
+    {
+      "Timestamp": "[01:18:03]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Konrad",
+      "notes": "SEGMENT MATCH: 'Konrad' is a bare first- or last-name segment of 'Konrad Krasuski' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:18:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:18:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:18:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:18:28]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny",
+      "notes": "Grammatical inflection of 'Hanna Koczewska'; multi-line mention, continues at [01:18:32] ('Koczewskiej')."
+    },
+    {
+      "Timestamp": "[01:18:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:18:47]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "SEGMENT MATCH: 'Hanna' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Hanna' is a name/alias for 2 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[01:18:47]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[01:18:47]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:18:50]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "SEGMENT MATCH: 'Hanna' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Hanna' is a name/alias for 2 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[01:18:52]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:18:55]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Konrada",
+      "notes": "Genitive-case inflection of 'Konrad' Krasuski."
+    },
+    {
+      "Timestamp": "[01:18:59]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Konrad",
+      "notes": "SEGMENT MATCH: 'Konrad' is a bare first- or last-name segment of 'Konrad Krasuski' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:19:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:19:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśce",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:20:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:20:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:21:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "SEGMENT MATCH: 'Krzysztof' is a bare first- or last-name segment of 'Krzysztof Gonciarz' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Krzysztof' is a name/alias for 3 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[01:21:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:21:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:21:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:22:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannie",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:22:03]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:22:13]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagórska",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:22:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:23:15]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimpera",
+      "notes": "Grammatical inflection of alias 'Gimper' for Tomasz Działowy."
+    },
+    {
+      "Timestamp": "[01:23:22]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:23:33]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:24:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:24:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:24:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Męciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:24:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Męciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:24:51]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:24:51]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:24:58]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:25:00]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "SEGMENT MATCH: 'Zagulska' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:25:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:25:22]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz",
+      "notes": "SEGMENT MATCH: 'Gonciarz' is a bare first- or last-name segment of 'Krzysztof Gonciarz' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:25:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:25:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:25:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:26:19]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katina"
+    },
+    {
+      "Timestamp": "[01:26:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:26:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:26:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:26:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:26:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:26:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:26:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:27:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:28:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:28:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:28:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:28:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:29:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:29:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:29:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:30:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:30:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:31:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:31:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:31:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:31:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynie",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:31:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:32:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:34:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Męciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:35:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:37:08]",
+      "person_id": "122",
+      "person_name": "Katina",
+      "exact mention": "Katina"
+    },
+    {
+      "Timestamp": "[01:37:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:39:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:39:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:40:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:41:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:41:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:41:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:42:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:42:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:43:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:43:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:43:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:44:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:44:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Męciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:44:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Męciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:45:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:46:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:46:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:47:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:50:24]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:50:27]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannę",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:50:27]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannę Zagulską",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:50:27]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:50:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:50:53]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:50:53]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:51:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:54:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:55:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "SEGMENT MATCH: 'Krzysztof' is a bare first- or last-name segment of 'Krzysztof Gonciarz' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Krzysztof' is a name/alias for 3 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[01:57:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:57:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:57:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:57:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:57:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:57:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:57:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:58:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[01:58:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:00:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:01:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:01:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:03:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:04:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:05:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:08:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:08:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Chrisa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[02:09:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:09:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:10:37]",
+      "person_id": "85",
+      "person_name": "Szymon Adam Opolski",
+      "exact mention": "Szymon",
+      "notes": "SEGMENT MATCH: 'Szymon' is a bare first- or last-name segment of 'Szymon Adam Opolski' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:10:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzu",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[02:10:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[02:10:59]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[02:11:01]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "SEGMENT MATCH: 'Krzysztof' is a bare first- or last-name segment of 'Krzysztof Gonciarz' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Krzysztof' is a name/alias for 3 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[02:11:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:11:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:18:03]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Grammatical inflection / short form of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[02:18:03]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej",
+      "notes": "Grammatical inflection / short form of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[02:18:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:18:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[02:18:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:18:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:18:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[02:18:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:18:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "SEGMENT MATCH: 'Krzysztof' is a bare first- or last-name segment of 'Krzysztof Gonciarz' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Krzysztof' is a name/alias for 3 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[02:18:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:18:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[02:18:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:18:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[02:18:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:18:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[02:18:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:18:30]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[02:18:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:19:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:19:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:19:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:19:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:19:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:19:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:21:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:22:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:22:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:28:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:28:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:29:13]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Stanowski'."
+    },
+    {
+      "Timestamp": "[02:29:20]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowski",
+      "notes": "SEGMENT MATCH: 'Stanowski' is a bare first- or last-name segment of 'Krzysztof Stanowski' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:29:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:29:26]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Starski",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Stanowski'."
+    },
+    {
+      "Timestamp": "[02:29:40]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowski",
+      "notes": "SEGMENT MATCH: 'Stanowski' is a bare first- or last-name segment of 'Krzysztof Stanowski' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:32:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:32:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:32:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzesiu",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[02:33:31]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[02:33:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:33:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[02:33:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:34:38]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:34:43]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba",
+      "notes": "Missed by naive generator: bare 'Kuba' for Jakub Łysiak (alias 'Kuba Łysiak Wąsik'); multi-line mention, continues at [02:34:44] ('Łysiak')."
+    },
+    {
+      "Timestamp": "[02:34:43]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika",
+      "notes": "Grammatical inflection of alias 'Wąsik' for Jakub Łysiak."
+    },
+    {
+      "Timestamp": "[02:34:44]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Łysiak",
+      "notes": "SEGMENT MATCH: 'Łysiak' is a bare first- or last-name segment of 'Jakub Łysiak' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended; Multi-line mention: continuation of [02:34:43] ('Kuba')."
+    },
+    {
+      "Timestamp": "[02:34:48]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola",
+      "notes": "AMBIGUOUS: could refer to Olciak (id 35, alias 'Ola') or Ola Łomsza (id 89); no surname or other disambiguating context found. Kept as Olciak (id 35) for consistency with the same unresolved case in earlier episodes; low confidence."
+    },
+    {
+      "Timestamp": "[02:34:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:35:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:35:23]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola",
+      "notes": "AMBIGUOUS: could refer to Olciak (id 35, alias 'Ola') or Ola Łomsza (id 89); no surname or other disambiguating context found. Kept as Olciak (id 35) for consistency with the same unresolved case in earlier episodes; low confidence."
+    },
+    {
+      "Timestamp": "[02:35:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśce",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:35:54]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela",
+      "notes": "SEGMENT MATCH: 'Aniela' is a bare first- or last-name segment of 'Aniela Olszewska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:35:54]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:36:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:36:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:36:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:37:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:38:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:38:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyno Meciński",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:38:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyno",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:38:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[02:39:11]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "SEGMENT MATCH: 'Hanna' is a bare first- or last-name segment of 'Hanna Zagulska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended. AMBIGUOUS: 'Hanna' is a name/alias for 2 different people in the entity list; all matching entities recorded here, manual review recommended."
+    },
+    {
+      "Timestamp": "[02:39:11]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagórska",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[02:39:11]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagórska",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[02:40:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:40:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:40:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "SEGMENT MATCH: 'Meciński' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:41:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:42:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "SEGMENT MATCH: 'Katarzyna' is a bare first- or last-name segment of 'Katarzyna Meciński' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:42:55]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba",
+      "notes": "Missed by naive generator: bare 'Kuba' for Jakub Łysiak; multi-line mention, continues at [02:42:57] ('Łysiak')."
+    },
+    {
+      "Timestamp": "[02:42:57]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Łysiak",
+      "notes": "SEGMENT MATCH: 'Łysiak' is a bare first- or last-name segment of 'Jakub Łysiak' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended; Multi-line mention: continuation of [02:42:55] ('Kuba')."
+    },
+    {
+      "Timestamp": "[02:43:26]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika",
+      "notes": "SEGMENT MATCH: 'Weronika' is a bare first- or last-name segment of 'Weronika Truszczyńska' rather than a full name/alias match on its own; higher false-positive risk (could refer to someone else with the same first/last name), manual review recommended."
+    },
+    {
+      "Timestamp": "[02:45:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza",
+      "notes": "Grammatical inflection / phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    }
+  ]
+}

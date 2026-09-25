@@ -1,0 +1,2427 @@
+{
+  "processing steps": [
+    "pre-existing draft mentions list (flat-list format, no FUZZY MATCH annotations; originating tool/process not specified)",
+    "Claude (Sonnet 4.6) refinement with validator (validate_mentions.py span-overlap/person-id-aware Rule C; added ~28 Rule-C-caught misses on first pass) plus a full manual read-through of the entire ~2-hour transcript (added ~75 further missed mentions the validator's Rule C could not catch on its own, including an entire previously-uncaptured character arc, plus corrected numerous timestamp errors introduced during this pass)"
+  ],
+  "notes": "This is one of the longest and most detailed episodes processed (2974 transcript lines, ~2 hours), structured as a business-breakup narrative between Krzysztof Gonciarz and Katarzyna Meciński (243 mentions -- the highest single-figure count across all processed episodes). The most significant finding from the manual read-through: the entire character arc of 'Ewa Nowakowska' (id 25, alias 'menedżerka z Tofu') -- roughly 20 mentions covering a former Tofu Media colleague central to a whole subplot -- was completely absent from the naive draft and only surfaced by reading context around an unrelated fix; this is a good example of why full manual reading remains necessary even after the validator reports clean. Numerous wordplay/nickname coinages for Katarzyna Meciński were found and included after confirming context: 'Kasiański' (a mocking Instagram-handle-style nickname), 'katarzynizm' (mocking neologism), and 'Casi' (a business-name pun, 'Asahi Casi'). Two English-language voicemail clips ('Kha's not responding to my emails') appear twice (opening and again near the end) and were both captured. One false-positive risk was intentionally left unmarked and documented: after 'Bestii z'/'Tokio' (the alias 'Bestia z Tokio') was correctly captured as a multi-line mention, the bare word 'Tokio' also matches five unrelated literal references to the city of Tokyo elsewhere in the transcript (where Krzysztof Gonciarz lived and worked) -- these residual Rule C warnings are expected and not real misses, consistent with similar coincidental-substring patterns in other episodes (e.g. 'Wi' in episode 6, 'mają' in episode 12). Several timestamp errors introduced during the extensive manual-addition process were caught and corrected by repeatedly re-running the validator rather than treating any single pass as final.",
+  "source_transcript": "Perseusz_16_transcript_pKN-NsQy_yI.txt",
+  "video_id": "pKN-NsQy_yI",
+  "episode": 16,
+  "mentions": [
+    {
+      "Timestamp": "[00:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kha",
+      "notes": "Missed by naive pass: English-language voicemail, short form/typo of 'Kasha' ('Kha's not responding to my emails')."
+    },
+    {
+      "Timestamp": "[00:22]",
+      "person_id": "64",
+      "person_name": "Adrian",
+      "exact mention": "Adrien"
+    },
+    {
+      "Timestamp": "[00:22]",
+      "person_id": "66",
+      "person_name": "Karen",
+      "exact mention": "Karen"
+    },
+    {
+      "Timestamp": "[00:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasha"
+    },
+    {
+      "Timestamp": "[00:29]",
+      "person_id": "66",
+      "person_name": "Karen",
+      "exact mention": "Karen"
+    },
+    {
+      "Timestamp": "[01:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią Meciński"
+    },
+    {
+      "Timestamp": "[02:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasie Meciński"
+    },
+    {
+      "Timestamp": "[03:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[03:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[03:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[04:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[05:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[05:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[06:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[06:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[07:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[07:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[08:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[08:50]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[09:57]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Chris"
+    },
+    {
+      "Timestamp": "[10:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[13:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[13:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Myciński"
+    },
+    {
+      "Timestamp": "[13:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[15:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[16:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[16:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[17:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[17:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[17:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[17:21]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Chris"
+    },
+    {
+      "Timestamp": "[18:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[19:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[19:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[20:11]",
+      "person_id": "78",
+      "person_name": "Maciej",
+      "exact mention": "Maćkiem"
+    },
+    {
+      "Timestamp": "[20:13]",
+      "person_id": "78",
+      "person_name": "Maciej",
+      "exact mention": "Maciek"
+    },
+    {
+      "Timestamp": "[20:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[20:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[20:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[20:56]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego"
+    },
+    {
+      "Timestamp": "[21:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[21:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[21:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[21:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[21:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[21:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[21:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[22:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[22:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[23:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[23:03]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofowi"
+    },
+    {
+      "Timestamp": "[23:05]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiemu"
+    },
+    {
+      "Timestamp": "[23:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[23:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[23:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[24:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[25:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[26:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[26:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[26:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[27:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[28:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[28:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[28:34]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[28:56]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[28:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[29:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[29:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[30:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[30:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[30:40]",
+      "person_id": "85",
+      "person_name": "Szymon Adam Opolski",
+      "exact mention": "Szymona"
+    },
+    {
+      "Timestamp": "[30:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[31:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[31:09]",
+      "person_id": "85",
+      "person_name": "Szymon Adam Opolski",
+      "exact mention": "Szymon Adam"
+    },
+    {
+      "Timestamp": "[31:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem Gąciarzem"
+    },
+    {
+      "Timestamp": "[31:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofowi Gonciarzowi"
+    },
+    {
+      "Timestamp": "[31:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[31:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[31:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[31:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński"
+    },
+    {
+      "Timestamp": "[31:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[31:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[32:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[32:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[32:22]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[32:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej"
+    },
+    {
+      "Timestamp": "[32:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[32:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę",
+      "notes": "Missed by naive pass: accusative-case inflection."
+    },
+    {
+      "Timestamp": "[32:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[33:07]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[33:09]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewę",
+      "notes": "Missed by naive pass: accusative-case inflection, consistent with Tofu Media context (alias 'menedżerka z Tofu')."
+    },
+    {
+      "Timestamp": "[33:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[33:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[34:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[34:21]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[34:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[34:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[34:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[34:58]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem",
+      "notes": "Missed by naive pass: instrumental-case form of alias 'Krzysiek'."
+    },
+    {
+      "Timestamp": "[35:00]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[35:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[35:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[35:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[35:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[36:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[36:01]",
+      "person_id": "85",
+      "person_name": "Szymon Adam Opolski",
+      "exact mention": "Szymon"
+    },
+    {
+      "Timestamp": "[37:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[38:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[38:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[39:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[39:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[39:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[40:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[40:03]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniką",
+      "notes": "Missed by naive pass: instrumental-case inflection ('Kaśka z Weroniką po panelach')."
+    },
+    {
+      "Timestamp": "[40:32]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika Truszczyńska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[40:39]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika Truszczyńska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[40:57]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[41:00]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[41:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[41:13]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewą",
+      "notes": "Missed by naive pass: instrumental-case inflection."
+    },
+    {
+      "Timestamp": "[41:30]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[41:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[41:53]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[41:58]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem"
+    },
+    {
+      "Timestamp": "[42:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[42:11]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[42:23]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewy",
+      "notes": "Missed by naive pass: genitive-case inflection, separate occurrence preceding 'Katarzyna Meciński' on the same line."
+    },
+    {
+      "Timestamp": "[42:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[42:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[42:31]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[42:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[42:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną",
+      "notes": "Missed by naive pass: instrumental-case inflection, separate occurrence on same line as 'Krzysztof'."
+    },
+    {
+      "Timestamp": "[42:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[42:43]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[42:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[42:45]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass: second occurrence on same line as 'Krzysztofa'."
+    },
+    {
+      "Timestamp": "[43:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[43:02]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewie",
+      "notes": "Missed by naive pass: dative-case inflection."
+    },
+    {
+      "Timestamp": "[43:14]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewę",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[43:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[43:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[43:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[43:45]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewę",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[43:47]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[43:50]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[43:50]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[43:53]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[44:01]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[44:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[44:20]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[45:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[45:36]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[46:11]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[46:11]",
+      "person_id": "85",
+      "person_name": "Szymon Adam Opolski",
+      "exact mention": "Szymon"
+    },
+    {
+      "Timestamp": "[46:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[46:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[46:29]",
+      "person_id": "85",
+      "person_name": "Szymon Adam Opolski",
+      "exact mention": "Szymonem"
+    },
+    {
+      "Timestamp": "[46:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[47:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[47:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[47:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński"
+    },
+    {
+      "Timestamp": "[47:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[49:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[51:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katzyną",
+      "notes": "Missed by naive pass: typo of instrumental 'Katarzyną'."
+    },
+    {
+      "Timestamp": "[51:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[52:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[53:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[54:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[54:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynie",
+      "notes": "Missed by naive pass: dative-case inflection."
+    },
+    {
+      "Timestamp": "[54:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[56:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[56:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiański",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[56:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[56:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[57:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[57:10]",
+      "person_id": "85",
+      "person_name": "Szymon Adam Opolski",
+      "exact mention": "Szymon"
+    },
+    {
+      "Timestamp": "[57:12]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela Olszewska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[57:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[57:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[57:20]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[57:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasie"
+    },
+    {
+      "Timestamp": "[57:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[57:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[57:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[57:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Kąciarz"
+    },
+    {
+      "Timestamp": "[57:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[59:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:01:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Kąciarz"
+    },
+    {
+      "Timestamp": "[01:01:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:01:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:01:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:02:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:02:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:02:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:02:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:02:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:03:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:04:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:04:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Meciński"
+    },
+    {
+      "Timestamp": "[01:04:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:06:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Mciński"
+    },
+    {
+      "Timestamp": "[01:07:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:08:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "kasi"
+    },
+    {
+      "Timestamp": "[01:08:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[01:09:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:10:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[01:11:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:11:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:11:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:12:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:12:55]",
+      "person_id": "20",
+      "person_name": "Iza",
+      "exact mention": "Iza"
+    },
+    {
+      "Timestamp": "[01:12:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:13:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:13:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:14:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:14:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:14:41]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela Olszewska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:14:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:14:47]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Łysiak"
+    },
+    {
+      "Timestamp": "[01:14:47]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:15:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:15:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:15:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:16:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyno",
+      "notes": "Missed by naive pass: vocative-case direct address."
+    },
+    {
+      "Timestamp": "[01:16:36]",
+      "person_id": "20",
+      "person_name": "Iza",
+      "exact mention": "Iza"
+    },
+    {
+      "Timestamp": "[01:16:59]",
+      "person_id": "57",
+      "person_name": "Wojciech Urbański",
+      "exact mention": "Wojtka",
+      "notes": "Missed by naive pass: multi-line mention, continues at [01:17:00] ('Orbańskiego')."
+    },
+    {
+      "Timestamp": "[01:17:00]",
+      "person_id": "57",
+      "person_name": "Wojciech Urbański",
+      "exact mention": "Orbańskiego",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Urbański'; multi-line mention, continuation of [01:16:59] ('Wojtka')."
+    },
+    {
+      "Timestamp": "[01:17:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:17:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:17:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:18:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:18:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "katarzynizm",
+      "notes": "Missed by naive pass: mocking wordplay coinage based on 'Katarzyna' ('No i to jest właśnie katarzynizm, nie?')."
+    },
+    {
+      "Timestamp": "[01:18:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:18:55]",
+      "person_id": "20",
+      "person_name": "Iza",
+      "exact mention": "Izę",
+      "notes": "Missed by naive pass: accusative-case inflection."
+    },
+    {
+      "Timestamp": "[01:19:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:19:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:19:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:20:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:20:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:20:34]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem",
+      "notes": "Missed by naive pass: instrumental-case form of alias 'Krzysiek'."
+    },
+    {
+      "Timestamp": "[01:20:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:20:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Mciński"
+    },
+    {
+      "Timestamp": "[01:20:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:21:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:21:27]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Konciarz",
+      "notes": "Missed by naive pass: typo of 'Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:21:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:23:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Casi",
+      "notes": "Missed by naive pass: wordplay company-name pun on 'Kasia' ('Asahi Casi')."
+    },
+    {
+      "Timestamp": "[01:23:31]",
+      "person_id": "85",
+      "person_name": "Szymon Adam Opolski",
+      "exact mention": "Szymonowi",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:23:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:24:01]",
+      "person_id": "20",
+      "person_name": "Iza",
+      "exact mention": "Izzie",
+      "notes": "Missed by naive pass: dative-case, phonetic mis-transcription of 'Izie'."
+    },
+    {
+      "Timestamp": "[01:24:03]",
+      "person_id": "20",
+      "person_name": "Iza",
+      "exact mention": "Izą",
+      "notes": "Missed by naive pass: instrumental-case inflection."
+    },
+    {
+      "Timestamp": "[01:24:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:24:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:24:20]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzowi"
+    },
+    {
+      "Timestamp": "[01:24:30]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem"
+    },
+    {
+      "Timestamp": "[01:24:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:24:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarzowi"
+    },
+    {
+      "Timestamp": "[01:24:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiański",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:24:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:25:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:25:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:25:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:25:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:25:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką",
+      "notes": "Missed by naive pass: instrumental-case inflection."
+    },
+    {
+      "Timestamp": "[01:25:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:25:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:27:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:27:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:27:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:28:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:28:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:28:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:28:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:29:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:29:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:30:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:31:03]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:31:03]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzuśka",
+      "notes": "Missed by naive pass: garbled typo of alias 'Krzysiek' ('Krzysiek w stylu Krzuśka się wydarł')."
+    },
+    {
+      "Timestamp": "[01:31:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką",
+      "notes": "Missed by naive pass: instrumental-case inflection."
+    },
+    {
+      "Timestamp": "[01:31:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:31:43]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[01:31:45]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[01:31:45]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[01:32:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "kasie"
+    },
+    {
+      "Timestamp": "[01:32:09]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimper",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:32:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę",
+      "notes": "Missed by naive pass: separate occurrence on same line as 'Gimper'."
+    },
+    {
+      "Timestamp": "[01:32:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:33:15]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczką"
+    },
+    {
+      "Timestamp": "[01:33:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:34:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:34:57]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wilico"
+    },
+    {
+      "Timestamp": "[01:35:05]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[01:35:08]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko"
+    },
+    {
+      "Timestamp": "[01:37:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:37:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:38:56]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[01:39:05]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[01:39:09]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczką"
+    },
+    {
+      "Timestamp": "[01:39:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:39:34]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[01:39:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:39:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:39:48]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[01:39:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:39:50]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę Łysiaka"
+    },
+    {
+      "Timestamp": "[01:40:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:40:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsikiem"
+    },
+    {
+      "Timestamp": "[01:41:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:41:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:42:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią",
+      "notes": "Missed by naive pass: multi-line mention, continues at [01:42:24] ('Dąbrowską')."
+    },
+    {
+      "Timestamp": "[01:42:24]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską",
+      "notes": "Missed by naive pass: multi-line mention, continuation of [01:42:22] ('Darią')."
+    },
+    {
+      "Timestamp": "[01:42:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:42:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:42:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:42:55]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsikiem"
+    },
+    {
+      "Timestamp": "[01:43:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:43:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[01:43:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:44:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:44:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzy",
+      "notes": "Missed by naive pass: truncated form of 'Katarzynę' ('inaczej ocenialiśmy Katarzy')."
+    },
+    {
+      "Timestamp": "[01:45:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:45:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:46:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:46:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:46:37]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę Łysiaka"
+    },
+    {
+      "Timestamp": "[01:46:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:46:50]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Bestii z",
+      "notes": "Missed by naive pass: alias 'Bestia z Tokio'; multi-line mention, continues at [01:46:52] ('Tokio')."
+    },
+    {
+      "Timestamp": "[01:47:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią Dąbrowską",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:47:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią",
+      "notes": "Missed by naive pass: second, separate occurrence on nearby line."
+    },
+    {
+      "Timestamp": "[01:47:35]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko"
+    },
+    {
+      "Timestamp": "[01:47:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:47:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:47:51]",
+      "person_id": "80",
+      "person_name": "Michał Sińczak",
+      "exact mention": "bezdomnym pelikanem"
+    },
+    {
+      "Timestamp": "[01:48:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:48:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaś",
+      "notes": "Missed by naive pass: truncated form of 'Kasia' ('Kaś zaczęło coś odpierdalać')."
+    },
+    {
+      "Timestamp": "[01:48:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:48:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:48:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:48:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:49:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:49:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem"
+    },
+    {
+      "Timestamp": "[01:49:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:49:46]",
+      "person_id": "86",
+      "person_name": "Aleg",
+      "exact mention": "Aleg"
+    },
+    {
+      "Timestamp": "[01:50:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:50:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:51:00]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:51:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:51:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:51:34]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[01:52:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:52:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[01:52:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:53:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:54:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:54:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:55:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:55:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:55:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:55:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:55:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:55:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:57:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:57:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:57:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:58:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:58:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Byciński",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[01:59:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[02:00:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:00:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:00:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:00:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[02:01:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasie"
+    },
+    {
+      "Timestamp": "[02:01:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[02:01:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:02:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:02:42]",
+      "person_id": "20",
+      "person_name": "Iza",
+      "exact mention": "Iza"
+    },
+    {
+      "Timestamp": "[02:02:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[02:03:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kha",
+      "notes": "Missed by naive pass: repeat of the opening voicemail clip ('Kha's not responding to my emails')."
+    },
+    {
+      "Timestamp": "[02:03:41]",
+      "person_id": "64",
+      "person_name": "Adrian",
+      "exact mention": "Adrien"
+    },
+    {
+      "Timestamp": "[02:03:41]",
+      "person_id": "66",
+      "person_name": "Karen",
+      "exact mention": "Karen"
+    },
+    {
+      "Timestamp": "[02:03:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasha"
+    },
+    {
+      "Timestamp": "[02:03:47]",
+      "person_id": "66",
+      "person_name": "Karen",
+      "exact mention": "Karen"
+    },
+    {
+      "Timestamp": "[02:04:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[02:04:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Goziarz",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Gonciarz', separate occurrence on same line as 'Krzysiu' ('Krzysiu Goziarz.')."
+    },
+    {
+      "Timestamp": "[01:46:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Tokio",
+      "notes": "Missed by naive pass: multi-line mention, continuation of [01:46:50] ('Bestii z')."
+    }
+  ]
+}

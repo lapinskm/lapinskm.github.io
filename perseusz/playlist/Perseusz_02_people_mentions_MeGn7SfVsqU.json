@@ -1,0 +1,778 @@
+{
+  "source_transcript": "Perseusz_02_transcript_MeGn7SfVsqU.txt",
+  "video_id": "MeGn7SfVsqU",
+  "episode": "02",
+  "processing steps": [
+    "Manual full transcript read against mentioned_people_with_ids.json, cross-checked with targeted regex/stem searches per person and alias to catch grammatical inflections and ASR typos",
+    "generate_mentions.py naive exact-match pass (baseline sanity check; caught only 18 exact literal name/alias strings, confirming it misses inflections/typos as its own stderr warning states)",
+    "generate_mentions.py fuzzy Levenshtein-distance passes (distances 1-4, using the internal min-word-length noise-guard table) diffed against the manual list to surface additional candidate mentions missed by hand",
+    "validate_mentions.py pass flagging ID/name mismatches (Rule A), timestamp/text mismatches (Rule B), and unmarked transcript occurrences of known names/aliases (Rule C)",
+    "Claude Sonnet 5 refinement: merged two additional genuine mentions found only by the fuzzy pass ('Pinpin' at [17:40] and 'Krpin' at [19:26], both ASR-garbled forms of 'Kryspin', confirmed by manual re-read of surrounding context), annotated every entry with grammatical inflection/typo/ASR-error notes, flagged low-confidence/ambiguous matches for manual review, and excluded false positives surfaced by both the naive substring matcher (e.g. 'Oskar' inside 'Oskarżasz') and fuzzy-match noise (common Polish words coincidentally close to short aliases, e.g. 'ale'~'Aleg', 'rok'~'Rock', 'miał'~'Michał', 'Kryspin'~'Krzysiu')"
+  ],
+  "notes": "All entries pass validate_mentions.py Rules A (ID/name consistency) and B (timestamp/text alignment). Rule C reports one warning ('Oskar' matched inside 'Oskarżasz' at [19:43]), which is a known false positive of the validator's own raw-substring Rule C check (no word-boundary enforcement on multi-char targets) rather than a missed mention — confirmed false by manual reading of that line, which is Kryspin accusing the narrator of 'oskarżanie' (accusing) people, not a reference to a person named Oskar. Entries flagged 'AMBIGUOUS' in their notes are lower-confidence judgement calls made from context (garbled ASR tokens, truncated words, or wordplay/nicknames not listed verbatim as aliases) and should be spot-checked by a human reviewer. This episode's mentions are dominated by two people (Krzysztof Gonciarz and Kryspin Sobczak) referred to almost exclusively by first name/nickname and subject to heavy ASR misspelling of 'Kryspin' (Krispin/Krypin/Krespin/Cryspin/Crispin/Kryspi/Pinpin/Krpin all occur).",
+  "mentions": [
+    {
+      "Timestamp": "[00:21]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Instrumental grammatical inflection of first name, referring to Krzysztof Gonciarz (subject of the whole video)."
+    },
+    {
+      "Timestamp": "[00:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Genitive grammatical inflection of full name ('Daria Dąbrowska' -> 'Darii Dąbrowskiej'), single-line mention."
+    },
+    {
+      "Timestamp": "[00:46]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Exact full-name match, nominative."
+    },
+    {
+      "Timestamp": "[00:53]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy",
+      "notes": "Multi-line mention: alias first name here, surname continues at [00:56] ('Lucy / Wieliczko')."
+    },
+    {
+      "Timestamp": "[00:56]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Multi-line mention, continuation of alias name started at [00:53]."
+    },
+    {
+      "Timestamp": "[01:13]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Multi-line mention: first name here, surname continues at [01:15] ('Hanna / Koczewska')."
+    },
+    {
+      "Timestamp": "[01:15]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Multi-line mention, continuation of full name started at [01:13]."
+    },
+    {
+      "Timestamp": "[01:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative ('tak jak mówi o tym Krzysztof')."
+    },
+    {
+      "Timestamp": "[01:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyn",
+      "notes": "AMBIGUOUS: word is cut off mid-name at the end of the line ('Następnego dnia Katarzyn.'); most plausibly a truncated 'Katarzyna', consistent with Katarzyna Meciński being discussed at length later in the video. Manual review recommended."
+    },
+    {
+      "Timestamp": "[01:42]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "naruciak",
+      "notes": "Lowercase casual reference to alias 'Naruciak' ('Pojawił się nagle naruciak ze wszystkich osób')."
+    },
+    {
+      "Timestamp": "[01:44]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuart",
+      "notes": "First name only, nominative ('że Stuart ukradł gaci')."
+    },
+    {
+      "Timestamp": "[02:07]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Instrumental grammatical inflection of first name."
+    },
+    {
+      "Timestamp": "[02:11]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "Multi-line mention: first name here, surname continues at [02:14] ('Kryspin / Sobczak')."
+    },
+    {
+      "Timestamp": "[02:14]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Sobczak",
+      "notes": "Multi-line mention, continuation of full name started at [02:11]."
+    },
+    {
+      "Timestamp": "[02:42]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin' (y/i substitution)."
+    },
+    {
+      "Timestamp": "[02:55]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin Sobczak",
+      "notes": "Exact full-name match."
+    },
+    {
+      "Timestamp": "[03:09]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin' (y/i substitution)."
+    },
+    {
+      "Timestamp": "[03:16]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Kąciarza",
+      "notes": "Typo/ASR variant of 'Krzysztofa Gonciarza' (genitive; G/K substitution in surname), from Kryspin's line 'Jestem byłą montażystką Krzysztofa Kąciarza' (I am Krzysztof Gonciarz's former editor). Logged only as a Krzysztof Gonciarz mention; the descriptive role phrase 'montażystka Krzysztofa Gonciarza' (also a listed alias for Kryspin Sobczak) was not separately double-counted here, to avoid over-attribution from a generic role noun."
+    },
+    {
+      "Timestamp": "[03:21]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative ('poznajcie Kryspin')."
+    },
+    {
+      "Timestamp": "[03:23]",
+      "person_id": "19",
+      "person_name": "Dominik Boss",
+      "exact mention": "Dominik Boss",
+      "notes": "Exact name match, in a list of channels Kryspin edited for."
+    },
+    {
+      "Timestamp": "[03:28]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak",
+      "notes": "Alias match: another channel Kryspin edited for, named after Adam Zimmermann's alias."
+    },
+    {
+      "Timestamp": "[03:38]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[03:42]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative ('Kryspin. Tak,')."
+    },
+    {
+      "Timestamp": "[03:53]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[03:58]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin'."
+    },
+    {
+      "Timestamp": "[04:07]",
+      "person_id": "20",
+      "person_name": "Iza",
+      "exact mention": "Iza",
+      "notes": "Exact first-name match ('Iza ci już...')."
+    },
+    {
+      "Timestamp": "[04:36]",
+      "person_id": "20",
+      "person_name": "Iza",
+      "exact mention": "Ija",
+      "notes": "AMBIGUOUS: typo/ASR variant missing one letter of 'Iza' ('Ija chyba ci napisała'); kept as a low-confidence match to Iza, manual review recommended."
+    },
+    {
+      "Timestamp": "[04:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Genitive/accusative grammatical inflection of first name."
+    },
+    {
+      "Timestamp": "[04:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Instrumental grammatical inflection of first name."
+    },
+    {
+      "Timestamp": "[04:52]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Multi-line mention: first part of a typo'd full name, surname continues at [04:53] ('Krzysztofa / Gąciarza'). Occurs in the phrase 'montażystki Krzysztofa Gąciarza' (Kryspin again describing herself as Krzysztof Gonciarz's former editor); logged only as a Krzysztof Gonciarz mention, per the same reasoning as [03:16]."
+    },
+    {
+      "Timestamp": "[04:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza",
+      "notes": "Multi-line mention, continuation of full name started at [04:52]. Typo/ASR variant of 'Gonciarza' (o/ą substitution in surname)."
+    },
+    {
+      "Timestamp": "[04:56]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin'."
+    },
+    {
+      "Timestamp": "[05:02]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Cryspin",
+      "notes": "Typo/ASR variant of first name 'Kryspin' (C/K substitution), matching the listed alias 'Crispin'."
+    },
+    {
+      "Timestamp": "[05:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[05:43]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[05:46]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[06:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej",
+      "notes": "Genitive grammatical inflection of full name."
+    },
+    {
+      "Timestamp": "[06:17]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative; same line as the Katarzyna Meciński mention above."
+    },
+    {
+      "Timestamp": "[06:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki",
+      "notes": "Genitive grammatical inflection of alias 'Kaśka' ('Współczuję... dla Kaśki')."
+    },
+    {
+      "Timestamp": "[06:35]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[06:52]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin'."
+    },
+    {
+      "Timestamp": "[06:59]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Exact alias match."
+    },
+    {
+      "Timestamp": "[07:01]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspi",
+      "notes": "Typo/ASR variant: truncated form of 'Kryspin' missing the final 'n'."
+    },
+    {
+      "Timestamp": "[07:03]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[07:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[08:14]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[08:20]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krypin",
+      "notes": "Typo/ASR variant of first name 'Kryspin' (missing 's')."
+    },
+    {
+      "Timestamp": "[08:30]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[09:27]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[09:32]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "crispin",
+      "notes": "Lowercase match of listed alias 'Crispin'."
+    },
+    {
+      "Timestamp": "[09:41]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[09:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[10:21]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[10:23]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[11:12]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[11:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz",
+      "notes": "Exact full-name match."
+    },
+    {
+      "Timestamp": "[11:25]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krypin",
+      "notes": "Typo/ASR variant of first name 'Kryspin' (missing 's')."
+    },
+    {
+      "Timestamp": "[11:27]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[11:40]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy",
+      "notes": "Multi-line mention: alias first name here, surname continues at [11:42] ('Lucy / Wicko')."
+    },
+    {
+      "Timestamp": "[11:42]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wicko",
+      "notes": "Multi-line mention, continuation of alias started at [11:40]. Heavily garbled typo/ASR variant of 'Wieliczko'."
+    },
+    {
+      "Timestamp": "[12:05]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[12:18]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin'."
+    },
+    {
+      "Timestamp": "[12:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia",
+      "notes": "Multi-line mention: alias first name here, surname continues at [12:24] ('Kasia / Meciński')."
+    },
+    {
+      "Timestamp": "[12:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "Multi-line mention, continuation of full name started at [12:20]."
+    },
+    {
+      "Timestamp": "[12:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[12:34]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "Multi-line mention: first name here, surname continues at [12:37] ('Kryspin / Sobczak')."
+    },
+    {
+      "Timestamp": "[12:37]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Sobczak",
+      "notes": "Multi-line mention, continuation of full name started at [12:34]."
+    },
+    {
+      "Timestamp": "[12:58]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[13:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię Meciński",
+      "notes": "Accusative grammatical inflection of full alias/name ('przez Kasię Meciński')."
+    },
+    {
+      "Timestamp": "[13:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative; same line as the Zosia mention below ('Krzysztof i Zosia w momencie...')."
+    },
+    {
+      "Timestamp": "[13:05]",
+      "person_id": "21",
+      "person_name": "Zosia",
+      "exact mention": "Zosia",
+      "notes": "First name, nominative; same line as the Krzysztof Gonciarz mention above."
+    },
+    {
+      "Timestamp": "[13:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Instrumental grammatical inflection of first name."
+    },
+    {
+      "Timestamp": "[13:22]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[13:24]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[13:32]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[13:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "First name only, nominative ('Później Daria poniża jeszcze tamtą...')."
+    },
+    {
+      "Timestamp": "[13:49]",
+      "person_id": "21",
+      "person_name": "Zosia",
+      "exact mention": "Zosia",
+      "notes": "First name, nominative."
+    },
+    {
+      "Timestamp": "[13:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[13:57]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Genitive/accusative grammatical inflection of first name."
+    },
+    {
+      "Timestamp": "[14:01]",
+      "person_id": "21",
+      "person_name": "Zosia",
+      "exact mention": "Zosi",
+      "notes": "Genitive/dative grammatical inflection of first name."
+    },
+    {
+      "Timestamp": "[14:04]",
+      "person_id": "21",
+      "person_name": "Zosia",
+      "exact mention": "Zosia",
+      "notes": "First name, nominative."
+    },
+    {
+      "Timestamp": "[15:07]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin'."
+    },
+    {
+      "Timestamp": "[15:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Multi-line mention: genitive first name here, surname continues at [15:44] ('Krzysztofa / Gonciarza')."
+    },
+    {
+      "Timestamp": "[15:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza",
+      "notes": "Multi-line mention, continuation of full name started at [15:43]. Genitive grammatical inflection of surname."
+    },
+    {
+      "Timestamp": "[15:54]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Crispin",
+      "notes": "Exact match of listed alias 'Crispin'."
+    },
+    {
+      "Timestamp": "[16:02]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin'."
+    },
+    {
+      "Timestamp": "[16:10]",
+      "person_id": "22",
+      "person_name": "Łukasz",
+      "exact mention": "Łukasz",
+      "notes": "Exact first-name match."
+    },
+    {
+      "Timestamp": "[16:37]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krypi",
+      "notes": "AMBIGUOUS: garbled/truncated typo variant of 'Kryspin' ('poruszyć wątek Krypi' = to raise the topic of Kryspin); kept as a low-confidence match, manual review recommended."
+    },
+    {
+      "Timestamp": "[16:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative; same line as the 'Krypi' mention above ('Krzysztof potrafił...')."
+    },
+    {
+      "Timestamp": "[16:56]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[17:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Tokio 24",
+      "notes": "AMBIGUOUS: reference to Krzysztof Gonciarz's 'Tokio24' project/exhibition; multi-line phrase continues at [17:15] ('wernisaż Tokio 24 i / Gon.'). Kept as a low-confidence mention of Krzysztof Gonciarz; manual review recommended."
+    },
+    {
+      "Timestamp": "[17:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gon",
+      "notes": "Multi-line mention, continuation of phrase started at [17:12]. Apparent truncated/shortened form of 'Gonciarz'; low-confidence, manual review recommended."
+    },
+    {
+      "Timestamp": "[17:40]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Pinpin",
+      "notes": "AMBIGUOUS: garbled ASR token unlike any listed alias on its own, but context ('Pinpin inicjuje ze mną kiedyś rozmowę...') sits in the middle of the same Kryspin narrative that resumes with an explicit 'Kryspin' mention two lines later at [17:58], making this very likely a mis-transcribed reference to Kryspin Sobczak. Found via generate_mentions.py's fuzzy (edit-distance) pass and confirmed on manual re-read; kept as a low-confidence match, manual review recommended."
+    },
+    {
+      "Timestamp": "[17:58]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[18:03]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[18:12]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin Sobczak",
+      "notes": "Exact full-name match."
+    },
+    {
+      "Timestamp": "[18:16]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[18:38]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin",
+      "notes": "Typo/ASR variant of first name 'Kryspin'."
+    },
+    {
+      "Timestamp": "[19:26]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krpin",
+      "notes": "AMBIGUOUS: garbled ASR token missing a vowel ('kilka dni. Krpin stwierdza, że będzie publikować...'), most plausibly 'Kryspin' given the ongoing Kryspin narrative. Found via generate_mentions.py's fuzzy (edit-distance) pass and confirmed on manual re-read; kept as a low-confidence match, manual review recommended."
+    },
+    {
+      "Timestamp": "[20:18]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[20:21]",
+      "person_id": "19",
+      "person_name": "Dominik Boss",
+      "exact mention": "Dominika Bossa",
+      "notes": "Genitive grammatical inflection of full name."
+    },
+    {
+      "Timestamp": "[20:29]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krespin",
+      "notes": "Typo/ASR variant of first name 'Kryspin' (e/y substitution)."
+    },
+    {
+      "Timestamp": "[20:29]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaka",
+      "notes": "Genitive grammatical inflection of alias 'Naruciak'; same line as the Kryspin mention above ('Zna również Naruciaka, więc Krespin jest istotną postacią...')."
+    },
+    {
+      "Timestamp": "[20:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Genitive grammatical inflection of first name ('uniwersum Katarzyny')."
+    },
+    {
+      "Timestamp": "[20:37]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stewarta Bartona",
+      "notes": "Typo/ASR/Polonized-spelling variant of genitive full name 'Stuarta Burtona' ('uniwersum Stewarta Bartona')."
+    },
+    {
+      "Timestamp": "[20:41]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First name only, nominative."
+    },
+    {
+      "Timestamp": "[20:55]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "First of two separate 'Kryspin' mentions on this line ('Kryspin. Transfobia. Kryspin zarzuca mi...')."
+    },
+    {
+      "Timestamp": "[20:55]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin",
+      "notes": "Second of two separate 'Kryspin' mentions on this line."
+    },
+    {
+      "Timestamp": "[21:22]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Instrumental grammatical inflection of first name, closing line."
+    }
+  ]
+}

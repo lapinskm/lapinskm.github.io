@@ -1,0 +1,2351 @@
+{
+  "processing steps": [
+    "pre-existing draft mentions list (flat-list format, no FUZZY MATCH annotations; originating tool/process not specified)",
+    "Claude (Sonnet 4.6) refinement with validator (fixed 8 Rule B errors -- typos and mis-timestamped entries -- and added ~50 Rule-C-caught misses) plus a full manual read-through of the transcript (added ~15 further missed mentions the validator's Rule C could not catch on its own)"
+  ],
+  "notes": "This was the most heavily corrected episode so far. Rule B found 8 errors: two literal typos in the data ('Goncjarz'->'Gonciarz', appearing twice) and six mentions timestamped one caption-line too early/late (including 'Bestii z Tokio', which was actually split across two lines and is now marked as a multi-line mention). Rule C then flagged ~50 further misses, the great majority inflected/typo forms of 'Daria Dąbrowska', 'Krzysztof Gonciarz', 'Katarzyna Meciński', and 'Hanna Koczewska'. One important false-positive source needed manual disambiguation: the entity 'V' (alias 'W') is genuinely referred to throughout this episode using several short spoken-letter variants ('V', 'W', 'Vi', 'Wi') -- but the 2-character target 'Wi' also coincidentally appears as a substring inside many ordinary Polish words (Więc/Wiecie/Większość/Wiadomo/Widzicie/Wiedziałbym/Wiesz), so each occurrence was checked individually in context; the genuine 'V'/'Wi' mentions were kept and the ~14 coincidental substring matches inside ordinary words were confirmed as noise and left unmarked (see residual Rule C warnings below). A full manual read-through of the transcript then surfaced roughly 15 further real mentions Rule C could not catch on its own (inflected/typo forms not already present elsewhere as a known target), including a correctly-identified 'Chris' used as a real direct address in a quoted English email (distinct from the 'Jesus Christ' idiom false-positive pattern seen in other episodes), a second distinct 'Maja' (Maja Mikołajczyk, separate from the much more frequently discussed Maja Staśko), and several multi-line surname splits ('Sylwestra'/'Wardengi', 'Weronikę'/'Truszczyńską', 'Hannie'/'Zegulskiej'). One occurrence was deliberately excluded, consistent with earlier episodes: 'Maciek' at [01:03:40] -- 'mój biały kolega nazwijmy go Maciek' ('my white friend, let's call him Maciek') is an explicit anonymizing placeholder, not a reference to the entity 'Maciej' (id 78). The 14 residual 'Wi' Rule C warnings and the 'Maciek' warning are expected and intentionally left unmarked. Update: the entity \"Nazwijmy go Maciek\" (id 124) was subsequently added to the master entity list to formally track this recurring anonymizing-placeholder character; the previously-excluded 'Maciek' mention at [01:03:40] is now included, tagged to id 124 instead of being dropped.",
+  "source_transcript": "Perseusz_06_transcript_bf3KGysriHY.txt",
+  "video_id": "bf3KGysriHY",
+  "episode": 6,
+  "mentions": [
+    {
+      "Timestamp": "[00:18]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[00:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[00:46]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[00:53]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:00]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[02:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński"
+    },
+    {
+      "Timestamp": "[02:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśku"
+    },
+    {
+      "Timestamp": "[02:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[02:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[02:51]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[02:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[02:58]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[02:59]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko"
+    },
+    {
+      "Timestamp": "[03:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[03:13]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[03:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarzem"
+    },
+    {
+      "Timestamp": "[03:36]",
+      "person_id": "34",
+      "person_name": "Kuba Wątor",
+      "exact mention": "wątora"
+    },
+    {
+      "Timestamp": "[03:36]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olciak"
+    },
+    {
+      "Timestamp": "[03:41]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuwarta Bartona"
+    },
+    {
+      "Timestamp": "[03:46]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuwarta"
+    },
+    {
+      "Timestamp": "[04:03]",
+      "person_id": "36",
+      "person_name": "Laura Klaus",
+      "exact mention": "Laura"
+    },
+    {
+      "Timestamp": "[04:05]",
+      "person_id": "36",
+      "person_name": "Laura Klaus",
+      "exact mention": "Klaus"
+    },
+    {
+      "Timestamp": "[04:05]",
+      "person_id": "37",
+      "person_name": "Jakub Chuptyś",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[04:15]",
+      "person_id": "36",
+      "person_name": "Laura Klaus",
+      "exact mention": "Laura Klaus"
+    },
+    {
+      "Timestamp": "[04:15]",
+      "person_id": "37",
+      "person_name": "Jakub Chuptyś",
+      "exact mention": "Gargelmela"
+    },
+    {
+      "Timestamp": "[04:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[04:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[04:30]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[04:31]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[04:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[04:45]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[04:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[04:50]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[04:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[05:17]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[05:51]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "V"
+    },
+    {
+      "Timestamp": "[05:51]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "V"
+    },
+    {
+      "Timestamp": "[06:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    },
+    {
+      "Timestamp": "[06:02]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "V"
+    },
+    {
+      "Timestamp": "[06:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[06:21]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "Wi"
+    },
+    {
+      "Timestamp": "[06:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkowi"
+    },
+    {
+      "Timestamp": "[07:10]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "Wi"
+    },
+    {
+      "Timestamp": "[07:55]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "W"
+    },
+    {
+      "Timestamp": "[07:57]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wagko"
+    },
+    {
+      "Timestamp": "[08:06]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "V"
+    },
+    {
+      "Timestamp": "[08:24]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[08:59]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[08:59]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "Vi"
+    },
+    {
+      "Timestamp": "[09:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[09:05]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "V"
+    },
+    {
+      "Timestamp": "[09:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[09:23]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "Wi"
+    },
+    {
+      "Timestamp": "[09:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[09:47]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "V",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[10:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[10:52]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[11:01]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[12:11]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[12:24]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[12:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[14:21]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[14:21]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy",
+      "notes": "Multi-line mention: continues at [14:24] ('Wicko')."
+    },
+    {
+      "Timestamp": "[14:24]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wicko",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Wieliczko'; multi-line mention, continuation of [14:21] ('Lucy')."
+    },
+    {
+      "Timestamp": "[16:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[16:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[16:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[16:35]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[16:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[16:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[16:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[17:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[17:47]",
+      "person_id": "36",
+      "person_name": "Laura Klaus",
+      "exact mention": "Laura"
+    },
+    {
+      "Timestamp": "[17:47]",
+      "person_id": "38",
+      "person_name": "Natalia",
+      "exact mention": "Natalia"
+    },
+    {
+      "Timestamp": "[18:00]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[18:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[18:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią Dąbrowską"
+    },
+    {
+      "Timestamp": "[19:35]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[19:46]",
+      "person_id": "42",
+      "person_name": "Maja Mikołajczyk",
+      "exact mention": "Mikołajczyk",
+      "notes": "Missed by naive pass: garbled reference to Maja Mikołajczyk, distinct from Maja Staśko ('Artykuł ma i Mikołajczyk dla na temat' likely garbled ASR for 'Artykuł Mai Mikołajczyk na ten temat')."
+    },
+    {
+      "Timestamp": "[20:03]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[20:03]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[20:17]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[20:37]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[20:49]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[20:52]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[20:54]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Anna Maria Żukowska"
+    },
+    {
+      "Timestamp": "[20:59]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[20:59]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Oli"
+    },
+    {
+      "Timestamp": "[20:59]",
+      "person_id": "36",
+      "person_name": "Laura Klaus",
+      "exact mention": "Laurę"
+    },
+    {
+      "Timestamp": "[21:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[21:14]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Żukowska"
+    },
+    {
+      "Timestamp": "[21:17]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[21:17]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[21:20]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[21:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[21:27]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[21:52]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[22:07]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[22:07]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Żukowska"
+    },
+    {
+      "Timestamp": "[23:20]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[23:34]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[23:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[23:41]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[23:47]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[23:50]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuarta"
+    },
+    {
+      "Timestamp": "[24:00]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuarta"
+    },
+    {
+      "Timestamp": "[24:02]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarzem"
+    },
+    {
+      "Timestamp": "[24:14]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[24:19]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[24:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarz"
+    },
+    {
+      "Timestamp": "[24:30]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[24:30]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[24:38]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaka"
+    },
+    {
+      "Timestamp": "[24:40]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[25:00]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[25:15]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanie",
+      "notes": "Missed by naive pass: locative-case inflection of 'Hania'."
+    },
+    {
+      "Timestamp": "[25:24]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaka"
+    },
+    {
+      "Timestamp": "[25:24]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "żona Naruciaka"
+    },
+    {
+      "Timestamp": "[25:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[25:30]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiowi"
+    },
+    {
+      "Timestamp": "[25:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu",
+      "notes": "Missed by naive pass: vocative-case form of 'Kasia'."
+    },
+    {
+      "Timestamp": "[25:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[25:55]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej"
+    },
+    {
+      "Timestamp": "[26:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gądziarz"
+    },
+    {
+      "Timestamp": "[26:17]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuarta Bartona"
+    },
+    {
+      "Timestamp": "[26:20]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuewarta"
+    },
+    {
+      "Timestamp": "[26:43]",
+      "person_id": "123",
+      "person_name": "Mateusz Morawiecki",
+      "exact mention": "pan Morawiecki"
+    },
+    {
+      "Timestamp": "[27:10]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[27:16]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[27:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[27:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[28:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[28:16]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[28:29]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olciak"
+    },
+    {
+      "Timestamp": "[28:37]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olciak"
+    },
+    {
+      "Timestamp": "[28:39]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olciak"
+    },
+    {
+      "Timestamp": "[28:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[28:57]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[29:00]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[29:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[29:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[29:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[29:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[29:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[30:00]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[30:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[30:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[30:46]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[30:48]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę"
+    },
+    {
+      "Timestamp": "[30:50]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewską"
+    },
+    {
+      "Timestamp": "[30:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem"
+    },
+    {
+      "Timestamp": "[30:58]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani"
+    },
+    {
+      "Timestamp": "[31:03]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    },
+    {
+      "Timestamp": "[31:03]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[31:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[31:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[31:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[32:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[32:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[32:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Meciński'."
+    },
+    {
+      "Timestamp": "[32:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[32:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Meciński'."
+    },
+    {
+      "Timestamp": "[33:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[33:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[33:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[33:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię Wyciński",
+      "notes": "Missed by naive pass: accusative-case, phonetic mis-transcription of 'Kasia Meciński'."
+    },
+    {
+      "Timestamp": "[33:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katerzyna Meciński"
+    },
+    {
+      "Timestamp": "[34:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[34:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Chris",
+      "notes": "Missed by naive pass: alias 'Chris' used as a direct address in a quoted English-language message."
+    },
+    {
+      "Timestamp": "[34:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[34:38]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[34:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[34:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[35:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[35:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[35:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[35:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią",
+      "notes": "Missed by naive pass: instrumental-case inflection of 'Kasia'."
+    },
+    {
+      "Timestamp": "[36:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi meciński",
+      "notes": "Missed by naive pass: genitive-case, phonetic mis-transcription of 'Kasia Meciński'."
+    },
+    {
+      "Timestamp": "[36:08]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[36:08]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannie"
+    },
+    {
+      "Timestamp": "[36:39]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Missed by naive pass: genitive-case inflection of 'Hanna Koczewska'."
+    },
+    {
+      "Timestamp": "[36:43]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[36:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[37:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[37:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[37:27]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[37:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[37:38]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu",
+      "notes": "Missed by naive pass: vocative-case form of alias 'Krzysiek'."
+    },
+    {
+      "Timestamp": "[37:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[38:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass: genitive-case inflection (part of film title 'Prawdziwa twarz Krzysztofa Gonciarza')."
+    },
+    {
+      "Timestamp": "[38:16]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[38:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[38:39]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[39:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[39:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[39:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[39:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[39:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz",
+      "notes": "Missed by naive pass: third occurrence continuing the repeated pattern from [39:15]."
+    },
+    {
+      "Timestamp": "[39:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[39:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią Dąbrowską"
+    },
+    {
+      "Timestamp": "[39:51]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[40:32]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią Dąbrowską"
+    },
+    {
+      "Timestamp": "[40:38]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[40:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[41:07]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[41:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[41:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[41:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię Meciński"
+    },
+    {
+      "Timestamp": "[41:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[41:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[41:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[41:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[41:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[41:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[41:51]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[41:51]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[42:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi",
+      "notes": "Missed by naive pass: genitive/dative-case form of 'Kasia'."
+    },
+    {
+      "Timestamp": "[42:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[42:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[42:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[42:30]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[42:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi",
+      "notes": "Missed by naive pass: genitive/dative-case form of 'Kasia'."
+    },
+    {
+      "Timestamp": "[42:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[43:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[43:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[43:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[43:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[43:44]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[43:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński"
+    },
+    {
+      "Timestamp": "[43:57]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[44:02]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliszko"
+    },
+    {
+      "Timestamp": "[44:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Myciński"
+    },
+    {
+      "Timestamp": "[44:06]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[44:17]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[44:18]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[44:21]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[44:33]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[45:11]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[45:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[45:25]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwestra",
+      "notes": "Missed by naive pass: genitive-case inflection of 'Sylwester'; multi-line mention, continues at [45:27] ('Wardengi')."
+    },
+    {
+      "Timestamp": "[45:27]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardengi",
+      "notes": "Multi-line mention: continuation of [45:25] ('Sylwestra')."
+    },
+    {
+      "Timestamp": "[45:36]",
+      "person_id": "44",
+      "person_name": "Olga Legosz",
+      "exact mention": "Nomad Mom"
+    },
+    {
+      "Timestamp": "[45:39]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[45:39]",
+      "person_id": "44",
+      "person_name": "Olga Legosz",
+      "exact mention": "Olga"
+    },
+    {
+      "Timestamp": "[45:56]",
+      "person_id": "34",
+      "person_name": "Kuba Wątor",
+      "exact mention": "Wontorem"
+    },
+    {
+      "Timestamp": "[45:56]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olciak"
+    },
+    {
+      "Timestamp": "[46:04]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[46:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza",
+      "notes": "Missed by naive pass: genitive-case, phonetic mis-transcription of 'Gonciarz' (part of film title 'Manipulacje gąciarza')."
+    },
+    {
+      "Timestamp": "[46:27]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[46:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gąciarza",
+      "notes": "Missed by naive pass entirely: genitive-case, phonetic mis-transcription of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[46:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[46:58]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Missed by naive pass: genitive-case inflection of 'Hanna Koczewska'."
+    },
+    {
+      "Timestamp": "[47:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[47:14]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani Koczewskiej",
+      "notes": "Missed by naive pass: genitive-case inflection of 'Hania Koczewska'."
+    },
+    {
+      "Timestamp": "[47:20]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania Koczewska"
+    },
+    {
+      "Timestamp": "[47:24]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani Koczewskiej"
+    },
+    {
+      "Timestamp": "[47:24]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani Koczewskiej",
+      "notes": "Missed by naive pass: second, separate occurrence on the same line as the [47:14] one ('temat Hani Koczewskiej. Hania Koczewska')."
+    },
+    {
+      "Timestamp": "[47:24]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania Koczewska",
+      "notes": "Missed by naive pass: separate occurrence on same line ('temat Hani Koczewskiej. Hania Koczewska')."
+    },
+    {
+      "Timestamp": "[47:25]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania Koczewska"
+    },
+    {
+      "Timestamp": "[47:25]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania Koczewska"
+    },
+    {
+      "Timestamp": "[47:41]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania",
+      "notes": "Missed by naive pass: vocative direct address ('ej Hania, mów mi tutaj')."
+    },
+    {
+      "Timestamp": "[47:51]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[47:55]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardengę"
+    },
+    {
+      "Timestamp": "[47:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[48:00]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwestra Wardęgi"
+    },
+    {
+      "Timestamp": "[48:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[48:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[48:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[49:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[49:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[49:55]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[50:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Derii Dąbrowskiej",
+      "notes": "Missed by naive pass: genitive-case, phonetic mis-transcription ('Derii' for 'Darii') of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[50:23]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[50:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśku"
+    },
+    {
+      "Timestamp": "[50:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[50:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem"
+    },
+    {
+      "Timestamp": "[51:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśku"
+    },
+    {
+      "Timestamp": "[51:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem"
+    },
+    {
+      "Timestamp": "[51:20]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii"
+    },
+    {
+      "Timestamp": "[51:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[51:32]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki Truszczyńskiej"
+    },
+    {
+      "Timestamp": "[51:36]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronika"
+    },
+    {
+      "Timestamp": "[51:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem"
+    },
+    {
+      "Timestamp": "[51:51]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[52:03]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weronikę",
+      "notes": "Missed by naive pass: accusative-case inflection of 'Weronika'; multi-line mention, continues at [52:05] ('Truszczyńską')."
+    },
+    {
+      "Timestamp": "[52:05]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Truszczyńską",
+      "notes": "Missed by naive pass: accusative-case inflection of 'Truszczyńska'; multi-line mention, continuation of [52:03] ('Weronikę')."
+    },
+    {
+      "Timestamp": "[52:07]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[52:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[52:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[52:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Meciński"
+    },
+    {
+      "Timestamp": "[52:52]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[52:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[52:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[53:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[53:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkowij"
+    },
+    {
+      "Timestamp": "[53:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii"
+    },
+    {
+      "Timestamp": "[53:17]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[53:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[54:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[55:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[55:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[55:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[55:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[56:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi",
+      "notes": "Missed by naive pass: genitive/dative-case form of 'Kasia'."
+    },
+    {
+      "Timestamp": "[56:03]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[56:03]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[56:09]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Bestii z",
+      "notes": "Multi-line mention: continues at [56:11] ('Tokio')."
+    },
+    {
+      "Timestamp": "[56:11]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Tokio",
+      "notes": "Multi-line mention: continuation of [56:09] ('Bestii z'); together forming alias 'Bestia z Tokio'."
+    },
+    {
+      "Timestamp": "[56:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[56:15]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimperowi"
+    },
+    {
+      "Timestamp": "[56:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[56:45]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[57:08]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki Truszczyńskiej"
+    },
+    {
+      "Timestamp": "[57:22]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniki"
+    },
+    {
+      "Timestamp": "[57:26]",
+      "person_id": "12",
+      "person_name": "Weronika Truszczyńska",
+      "exact mention": "Weroniką"
+    },
+    {
+      "Timestamp": "[57:29]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[58:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    },
+    {
+      "Timestamp": "[58:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[59:13]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[59:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Missed by naive pass: instrumental-case inflection."
+    },
+    {
+      "Timestamp": "[01:00:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem"
+    },
+    {
+      "Timestamp": "[01:00:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:00:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[01:00:59]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:01:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza",
+      "notes": "Missed by naive pass: genitive-case, phonetic mis-transcription of 'Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:01:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:01:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[01:01:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:01:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:01:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:02:01]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:02:07]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:02:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:02:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:02:16]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[01:02:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:02:45]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[01:02:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:03:00]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[01:03:09]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno Koczewska"
+    },
+    {
+      "Timestamp": "[01:03:32]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Konciarz",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Gonciarz' in a chanted/song section ('Konciarz kazał wam się walić')."
+    },
+    {
+      "Timestamp": "[01:03:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "konciarz",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Gonciarz' in a chanted/song section ('Jackson Jordan konciarz szmatę pozrób')."
+    },
+    {
+      "Timestamp": "[01:03:40]",
+      "person_id": "124",
+      "person_name": "Nazwijmy go Maciek",
+      "exact mention": "Maciek",
+      "notes": "'mój biały kolega nazwijmy go Maciek' -- explicit anonymizing placeholder for an unnamed friend, now tracked as its own entity (id 124) rather than excluded, per addition of this entity to the master list."
+    },
+    {
+      "Timestamp": "[01:03:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:03:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:04:08]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:04:10]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:04:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[01:04:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[01:04:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:04:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:05:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dario"
+    },
+    {
+      "Timestamp": "[01:05:24]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:05:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[01:05:30]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanie",
+      "notes": "Missed by naive pass: locative-case inflection of 'Hania' ('chyba głównie na Hanie')."
+    },
+    {
+      "Timestamp": "[01:05:35]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[01:05:42]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanie",
+      "notes": "Missed by naive pass: locative-case inflection of 'Hania' ('jakiś dodatkowy film na Hanie')."
+    },
+    {
+      "Timestamp": "[01:05:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:06:07]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:06:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:07:26]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[01:07:29]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:08:40]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagórskiej"
+    },
+    {
+      "Timestamp": "[01:08:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[01:08:51]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:09:21]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannie",
+      "notes": "Multi-line mention: continues at [01:09:23] ('Zegulskiej')."
+    },
+    {
+      "Timestamp": "[01:09:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:09:23]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zegulskiej",
+      "notes": "Missed by naive pass: phonetic mis-transcription, dative-case inflection of 'Zagulska'; multi-line mention, continuation of [01:09:21] ('Hannie')."
+    },
+    {
+      "Timestamp": "[01:09:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:10:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[01:10:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Taria Dąbrowska",
+      "notes": "Missed by naive pass: phonetic mis-transcription ('Taria' for 'Daria') of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[01:11:13]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej",
+      "notes": "Missed by naive pass: genitive-case inflection of 'Zagulska'; multi-line mention, continuation of [01:11:12]."
+    },
+    {
+      "Timestamp": "[01:11:39]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny Zagulskiej",
+      "notes": "Missed by naive pass: genitive-case inflection of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[01:11:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[01:12:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[01:12:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    }
+  ]
+}

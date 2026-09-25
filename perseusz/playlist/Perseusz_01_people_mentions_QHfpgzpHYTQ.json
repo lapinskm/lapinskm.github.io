@@ -1,0 +1,497 @@
+{
+  "source_transcript": "Perseusz_01_transcript_QHfpgzpHYTQ.txt",
+  "video_id": "QHfpgzpHYTQ",
+  "episode": "01",
+  "processing steps": [
+    "unknown/manual",
+    "generate_mentions.py naive generator pass (fuzzy name/alias matcher against mentioned_people_with_ids.json)",
+    "validate_mentions.py pass flagging ID/name mismatches (Rule A), timestamp/text mismatches (Rule B), and unmarked transcript occurrences of known names/aliases (Rule C)",
+    "Claude Sonnet 5 refinement with naive generator and validator: merged incorrectly-split multi-timestamp mentions, corrected mis-timestamped entries, added missing mentions found via manual transcript re-read (Daria Dąbrowska intro, Stuart Burton reference, portmanteau wordplay), annotated grammatical inflections/typos/ASR errors, and flagged low-confidence/ambiguous matches for manual review"
+  ],
+  "notes": "All entries pass validate_mentions.py Rules A (ID/name consistency), B (timestamp/text alignment), and C (no unmarked known-name occurrences). Entries flagged 'AMBIGUOUS' in their notes are lower-confidence judgement calls made from context and should be spot-checked by a human reviewer.",
+  "mentions": [
+    {
+      "Timestamp": "[00:00]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Multi-line mention: first name here, surname continues at [00:02] ('nazywa się Manuela / Gretkowska')."
+    },
+    {
+      "Timestamp": "[00:02]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gretkowska",
+      "notes": "Multi-line mention, continuation of full name started at [00:00]."
+    },
+    {
+      "Timestamp": "[00:05]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gretkowska",
+      "notes": "Exact full-name match (Wikipedia quote)."
+    },
+    {
+      "Timestamp": "[00:29]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela'."
+    },
+    {
+      "Timestamp": "[00:55]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dariandi",
+      "notes": "AMBIGUOUS/wordplay: portmanteau of 'Normandii' (Normandy, continuing the D-Day joke from [00:52]) and 'Daria', used as a punning lead-in to the literal 'Daria' mentions on the same line. Kept as a (low-confidence) mention of Daria Dąbrowska; manual review recommended."
+    },
+    {
+      "Timestamp": "[00:55]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Self-introduction ('Hej, ja jestem Daria'); first name only, nominative."
+    },
+    {
+      "Timestamp": "[00:55]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Second occurrence of 'Daria' on same line; start of full-name mention 'Daria Dąbrowska' that continues at [00:58]."
+    },
+    {
+      "Timestamp": "[00:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Multi-line mention, continuation of full name started at [00:55]."
+    },
+    {
+      "Timestamp": "[01:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz",
+      "notes": "Surname only, nominative."
+    },
+    {
+      "Timestamp": "[01:12]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela'."
+    },
+    {
+      "Timestamp": "[01:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz",
+      "notes": "Lowercase casual mid-sentence reference to surname; still a valid mention."
+    },
+    {
+      "Timestamp": "[02:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza",
+      "notes": "Genitive grammatical inflection of surname ('otoczenie Gonciarza')."
+    },
+    {
+      "Timestamp": "[02:45]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manueli",
+      "notes": "Dative grammatical inflection of first name ('Pani Manueli')."
+    },
+    {
+      "Timestamp": "[02:48]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Exact alias match."
+    },
+    {
+      "Timestamp": "[02:50]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię",
+      "notes": "Accusative grammatical inflection of first name."
+    },
+    {
+      "Timestamp": "[03:01]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Madaria",
+      "notes": "AMBIGUOUS: garbled ASR token ('Autyzm Madaria tak twierdzi'), likely a mis-transcribed/fused reference to Daria, whose autism diagnosis is the exact topic being discussed a few lines later ([04:54]-[04:58]). Kept as low-confidence match to Daria Dąbrowska; manual review recommended."
+    },
+    {
+      "Timestamp": "[03:09]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy",
+      "notes": "Multi-line mention: first name here, surname continues at [03:10]."
+    },
+    {
+      "Timestamp": "[03:10]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Multi-line mention, continuation of full name started at [03:09]."
+    },
+    {
+      "Timestamp": "[03:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darius",
+      "notes": "AMBIGUOUS: does not match any entity name/alias directly; in context ('kiedy się ogląda film Darius') this most plausibly is a garbled ASR rendering of 'Darii' (genitive of Daria), referring to Daria's video. Kept as low-confidence match to Daria Dąbrowska; manual review recommended."
+    },
+    {
+      "Timestamp": "[03:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Genitive/possessive grammatical inflection of alias 'Krzysiek' ('była dziewczyna Krzyśka' = Krzysiek's ex-girlfriend)."
+    },
+    {
+      "Timestamp": "[03:19]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela'."
+    },
+    {
+      "Timestamp": "[03:52]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz",
+      "notes": "Surname only, nominative."
+    },
+    {
+      "Timestamp": "[03:58]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela'."
+    },
+    {
+      "Timestamp": "[04:16]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela'."
+    },
+    {
+      "Timestamp": "[04:22]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Typo variant of alias 'Lucy Wieliczko' (missing 'e')."
+    },
+    {
+      "Timestamp": "[04:37]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Grotkowska",
+      "notes": "Typo variant of full name 'Manuela Gretkowska' (e/o substitution in surname)."
+    },
+    {
+      "Timestamp": "[04:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "First name, nominative."
+    },
+    {
+      "Timestamp": "[04:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "First name, nominative."
+    },
+    {
+      "Timestamp": "[04:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "First name, nominative."
+    },
+    {
+      "Timestamp": "[05:03]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "First name, nominative."
+    },
+    {
+      "Timestamp": "[05:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Grzysiek",
+      "notes": "Typo/ASR variant of alias 'Krzysiek' (K/G substitution)."
+    },
+    {
+      "Timestamp": "[06:17]",
+      "person_id": "123",
+      "person_name": "Mateusz Morawiecki",
+      "exact mention": "pan Morawiecki",
+      "notes": "Exact alias match. Corrected from the earlier draft, which erroneously split this into 'pan' at [06:17] and 'Morawiecki' at [06:19]; both words actually occur together on the [06:17] line."
+    },
+    {
+      "Timestamp": "[06:23]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuartem",
+      "notes": "Instrumental grammatical inflection of first name ('oświadczenie Stuartem' — likely truncated/garbled reference to an oświadczenie *o* Stuarcie / involving Stuart)."
+    },
+    {
+      "Timestamp": "[06:23]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'pani Manuela'."
+    },
+    {
+      "Timestamp": "[07:00]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela'."
+    },
+    {
+      "Timestamp": "[07:19]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Luc i",
+      "notes": "Multi-line mention and typo/ASR split: garbled rendering of 'Lucy Wiliczko' (typo variant of alias 'Lucy Wieliczko'). 'Luc' is the truncated first name; the trailing 'i' is the Polish word 'and' caught by the ASR mid-name. Surname continues at [07:21]."
+    },
+    {
+      "Timestamp": "[07:21]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wiliczko",
+      "notes": "Multi-line mention, continuation of [07:19]; also a typo variant of surname 'Wieliczko' (missing 'e')."
+    },
+    {
+      "Timestamp": "[07:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Evil Gonciarz",
+      "notes": "Exact alias match."
+    },
+    {
+      "Timestamp": "[07:43]",
+      "person_id": "123",
+      "person_name": "Mateusz Morawiecki",
+      "exact mention": "pan Morawiecki",
+      "notes": "Exact alias match. Timestamp corrected from the earlier draft's [07:42] (not present in transcript) to [07:43], the line where this phrase actually occurs."
+    },
+    {
+      "Timestamp": "[07:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Multi-line mention: first name here, surname continues at [07:50]."
+    },
+    {
+      "Timestamp": "[07:50]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Multi-line mention, continuation of full name started at [07:47]."
+    },
+    {
+      "Timestamp": "[08:03]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gretkowskiej",
+      "notes": "Genitive grammatical inflection of surname ('Pod postem Gretkowskiej')."
+    },
+    {
+      "Timestamp": "[08:24]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gradkowskiej",
+      "notes": "Typo variant of genitive surname 'Gretkowskiej' (e/a substitution)."
+    },
+    {
+      "Timestamp": "[08:32]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Exact full-name match."
+    },
+    {
+      "Timestamp": "[08:42]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gretkowska",
+      "notes": "Surname only, nominative."
+    },
+    {
+      "Timestamp": "[08:53]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gretkowska",
+      "notes": "Exact full-name match (studio introduction)."
+    },
+    {
+      "Timestamp": "[09:02]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gretkowskiej",
+      "notes": "Genitive grammatical inflection of surname ('pani pisarki Gretkowskiej')."
+    },
+    {
+      "Timestamp": "[09:20]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gradkowskiej",
+      "notes": "Typo variant of genitive surname 'Gretkowskiej' (e/a substitution)."
+    },
+    {
+      "Timestamp": "[09:21]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Multi-line mention: first name here, surname continues at [09:24]."
+    },
+    {
+      "Timestamp": "[09:24]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gretkowska",
+      "notes": "Multi-line mention, continuation of full name started at [09:21]."
+    },
+    {
+      "Timestamp": "[09:56]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manueli Gratkowskiej",
+      "notes": "Typo variant of dative full name 'Manueli Gretkowskiej' (e/a substitution in surname)."
+    },
+    {
+      "Timestamp": "[10:17]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gretkowska",
+      "notes": "Exact full-name match."
+    },
+    {
+      "Timestamp": "[10:22]",
+      "person_id": "15",
+      "person_name": "Pola Gretkowska",
+      "exact mention": "Poli",
+      "notes": "Genitive/dative grammatical inflection of first name 'Pola' ('nie tylko córce Poli' = not only to daughter Pola). Distinct person from Manuela Gretkowska: this is her daughter."
+    },
+    {
+      "Timestamp": "[10:48]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Grytkowska",
+      "notes": "Typo variant of full name 'Manuela Gretkowska' (e/y substitution in surname)."
+    },
+    {
+      "Timestamp": "[11:11]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gretkowskiej",
+      "notes": "Genitive grammatical inflection of surname ('książki pani Gretkowskiej')."
+    },
+    {
+      "Timestamp": "[11:12]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Multi-line mention: first name here, surname continues at [11:14]."
+    },
+    {
+      "Timestamp": "[11:14]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gretkowska",
+      "notes": "Multi-line mention, continuation of full name started at [11:12]."
+    },
+    {
+      "Timestamp": "[11:23]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Gretkowskiej",
+      "notes": "Genitive grammatical inflection of surname ('książek pani Gretkowskiej')."
+    },
+    {
+      "Timestamp": "[11:57]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuelo",
+      "notes": "Vocative grammatical inflection of first name ('pani Manuelo')."
+    },
+    {
+      "Timestamp": "[12:02]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela'."
+    },
+    {
+      "Timestamp": "[12:07]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gretkowska",
+      "notes": "Exact full-name match."
+    },
+    {
+      "Timestamp": "[12:17]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela.'."
+    },
+    {
+      "Timestamp": "[12:19]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'Pani Manuela lubi...'."
+    },
+    {
+      "Timestamp": "[12:31]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Honorific reference 'pani Manuela'."
+    },
+    {
+      "Timestamp": "[12:37]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manueli",
+      "notes": "Genitive grammatical inflection of first name ('rodzina pani Manueli')."
+    },
+    {
+      "Timestamp": "[12:56]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manueli Gretkowskiej",
+      "notes": "Genitive grammatical inflection of full name ('Felieton Manueli Gretkowskiej')."
+    },
+    {
+      "Timestamp": "[13:15]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela",
+      "notes": "Nominative reference, first of two mentions on this line ('jak pani Manuela, to słabo')."
+    },
+    {
+      "Timestamp": "[13:15]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuelo",
+      "notes": "Vocative grammatical inflection, second of two mentions on this line ('Pani Manuelo, bardzo...')."
+    },
+    {
+      "Timestamp": "[13:40]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gretkowska",
+      "notes": "Exact full-name match (closing caption)."
+    }
+  ]
+}

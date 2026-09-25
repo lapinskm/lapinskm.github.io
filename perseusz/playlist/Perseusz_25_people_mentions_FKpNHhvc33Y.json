@@ -1,0 +1,2894 @@
+{
+  "source_transcript": "Perseusz_25_transcript_FKpNHhvc33Y.txt",
+  "video_id": "FKpNHhvc33Y",
+  "episode": "25",
+  "processing steps": [
+    "unknown/manual",
+    "naive generator (generate_mentions.py, max_edit_distance=3, bare name-segment matching enabled) pass against mentioned_people_with_ids.json -> 2263 raw candidate mentions",
+    "validate_mentions.py run against the raw naive output to check Rule A/B/C",
+    "Claude Sonnet 4.6 refinement with naive generator and validator: cross-checked every one of the ~660 unique (person, matched-text) patterns produced by the naive pass against the transcript by hand; discarded fuzzy/segment false positives (e.g. bare first names or short surnames of the naive tool's ~100 additional listed people who never actually appear in this episode, such as 'Jerzy Kalina', 'Krzysztof Stanowski', 'Dariusz Matecki', 'Maria Sadowska', 'Andrzej Wajda' -- their apparent 'hits' were fuzzy matches against unrelated common Polish words); reattributed one misassigned token ('Łysiek', wrongly proposed for Krzysztof Gonciarz's nickname 'Krzysiek', correctly belongs to Jakub Łysiak); merged adjacent same-line first-name/surname fragments into single full-name mentions; identified and cross-referenced ~40 mentions where a name is split across two consecutive transcript timestamps (e.g. 'Krzysztofa' / 'Gonciarza', 'Daria' / 'Dąbrowska', 'Karolina' / 'Domaracka'); added a handful of mentions the naive tool structurally could not find (bare nickname 'Kuba' for Jakub Łysiak, since his canonical first name on file is 'Jakub' and aliases are not segmented; a typo variant 'Wyczukowskiej' beyond the edit-distance threshold; the pun phrase 'Anna Wanna Żukowska'); re-ran validate_mentions.py iteratively and fixed every Rule C unmarked-match warning until all three rules (A, B, C) passed clean."
+  ],
+  "notes": "This file supersedes the raw naive-generator output; only mentions of people confirmed by manual transcript-context review to actually appear in this episode are included. Of the 124 people in mentioned_people_with_ids.json, only 25 are mentioned in this transcript: ids 1, 2, 3, 4, 5, 7, 8, 9, 10, 13, 14, 16, 17, 18, 23, 29, 43, 72, 77, 84, 109, 112, 113, 114, 115. The remaining ~99 listed people do not appear in this episode at all; the naive generator's fuzzy/bare-segment matching had proposed hundreds of false-positive hits for them (mostly common Polish words or unrelated names coincidentally close in edit distance to a first name or short surname), all of which were removed. 'Kuba Wontor' (id 125) was added to mentioned_people_with_ids.json after initial delivery, at the user's request; his mention at [55:29] ('Kuby Vontora' in the transcript) is now included below. One person is still discussed in this episode but remains absent from mentioned_people_with_ids.json and so still could not be added as a proper mention -- flagging for the master list: 'Andrzej Hyra' (a commenter, [47:41] and [48:15]). Entries with no 'notes' field are exact, literal name/alias matches against mentioned_people_with_ids.json. Entries with a 'notes' field are either: a grammatical inflection or bare first-name/surname segment of a listed name (not a complete literal name/alias string by itself); a typo/ASR transcription variant; a mention whose name is split across two consecutive timestamps (cross-referenced in both directions); or a case with genuine residual ambiguity, explained inline (e.g. the bare surname 'Sołuski' at [51:02], which is recorded for both Marcin Sołuski and Alicja Sołuski since the transcript addresses both lawyers together two lines earlier and does not disambiguate which one 'Sołuski' refers to). validate_mentions.py passes clean against this file (Rule A, B, and C all report no issues).",
+  "mentions": [
+    {
+      "Timestamp": "[00:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari Dąbrowski",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[00:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[00:07]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:26]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[01:26]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[02:52]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:52]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[03:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    },
+    {
+      "Timestamp": "[03:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[03:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[03:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[03:40]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[03:40]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza",
+      "notes": "Grammatical inflection of 'Krzysztof Gonciarz' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[03:48]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[04:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[04:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[04:20]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari Dąbrowskiej",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska' (missing feminine ending on the first name)."
+    },
+    {
+      "Timestamp": "[04:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[04:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[04:45]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[04:45]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[04:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Grzysiek",
+      "notes": "Typo/ASR variant of 'Krzysztof Gonciarz'."
+    },
+    {
+      "Timestamp": "[04:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[05:01]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[05:01]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[05:27]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[05:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[05:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[05:50]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [05:52]."
+    },
+    {
+      "Timestamp": "[05:52]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [05:50]."
+    },
+    {
+      "Timestamp": "[06:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[06:38]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Anna",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Anna Maria Żukowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Żukowska' at [06:40]."
+    },
+    {
+      "Timestamp": "[06:38]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Maria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Anna Maria Żukowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Żukowska' at [06:40]."
+    },
+    {
+      "Timestamp": "[06:40]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Żukowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Anna Maria Żukowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Anna Maria' at [06:38]."
+    },
+    {
+      "Timestamp": "[06:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[06:55]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Anna Wanna Żukowska",
+      "notes": "Full phrase 'Anna Wanna Żukowska' — 'Wanna' appears to be a nickname/pun (or mis-hearing) substituting for 'Maria' in her name, echoing the 'Anna Maria' construction used elsewhere in the transcript. MISSED as a distinct combined mention by the naive generator (the individual tokens 'Anna' and 'Żukowska' were caught separately at this timestamp; merged here into one mention of the full phrase)."
+    },
+    {
+      "Timestamp": "[06:57]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[07:14]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Żukowską",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Anna Maria Żukowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[07:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowską' at [07:22]."
+    },
+    {
+      "Timestamp": "[07:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Darię' at [07:21]."
+    },
+    {
+      "Timestamp": "[07:24]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[07:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[07:38]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Gonciarza' at [07:39]."
+    },
+    {
+      "Timestamp": "[07:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Krzysztofa' at [07:38]."
+    },
+    {
+      "Timestamp": "[07:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[07:50]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[07:54]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gretkowska"
+    },
+    {
+      "Timestamp": "[07:54]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gretkowska",
+      "notes": "Grammatical inflection of 'Manuela Gretkowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[07:59]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    },
+    {
+      "Timestamp": "[07:59]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[07:59]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[07:59]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[08:04]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[08:17]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuelę Gretkowską"
+    },
+    {
+      "Timestamp": "[08:17]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuelę Gretkowską",
+      "notes": "Grammatical inflection of 'Manuela Gretkowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[08:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[08:49]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuelo",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Manuela Gretkowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[09:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[09:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[09:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[09:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[10:13]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[10:13]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[10:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[10:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[10:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [10:50]."
+    },
+    {
+      "Timestamp": "[10:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection (genitive) of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[10:50]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [10:47]."
+    },
+    {
+      "Timestamp": "[10:59]",
+      "person_id": "109",
+      "person_name": "Amelia Wiśniewska",
+      "exact mention": "Amelia",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Amelia Wiśniewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Wiśniewska' at [11:01]."
+    },
+    {
+      "Timestamp": "[11:01]",
+      "person_id": "109",
+      "person_name": "Amelia Wiśniewska",
+      "exact mention": "Wiśniewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Amelia Wiśniewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Amelia' at [10:59]."
+    },
+    {
+      "Timestamp": "[11:08]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [11:12]."
+    },
+    {
+      "Timestamp": "[11:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [11:08]."
+    },
+    {
+      "Timestamp": "[11:17]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [11:19]."
+    },
+    {
+      "Timestamp": "[11:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [11:17]."
+    },
+    {
+      "Timestamp": "[11:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[11:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[11:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [11:49]."
+    },
+    {
+      "Timestamp": "[11:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [11:47]."
+    },
+    {
+      "Timestamp": "[12:20]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[12:20]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[12:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[12:50]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[13:14]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Karolina Domaracka', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Domarzka' at [13:16]."
+    },
+    {
+      "Timestamp": "[13:16]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarzka",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'. Multi-line mention: forms one name together with 'Karolina' at [13:14]."
+    },
+    {
+      "Timestamp": "[13:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[13:30]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożki"
+    },
+    {
+      "Timestamp": "[13:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolinę Domarcką",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'."
+    },
+    {
+      "Timestamp": "[13:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolinę Domarcką",
+      "notes": "Grammatical inflection of 'Karolina Domaracka' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[13:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    },
+    {
+      "Timestamp": "[13:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[13:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[13:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[13:56]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[13:56]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[14:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[14:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[14:08]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Karolina Domaracka', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Domaradka' at [14:11]."
+    },
+    {
+      "Timestamp": "[14:08]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewa Wyczółkowska"
+    },
+    {
+      "Timestamp": "[14:08]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewa Wyczółkowska",
+      "notes": "Grammatical inflection of 'Ewa Wyczółkowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[14:11]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaradka",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'. Multi-line mention: forms one name together with 'Karolina' at [14:08]."
+    },
+    {
+      "Timestamp": "[14:18]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[14:18]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewa Wyczzyłkowska",
+      "notes": "Grammatical inflection of 'Ewa Wyczółkowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[14:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[14:27]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dario",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[14:44]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolinę",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Karolina Domaracka', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Domaracką' at [14:46]."
+    },
+    {
+      "Timestamp": "[14:46]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracką",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Karolina Domaracka', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Karolinę' at [14:44]."
+    },
+    {
+      "Timestamp": "[14:46]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczukłkowską",
+      "notes": "Typo/ASR variant of 'Ewa Wyczółkowska'."
+    },
+    {
+      "Timestamp": "[14:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[14:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[14:56]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej",
+      "notes": "Grammatical inflection of 'Karolina Domaracka' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[15:12]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudola",
+      "notes": "Bare surname 'Rudola' (genitive), referring to 'mecenasa Rudola' (\"attorney Rudol\") — Kamil Rudol."
+    },
+    {
+      "Timestamp": "[15:20]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[15:25]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wysczłukowska",
+      "notes": "Typo/ASR variant of 'Ewa Wyczółkowska'."
+    },
+    {
+      "Timestamp": "[15:44]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Zagulska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[15:46]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Zagulska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[16:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'."
+    },
+    {
+      "Timestamp": "[16:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka",
+      "notes": "Grammatical inflection of 'Karolina Domaracka' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[17:32]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [17:34]."
+    },
+    {
+      "Timestamp": "[17:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [17:32]."
+    },
+    {
+      "Timestamp": "[17:45]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak",
+      "notes": "Alias 'Naruciak' for Adam Robert Zimmermann; mentioned in the same breath as 'psycholożka' (Ewa Racławska, id 29) on the same line."
+    },
+    {
+      "Timestamp": "[17:45]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożka"
+    },
+    {
+      "Timestamp": "[17:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[18:01]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiem"
+    },
+    {
+      "Timestamp": "[18:18]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[18:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[18:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[18:38]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[18:38]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[18:40]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[18:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "zdaria",
+      "notes": "Typo/ASR variant: 'zdaria' appears to be a run-together mis-transcription of 'z Daria' (\"with Daria\"); paired with 'Dąbrowska' on the next line. Multi-line mention: forms one name together with 'Dąbrowska' at [18:46]."
+    },
+    {
+      "Timestamp": "[18:46]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'zdaria' at [18:43]."
+    },
+    {
+      "Timestamp": "[19:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[19:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[19:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Gonciarza' at [19:47]."
+    },
+    {
+      "Timestamp": "[19:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Krzysztofa' at [19:45]."
+    },
+    {
+      "Timestamp": "[19:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [19:58]."
+    },
+    {
+      "Timestamp": "[19:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [19:56]."
+    },
+    {
+      "Timestamp": "[20:30]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [20:32]."
+    },
+    {
+      "Timestamp": "[20:32]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [20:30]."
+    },
+    {
+      "Timestamp": "[21:00]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [21:03]."
+    },
+    {
+      "Timestamp": "[21:03]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [21:00]."
+    },
+    {
+      "Timestamp": "[21:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [21:22]."
+    },
+    {
+      "Timestamp": "[21:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [21:21]."
+    },
+    {
+      "Timestamp": "[21:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[21:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[21:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[21:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[21:50]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[21:50]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską",
+      "notes": "Grammatical inflection (accusative) of 'Daria Dąbrowska'. Line contains two separate mentions of her; see also the following 'Daria Dąbrowska' entry at the same timestamp."
+    },
+    {
+      "Timestamp": "[22:08]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[22:08]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[22:46]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[22:46]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[23:07]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[23:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[23:21]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[23:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[23:23]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[23:26]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Weliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[23:27]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[23:30]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[23:44]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[24:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiem"
+    },
+    {
+      "Timestamp": "[24:35]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[24:38]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Julia Wieliczko', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[24:40]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[25:20]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[25:20]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[25:40]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[25:42]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Julia Wieliczko', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[25:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[25:44]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection (genitive) of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[25:47]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[25:47]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Paulina T', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[25:52]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny Gwóźdź"
+    },
+    {
+      "Timestamp": "[25:52]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny Gwóźdź",
+      "notes": "Grammatical inflection of 'Magdalena Gwóźdź' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[26:02]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Gwóźdź",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Magdalena Gwóźdź', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[26:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[26:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński",
+      "notes": "Grammatical inflection of 'Katarzyna Meciński' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[26:24]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Paweł Fomiczewski"
+    },
+    {
+      "Timestamp": "[26:24]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Paweł Fomiczewski",
+      "notes": "Grammatical inflection of 'Paweł Fomiczewski' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[26:27]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Zbrodnia i Kara"
+    },
+    {
+      "Timestamp": "[26:32]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[26:32]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[27:37]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[27:39]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[27:43]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wielczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[27:43]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wielczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[27:49]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóźdź"
+    },
+    {
+      "Timestamp": "[27:49]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóźdź",
+      "notes": "Grammatical inflection of 'Magdalena Gwóźdź' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[28:00]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleno Gwóźdź"
+    },
+    {
+      "Timestamp": "[28:00]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleno Gwóźdź",
+      "notes": "Grammatical inflection of 'Magdalena Gwóźdź' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[28:08]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[28:08]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[28:16]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[28:16]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[28:18]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[28:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[28:52]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[28:56]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[29:08]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[29:08]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[29:51]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[29:51]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[30:03]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[30:03]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[30:42]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[30:42]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[30:54]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domarazka",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'."
+    },
+    {
+      "Timestamp": "[30:56]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczką",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Julia Wieliczko', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[30:56]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracką",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Karolina Domaracka', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[31:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Katarzyna Meciński', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Mecińskiej' at [31:10]."
+    },
+    {
+      "Timestamp": "[31:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Katarzyna Meciński', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Katarzyny' at [31:08]."
+    },
+    {
+      "Timestamp": "[31:15]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[31:17]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Julia Wieliczko', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[31:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[31:27]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Julia",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Julia Wieliczko', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[31:43]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Julka"
+    },
+    {
+      "Timestamp": "[31:43]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[31:46]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Julia Wieliczko', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[31:54]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[31:54]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[32:02]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[32:02]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[32:14]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Konrada Krasuskiego",
+      "notes": "Grammatical inflection of 'Konrad Krasuski' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[32:27]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofowi Gonciarzowi",
+      "notes": "Grammatical inflection of 'Krzysztof Gonciarz' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[32:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński"
+    },
+    {
+      "Timestamp": "[32:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński",
+      "notes": "Grammatical inflection of 'Katarzyna Meciński' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[32:40]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wielczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[32:40]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wielczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[32:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[32:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[32:56]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Julka"
+    },
+    {
+      "Timestamp": "[33:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gąciarza",
+      "notes": "Grammatical inflection of 'Krzysztof Gonciarz' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[34:27]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gąciarza",
+      "notes": "Grammatical inflection of 'Krzysztof Gonciarz' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[34:36]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[34:51]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[35:08]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[35:08]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[35:12]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[35:12]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[36:28]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[36:34]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[36:38]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[36:49]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[36:49]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[36:55]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[36:55]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[37:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [37:14]."
+    },
+    {
+      "Timestamp": "[37:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [37:12]."
+    },
+    {
+      "Timestamp": "[37:16]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[37:16]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[37:19]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[37:21]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Julia Wieliczko', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[37:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarzka",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'."
+    },
+    {
+      "Timestamp": "[37:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarzka",
+      "notes": "Grammatical inflection of 'Karolina Domaracka' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[37:40]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[37:40]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[37:54]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej",
+      "notes": "Grammatical inflection of 'Karolina Domaracka' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[37:58]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej",
+      "notes": "Grammatical inflection of 'Karolina Domaracka' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[38:08]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Karolina Domaracka', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Domarcka' at [38:10]."
+    },
+    {
+      "Timestamp": "[38:10]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'. Multi-line mention: forms one name together with 'Karolina' at [38:08]."
+    },
+    {
+      "Timestamp": "[38:16]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Karolina Domaracka', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Domarackiej' at [38:18]."
+    },
+    {
+      "Timestamp": "[38:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Karolina Domaracka', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Karoliny' at [38:16]."
+    },
+    {
+      "Timestamp": "[38:18]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczukowskiej",
+      "notes": "Typo/ASR variant of 'Wyczółkowska' ('Wyczukowskiej'), MISSED by the naive generator because the edit distance from the canonical spelling exceeds its threshold. Paired with 'Karoliny' on the previous line (that mention belongs to a different person, Karolina Domaracka, id 9)."
+    },
+    {
+      "Timestamp": "[38:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[38:49]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Kamil Rudol', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[39:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonziaś"
+    },
+    {
+      "Timestamp": "[39:15]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[39:29]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny domarackiej",
+      "notes": "Grammatical inflection of 'Karolina Domaracka' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[39:41]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[39:45]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[39:45]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko",
+      "notes": "Grammatical inflection of 'Julia Wieliczko' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[39:52]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Kamil Rudol', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[41:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[41:38]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Grammatical inflection (genitive) of 'Hanna Koczewska'."
+    },
+    {
+      "Timestamp": "[41:40]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[42:26]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[42:26]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[42:55]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela",
+      "notes": "Multi-line mention: forms one name together with 'Olszewska' at [42:57]."
+    },
+    {
+      "Timestamp": "[42:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasie",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Katarzyna Meciński', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[42:57]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Aniela Olszewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Angela' at [42:55]."
+    },
+    {
+      "Timestamp": "[42:59]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsiku"
+    },
+    {
+      "Timestamp": "[43:04]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[43:08]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[43:31]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[43:39]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanną Koczewską"
+    },
+    {
+      "Timestamp": "[43:39]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanną Koczewską",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[43:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Gonciarza' at [43:47]."
+    },
+    {
+      "Timestamp": "[43:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Krzysztofa' at [43:45]."
+    },
+    {
+      "Timestamp": "[44:16]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem Gonciarzem",
+      "notes": "Grammatical inflection of 'Krzysztof Gonciarz' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[44:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Gonciarz' at [44:28]."
+    },
+    {
+      "Timestamp": "[44:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Krzysztof' at [44:26]."
+    },
+    {
+      "Timestamp": "[44:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[45:09]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[45:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[45:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza",
+      "notes": "Grammatical inflection of 'Krzysztof Gonciarz' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[45:40]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarzem",
+      "notes": "Typo/ASR variant (instrumental case) of 'Gonciarz'."
+    },
+    {
+      "Timestamp": "[45:52]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[45:52]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[46:59]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[46:59]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[47:12]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską"
+    },
+    {
+      "Timestamp": "[47:12]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[48:38]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[48:38]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[49:00]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewską' at [49:02]."
+    },
+    {
+      "Timestamp": "[49:02]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewską",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hannę' at [49:00]."
+    },
+    {
+      "Timestamp": "[49:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią Dąbrowską"
+    },
+    {
+      "Timestamp": "[49:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią Dąbrowską",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[49:21]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewską",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[49:30]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[49:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[50:12]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domarazka",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'."
+    },
+    {
+      "Timestamp": "[50:58]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "koczewskiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[50:59]",
+      "person_id": "113",
+      "person_name": "Marcin Sołuski",
+      "exact mention": "Marcin",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Marcin Sołuski', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[50:59]",
+      "person_id": "114",
+      "person_name": "Alicja Sołuski",
+      "exact mention": "Alicja",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Alicja Sołuski', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[51:02]",
+      "person_id": "113",
+      "person_name": "Marcin Sołuski",
+      "exact mention": "Sołuski",
+      "notes": "Bare surname 'Sołuski', addressed collectively to \"moi prawnicy Marcin i Alicja\" (Krzysztof's two lawyers) mentioned two lines earlier at [50:59]; genuinely ambiguous between Marcin Sołuski and Alicja Sołuski, so recorded for both."
+    },
+    {
+      "Timestamp": "[51:02]",
+      "person_id": "114",
+      "person_name": "Alicja Sołuski",
+      "exact mention": "Sołuski",
+      "notes": "Bare surname 'Sołuski', addressed collectively to \"moi prawnicy Marcin i Alicja\" (Krzysztof's two lawyers) mentioned two lines earlier at [50:59]; genuinely ambiguous between Marcin Sołuski and Alicja Sołuski, so recorded for both."
+    },
+    {
+      "Timestamp": "[51:11]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Julia Wieliczko', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[51:17]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[51:56]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno Koczewska"
+    },
+    {
+      "Timestamp": "[51:56]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[52:24]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwester",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Sylwester Wardenga', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Wardenga' at [52:27]."
+    },
+    {
+      "Timestamp": "[52:27]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardenga",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Sylwester Wardenga', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Sylwester' at [52:24]."
+    },
+    {
+      "Timestamp": "[52:29]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuartem",
+      "notes": "Typo/ASR variant of 'Stuart Burton'."
+    },
+    {
+      "Timestamp": "[52:35]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewska' at [52:37]."
+    },
+    {
+      "Timestamp": "[52:35]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwestrze",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Sylwester Wardenga', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[52:37]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hanna' at [52:35]."
+    },
+    {
+      "Timestamp": "[52:49]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno Koczewska"
+    },
+    {
+      "Timestamp": "[52:49]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[53:04]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewskiej' at [53:06]."
+    },
+    {
+      "Timestamp": "[53:06]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hanny' at [53:04]."
+    },
+    {
+      "Timestamp": "[53:10]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[53:10]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[53:19]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[53:36]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanną Koczewską"
+    },
+    {
+      "Timestamp": "[53:36]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanną Koczewską",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[53:39]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[53:43]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba",
+      "notes": "Bare first name, MISSED by the naive generator (not registered as a search target since the entity's canonical first name is 'Jakub', not the nickname 'Kuba'). Attributed to Jakub Łysiak by context: immediately follows 'Wąsik.' (his alias) at [53:39] and precedes further discussion of him."
+    },
+    {
+      "Timestamp": "[53:50]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Łysiek",
+      "notes": "Nickname/typo: informal first name 'Kuba' (for canonical 'Jakub') plus 'Łysiek', a diminutive/mis-transcription of surname 'Łysiak'. The naive generator's fuzzy matcher had also proposed the 'Łysiek' token for Krzysztof Gonciarz (id 1) via his nickname 'Krzysiek'; that misattribution was corrected during review, and the bare-nickname form 'Kuba' (not registered as a search target, since the entity's listed first name is 'Jakub') was added by hand."
+    },
+    {
+      "Timestamp": "[53:53]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewskiej' at [53:54]."
+    },
+    {
+      "Timestamp": "[53:54]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hanny' at [53:53]."
+    },
+    {
+      "Timestamp": "[54:02]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba",
+      "notes": "Bare first name 'Kuba', MISSED by the naive generator for the same reason as the [53:43] entry above. Attributed to Jakub Łysiak by context (discussion continues from the surrounding lines about him and Hanna Koczewska)."
+    },
+    {
+      "Timestamp": "[54:05]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Aniela Olszewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[54:08]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewska' at [54:11]."
+    },
+    {
+      "Timestamp": "[54:11]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hanna' at [54:08]."
+    },
+    {
+      "Timestamp": "[54:51]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[55:24]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[55:24]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[55:29]",
+      "person_id": 34,
+      "person_name": "Kuba Wątor",
+      "exact mention": "Kuby Vontora",
+      "notes": "Grammatical inflection (genitive) and spelling variant ('Vontora' vs. canonical 'Wontor') of 'Kuba Wontor'."
+    },
+    {
+      "Timestamp": "[55:38]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[55:38]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka",
+      "notes": "Grammatical inflection of 'Karolina Domaracka' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[56:16]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Goczewska",
+      "notes": "Typo/ASR variant of 'Hanna Koczewska'."
+    },
+    {
+      "Timestamp": "[56:16]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Goczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[56:24]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[56:24]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[56:29]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[56:31]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[56:34]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[56:34]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[57:17]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[57:17]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[57:29]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[57:29]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[57:37]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[57:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[57:54]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[58:15]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską",
+      "notes": "Multi-line mention: forms one name together with 'Koczewską' at [58:18]."
+    },
+    {
+      "Timestamp": "[58:15]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewską' at [58:18]."
+    },
+    {
+      "Timestamp": "[58:15]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewską",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewską' at [58:18]."
+    },
+    {
+      "Timestamp": "[58:18]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Multi-line mention: forms one name together with 'Hannę' at [58:15]."
+    },
+    {
+      "Timestamp": "[58:18]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hannę' at [58:15]."
+    },
+    {
+      "Timestamp": "[58:18]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hannę' at [58:15]."
+    },
+    {
+      "Timestamp": "[58:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[58:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[58:46]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Dąbrowska' at [58:48]."
+    },
+    {
+      "Timestamp": "[58:48]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Daria' at [58:46]."
+    },
+    {
+      "Timestamp": "[59:00]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską"
+    },
+    {
+      "Timestamp": "[59:00]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[59:15]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[59:45]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[59:45]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[59:48]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[59:50]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Weliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[59:54]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[59:54]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska",
+      "notes": "Grammatical inflection of 'Hanna Koczewska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[59:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[59:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński",
+      "notes": "Grammatical inflection of 'Katarzyna Meciński' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[01:00:40]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:00:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Typo/ASR variant of 'Daria Dąbrowska'."
+    },
+    {
+      "Timestamp": "[01:00:42]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[01:00:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:01:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Katarzyna Meciński', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:01:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński"
+    },
+    {
+      "Timestamp": "[01:01:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński",
+      "notes": "Grammatical inflection of 'Katarzyna Meciński' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[01:01:35]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "anieli",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Aniela Olszewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:02:05]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Paulina T', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:02:21]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Paulina T', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:02:58]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewską' at [01:03:00]."
+    },
+    {
+      "Timestamp": "[01:03:00]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:03:00]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewską",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hannę' at [01:02:58]."
+    },
+    {
+      "Timestamp": "[01:03:00]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska",
+      "notes": "Grammatical inflection of 'Daria Dąbrowska' (merged adjacent first-name/surname tokens)."
+    },
+    {
+      "Timestamp": "[01:03:06]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:03:08]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:03:15]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanią",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:03:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:03:29]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Daria Dąbrowska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:03:29]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[01:03:31]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[01:03:33]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wiliczko",
+      "notes": "Typo/ASR variant of 'Julia Wieliczko'."
+    },
+    {
+      "Timestamp": "[01:03:35]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:03:40]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[01:03:40]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:03:44]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczeska",
+      "notes": "Typo/ASR variant of 'Hanna Koczewska'."
+    },
+    {
+      "Timestamp": "[01:04:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domaradzka",
+      "notes": "Typo/ASR variant of 'Karolina Domaracka'."
+    },
+    {
+      "Timestamp": "[01:04:18]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "wyczułkowska",
+      "notes": "Typo/ASR variant of 'Ewa Wyczółkowska'."
+    },
+    {
+      "Timestamp": "[01:04:23]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Krzysztof Gonciarz', not a full literal name/alias match on its own."
+    },
+    {
+      "Timestamp": "[01:04:36]",
+      "person_id": "115",
+      "person_name": "Liter Kara",
+      "exact mention": "Liter Kara",
+      "notes": "Bare mention 'Kara' from the full phrase 'Liter Kara' is split by an incidental line break upstream ('Liter' appears together with 'Kara' on this same line, so no true multi-line split here); this specific 'Kara' token, MISSED at this timestamp by the naive generator (a different, unrelated 'Kara' token at [26:27], part of the alias 'Zbrodnia i Kara' for a different person, was found instead), has been added manually."
+    },
+    {
+      "Timestamp": "[01:04:36]",
+      "person_id": "115",
+      "person_name": "Liter Kara",
+      "exact mention": "Liter",
+      "notes": "Bare mention 'Kara' from the full phrase 'Liter Kara' is split by an incidental line break upstream ('Liter' appears together with 'Kara' on this same line, so no true multi-line split here); this specific 'Kara' token, MISSED at this timestamp by the naive generator (a different, unrelated 'Kara' token at [26:27], part of the alias 'Zbrodnia i Kara' for a different person, was found instead), has been added manually."
+    },
+    {
+      "Timestamp": "[01:04:36]",
+      "person_id": "115",
+      "person_name": "Liter Kara",
+      "exact mention": "Kara",
+      "notes": "Bare mention 'Kara' from the full phrase 'Liter Kara' is split by an incidental line break upstream ('Liter' appears together with 'Kara' on this same line, so no true multi-line split here); this specific 'Kara' token, MISSED at this timestamp by the naive generator (a different, unrelated 'Kara' token at [26:27], part of the alias 'Zbrodnia i Kara' for a different person, was found instead), has been added manually."
+    },
+    {
+      "Timestamp": "[01:04:40]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewska' at [01:04:42]."
+    },
+    {
+      "Timestamp": "[01:04:42]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno Koczewsko",
+      "notes": "Typo/ASR variant of 'Hanna Koczewska'. Multi-line mention: forms one name together with 'Hanna' at [01:04:40]."
+    },
+    {
+      "Timestamp": "[01:04:42]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hanna' at [01:04:40]."
+    },
+    {
+      "Timestamp": "[01:04:42]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hanna' at [01:04:40]."
+    },
+    {
+      "Timestamp": "[01:04:49]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Koczewska' at [01:04:51]."
+    },
+    {
+      "Timestamp": "[01:04:51]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Grammatical inflection / bare name-or-surname segment of 'Hanna Koczewska', not a full literal name/alias match on its own. Multi-line mention: forms one name together with 'Hanna' at [01:04:49]."
+    },
+    {
+      "Timestamp": "[01:06:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarz",
+      "notes": "Typo/ASR variant of 'Krzysztof Gonciarz'."
+    }
+  ]
+}

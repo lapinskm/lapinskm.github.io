@@ -1,0 +1,787 @@
+{
+  "processing steps": [
+    "Naive generator produced initial candidate mentions via alias/name string matching against transcript timestamps.",
+    "Claude Sonnet 5 refinement with naive generator and validator: aggregated naive output against full transcript context, corrected/annotated typos and grammatical inflections, resolved multi-line mentions split across timestamp boundaries, flagged an ambiguous 'Maciek' reference, added a missed 'Katarzyna Myciński' typo mention and a missed 'Gimperem' mention, then iterated with validate_mentions.py until Rule A, Rule B, and Rule C all passed."
+  ],
+  "source_transcript": "Perseusz_19_transcript_xGDmQAaHgxs.txt",
+  "video_id": "xGDmQAaHgxs",
+  "episode": 19,
+  "notes": "Episode centers on Krzysztof Gonciarz's dispute with Hanna Koczewska; most mentions are inflected/typo'd forms of 'Hanna Koczewska' and 'Krzysztof Gonciarz'. One residual ambiguity remains for the [22:58] 'Maciek' reference (see per-mention note).",
+  "mentions": [
+    {
+      "Timestamp": "[00:07]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannie Koczewskiej"
+    },
+    {
+      "Timestamp": "[00:48]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[01:09]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania Koczewska",
+      "notes": "Informal alias 'Hania' combined with surname."
+    },
+    {
+      "Timestamp": "[01:31]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[01:36]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[01:42]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[01:58]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[02:01]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[02:12]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[03:00]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Kamil"
+    },
+    {
+      "Timestamp": "[03:02]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol"
+    },
+    {
+      "Timestamp": "[03:08]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Kroczewska",
+      "notes": "ASR mishearing/typo of 'Koczewska' as 'Kroczewska'."
+    },
+    {
+      "Timestamp": "[03:45]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[03:55]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[03:57]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[03:59]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[04:21]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej"
+    },
+    {
+      "Timestamp": "[04:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[04:43]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[04:48]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[04:50]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[05:54]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej"
+    },
+    {
+      "Timestamp": "[05:56]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[06:04]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską"
+    },
+    {
+      "Timestamp": "[06:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "kąciarza",
+      "notes": "ASR mishearing/typo of 'Gonciarza' (genitive of Gonciarz)."
+    },
+    {
+      "Timestamp": "[07:06]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[07:30]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej"
+    },
+    {
+      "Timestamp": "[07:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[08:04]",
+      "person_id": "91",
+      "person_name": "Natalia Lao",
+      "exact mention": "Natalia Lao"
+    },
+    {
+      "Timestamp": "[08:04]",
+      "person_id": "92",
+      "person_name": "Klaudia Nietrzepka",
+      "exact mention": "Klaudia"
+    },
+    {
+      "Timestamp": "[08:06]",
+      "person_id": "92",
+      "person_name": "Klaudia Nietrzepka",
+      "exact mention": "Nietrzepka"
+    },
+    {
+      "Timestamp": "[08:06]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Kamil Rudol"
+    },
+    {
+      "Timestamp": "[08:25]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzem"
+    },
+    {
+      "Timestamp": "[08:33]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską"
+    },
+    {
+      "Timestamp": "[08:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzem"
+    },
+    {
+      "Timestamp": "[08:43]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej"
+    },
+    {
+      "Timestamp": "[08:50]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol"
+    },
+    {
+      "Timestamp": "[08:52]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę Łysiaka"
+    },
+    {
+      "Timestamp": "[08:55]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[08:55]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[09:00]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[09:00]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[09:08]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[09:08]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[09:14]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[09:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[10:19]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[10:20]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol"
+    },
+    {
+      "Timestamp": "[10:26]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[10:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[10:35]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol"
+    },
+    {
+      "Timestamp": "[10:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Mecińska",
+      "notes": "Grammatically correct feminine declension of surname 'Meciński' (not a typo)."
+    },
+    {
+      "Timestamp": "[10:39]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską"
+    },
+    {
+      "Timestamp": "[10:43]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno",
+      "notes": "Multi-line mention: vocative case, first half of repeated address 'Hanno Koczewsko, Hanno Koczewsko' split across the line break; continues at [10:45] as 'Koczewsko'. Missed by naive generator."
+    },
+    {
+      "Timestamp": "[10:45]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanno Koczewsko",
+      "notes": "Vocative case of 'Hanna Koczewska'; second of two consecutive vocative addresses on this line. The first occurrence is split across the line break, see [10:43]/[10:45] entries for 'Hanno'/'Koczewsko'."
+    },
+    {
+      "Timestamp": "[10:45]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewsko",
+      "notes": "Multi-line mention: completes the vocative address begun at [10:43] 'Hanno'. The second, self-contained occurrence of 'Hanno Koczewsko' later on this same line is captured separately. Missed by naive generator."
+    },
+    {
+      "Timestamp": "[10:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński"
+    },
+    {
+      "Timestamp": "[10:51]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Kanna Zagulska",
+      "notes": "ASR mishearing/typo of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[11:08]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[11:16]",
+      "person_id": "93",
+      "person_name": "Patrycja Wieczorkiewicz",
+      "exact mention": "Patrycję Wieczorkiewicz"
+    },
+    {
+      "Timestamp": "[11:17]",
+      "person_id": "94",
+      "person_name": "Natalia Walok",
+      "exact mention": "Nataryję Walok",
+      "notes": "ASR mishearing/typo of 'Natalię Walok'."
+    },
+    {
+      "Timestamp": "[11:17]",
+      "person_id": "95",
+      "person_name": "Sulej",
+      "exact mention": "Sulej"
+    },
+    {
+      "Timestamp": "[11:19]",
+      "person_id": "96",
+      "person_name": "Kubik",
+      "exact mention": "Kubik"
+    },
+    {
+      "Timestamp": "[11:22]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[11:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[11:52]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[11:55]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[12:27]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[12:31]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską"
+    },
+    {
+      "Timestamp": "[12:39]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koc",
+      "notes": "Speaker interrupts/self-corrects mid-surname; truncated form of 'Hannę Koczewską'."
+    },
+    {
+      "Timestamp": "[12:42]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny"
+    },
+    {
+      "Timestamp": "[12:42]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Second occurrence of the name on this line ('...nie Hanny, bo Hanna napisała...'); naive generator only caught the first occurrence 'Hanny'."
+    },
+    {
+      "Timestamp": "[12:46]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol"
+    },
+    {
+      "Timestamp": "[12:55]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[12:57]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[13:05]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol"
+    },
+    {
+      "Timestamp": "[13:11]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol"
+    },
+    {
+      "Timestamp": "[13:16]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Kamil Rudol"
+    },
+    {
+      "Timestamp": "[13:24]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudol"
+    },
+    {
+      "Timestamp": "[13:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[13:57]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską"
+    },
+    {
+      "Timestamp": "[13:57]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[13:57]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[14:00]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską"
+    },
+    {
+      "Timestamp": "[14:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę Meciński"
+    },
+    {
+      "Timestamp": "[14:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[14:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[14:55]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[15:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[15:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[15:37]",
+      "person_id": "84",
+      "person_name": "Kamil Rudol",
+      "exact mention": "Rudrol",
+      "notes": "ASR mishearing/typo of 'Rudol'."
+    },
+    {
+      "Timestamp": "[15:37]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[15:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Myciński",
+      "notes": "ASR mishearing/typo of 'Katarzyna Meciński' (wrong root letter and masculine suffix); missed entirely by naive generator."
+    },
+    {
+      "Timestamp": "[16:19]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[16:22]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[16:39]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[16:55]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[17:24]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[18:02]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej"
+    },
+    {
+      "Timestamp": "[18:15]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[18:45]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Kczewska",
+      "notes": "ASR mishearing/typo of 'Koczewska' as 'Kczewska' (missing 'o')."
+    },
+    {
+      "Timestamp": "[19:23]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[19:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[19:28]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[19:30]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię Dąbrowską"
+    },
+    {
+      "Timestamp": "[19:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii"
+    },
+    {
+      "Timestamp": "[19:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[19:39]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny",
+      "notes": "Multi-line mention: genitive case 'Hanny Koczewskiej' split across the line break, continues at [19:42] 'Koczewskiej' (already present in naive list). Missed by naive generator."
+    },
+    {
+      "Timestamp": "[19:42]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej"
+    },
+    {
+      "Timestamp": "[19:46]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[19:48]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[19:59]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[20:01]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[20:23]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna Koczewska"
+    },
+    {
+      "Timestamp": "[20:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[21:01]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[21:03]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimperem",
+      "notes": "Instrumental-case inflection of alias 'Gimper'; missed by naive generator."
+    },
+    {
+      "Timestamp": "[21:44]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Julka"
+    },
+    {
+      "Timestamp": "[22:18]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[22:20]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[22:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarzowi",
+      "notes": "Lowercase, informal dative-case form of 'Gonciarz' used in song lyrics."
+    },
+    {
+      "Timestamp": "[22:56]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gościarz",
+      "notes": "ASR mishearing/typo of 'Gonciarz' in song lyrics."
+    },
+    {
+      "Timestamp": "[22:58]",
+      "person_id": "78",
+      "person_name": "Maciej",
+      "exact mention": "Maciek",
+      "notes": "Ambiguous: could refer to person_id 78 (Maciej / alias 'Maciek') or person_id 124 ('Nazwijmy go Maciek', alias 'Maciek'). This song-lyric segment gives no disambiguating context; kept as id 78 (the recurring, previously-established figure) as the more likely referent."
+    },
+    {
+      "Timestamp": "[23:06]",
+      "person_id": "97",
+      "person_name": "Marcin Dubiel",
+      "exact mention": "Marcin Dubiel"
+    },
+    {
+      "Timestamp": "[23:14]",
+      "person_id": "90",
+      "person_name": "Karolina Korwin Piotrowska",
+      "exact mention": "Korwin"
+    },
+    {
+      "Timestamp": "[23:16]",
+      "person_id": "90",
+      "person_name": "Karolina Korwin Piotrowska",
+      "exact mention": "Piotrowska"
+    }
+  ]
+}

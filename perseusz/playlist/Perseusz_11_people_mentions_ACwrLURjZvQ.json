@@ -1,0 +1,680 @@
+{
+  "processing steps": [
+    "pre-existing draft mentions list (flat-list format, no FUZZY MATCH annotations; originating tool/process not specified)",
+    "Claude (Sonnet 4.6) refinement with validator (validate_mentions.py span-overlap/person-id-aware Rule C; found 2 Rule B mis-timestamped entries, both multi-line splits) plus a full manual read-through of the transcript (no further misses found)"
+  ],
+  "notes": "This was an unusually clean pre-existing draft. The validator found only 2 Rule B issues, both mentions logged one caption-line early where the actual word occurs on the following line ('Bartona' continuing 'Stuarta', and 'Mike' actually appearing alongside the already-marked 'Adrian' one line earlier) -- both corrected and marked as multi-line where applicable. A full manual read-through of the transcript found no further missed mentions; the draft's coverage of the dense 'Naruciak'/'psycholożka' back-and-forth and the many Stuart Burton typo variants ('Stewarta', 'Stuwarta', 'Stewartcie Bartonie', etc.) was already thorough and accurate. One fragment was reviewed and deliberately left unmarked: 'z Ewą Stume' at [05:16] does not match any entity name or alias and is too uncertain to confidently resolve.",
+  "source_transcript": "Perseusz_11_transcript_ACwrLURjZvQ.txt",
+  "video_id": "ACwrLURjZvQ",
+  "episode": 11,
+  "mentions": [
+    {
+      "Timestamp": "[00:08]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[00:11]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[00:16]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "narociak"
+    },
+    {
+      "Timestamp": "[00:17]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "narościach"
+    },
+    {
+      "Timestamp": "[00:23]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[00:31]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuart"
+    },
+    {
+      "Timestamp": "[00:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[01:28]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[01:32]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:38]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:48]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[01:58]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożka"
+    },
+    {
+      "Timestamp": "[02:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[02:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią Myciński"
+    },
+    {
+      "Timestamp": "[02:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[02:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[02:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[02:20]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[02:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Asia"
+    },
+    {
+      "Timestamp": "[02:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysia"
+    },
+    {
+      "Timestamp": "[02:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:32]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[02:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "kasie"
+    },
+    {
+      "Timestamp": "[03:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[03:12]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożka"
+    },
+    {
+      "Timestamp": "[03:28]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożka"
+    },
+    {
+      "Timestamp": "[03:37]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaka"
+    },
+    {
+      "Timestamp": "[03:42]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[03:48]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "na ruciak"
+    },
+    {
+      "Timestamp": "[03:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[04:08]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[04:12]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[04:27]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[04:41]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "na ruciak"
+    },
+    {
+      "Timestamp": "[05:03]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaka"
+    },
+    {
+      "Timestamp": "[05:10]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[05:38]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[06:03]",
+      "person_id": "63",
+      "person_name": "Marcinek",
+      "exact mention": "Marcinka"
+    },
+    {
+      "Timestamp": "[06:31]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[06:49]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[06:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[07:00]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaka"
+    },
+    {
+      "Timestamp": "[07:07]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Noruciak"
+    },
+    {
+      "Timestamp": "[07:15]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[07:35]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "nauciaka"
+    },
+    {
+      "Timestamp": "[07:44]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psychologiem"
+    },
+    {
+      "Timestamp": "[08:07]",
+      "person_id": "27",
+      "person_name": "Julia Bojaruniec",
+      "exact mention": "prostracją"
+    },
+    {
+      "Timestamp": "[08:29]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[08:45]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[08:59]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaku"
+    },
+    {
+      "Timestamp": "[09:07]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "Ewa psycholożka"
+    },
+    {
+      "Timestamp": "[09:11]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak Adam"
+    },
+    {
+      "Timestamp": "[09:35]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuarta"
+    },
+    {
+      "Timestamp": "[09:36]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Bartona",
+      "notes": "Corrected timestamp (was mis-timestamped one line early; multi-line mention, continuation of [09:35] ('Stuarta'))."
+    },
+    {
+      "Timestamp": "[09:41]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stewarta Bartona"
+    },
+    {
+      "Timestamp": "[09:44]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[09:47]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożka"
+    },
+    {
+      "Timestamp": "[09:53]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[10:05]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stewartcie Bartonie"
+    },
+    {
+      "Timestamp": "[10:40]",
+      "person_id": "123",
+      "person_name": "Mateusz Morawiecki",
+      "exact mention": "pan Morawiecki"
+    },
+    {
+      "Timestamp": "[10:47]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuarta"
+    },
+    {
+      "Timestamp": "[10:58]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Adam Zimmerman Naruciak"
+    },
+    {
+      "Timestamp": "[11:02]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[11:04]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny"
+    },
+    {
+      "Timestamp": "[11:06]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej"
+    },
+    {
+      "Timestamp": "[11:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[11:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiowi"
+    },
+    {
+      "Timestamp": "[11:27]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[11:40]",
+      "person_id": "60",
+      "person_name": "Justyna Sukanek",
+      "exact mention": "sukanek"
+    },
+    {
+      "Timestamp": "[11:42]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stewarta"
+    },
+    {
+      "Timestamp": "[11:44]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską"
+    },
+    {
+      "Timestamp": "[11:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[11:49]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza"
+    },
+    {
+      "Timestamp": "[11:58]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwek"
+    },
+    {
+      "Timestamp": "[12:07]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[12:09]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuwarta"
+    },
+    {
+      "Timestamp": "[12:13]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Bartona"
+    },
+    {
+      "Timestamp": "[12:16]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Adam"
+    },
+    {
+      "Timestamp": "[12:18]",
+      "person_id": "60",
+      "person_name": "Justyna Sukanek",
+      "exact mention": "Justynę Sukanek"
+    },
+    {
+      "Timestamp": "[12:22]",
+      "person_id": "60",
+      "person_name": "Justyna Sukanek",
+      "exact mention": "Justyna"
+    },
+    {
+      "Timestamp": "[12:26]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[12:35]",
+      "person_id": "60",
+      "person_name": "Justyna Sukanek",
+      "exact mention": "Justyny"
+    },
+    {
+      "Timestamp": "[12:37]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciak"
+    },
+    {
+      "Timestamp": "[12:46]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Rienka Kasperowicz"
+    },
+    {
+      "Timestamp": "[12:52]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[12:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[13:33]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Renką Kasperowicz"
+    },
+    {
+      "Timestamp": "[13:46]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[13:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[14:46]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[16:10]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Rienka"
+    },
+    {
+      "Timestamp": "[16:20]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanną"
+    },
+    {
+      "Timestamp": "[16:22]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagórską"
+    },
+    {
+      "Timestamp": "[16:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarz"
+    },
+    {
+      "Timestamp": "[16:51]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Ruciaka"
+    },
+    {
+      "Timestamp": "[17:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[17:24]",
+      "person_id": "64",
+      "person_name": "Adrian",
+      "exact mention": "Adrian"
+    },
+    {
+      "Timestamp": "[17:24]",
+      "person_id": "65",
+      "person_name": "Mike",
+      "exact mention": "Mike",
+      "notes": "Corrected timestamp (was mis-timestamped; actual occurrence is on the same line as 'Adrian')."
+    },
+    {
+      "Timestamp": "[17:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[17:27]",
+      "person_id": "66",
+      "person_name": "Karen",
+      "exact mention": "Karen"
+    },
+    {
+      "Timestamp": "[17:44]",
+      "person_id": "66",
+      "person_name": "Karen",
+      "exact mention": "Karen"
+    },
+    {
+      "Timestamp": "[18:36]",
+      "person_id": "67",
+      "person_name": "Ewa Red Lipstick Monster",
+      "exact mention": "Red Lipstick Monster"
+    },
+    {
+      "Timestamp": "[18:36]",
+      "person_id": "67",
+      "person_name": "Ewa Red Lipstick Monster",
+      "exact mention": "Ewa"
+    },
+    {
+      "Timestamp": "[18:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[18:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[19:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Mecińskiej"
+    },
+    {
+      "Timestamp": "[19:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[20:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[20:53]",
+      "person_id": "64",
+      "person_name": "Adrian",
+      "exact mention": "Adrien"
+    },
+    {
+      "Timestamp": "[20:53]",
+      "person_id": "65",
+      "person_name": "Mike",
+      "exact mention": "Mike"
+    },
+    {
+      "Timestamp": "[20:56]",
+      "person_id": "66",
+      "person_name": "Karen",
+      "exact mention": "Karen"
+    }
+  ]
+}

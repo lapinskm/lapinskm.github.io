@@ -1,0 +1,2536 @@
+{
+  "processing steps": [
+    "pre-existing draft mentions list (flat-list format, no FUZZY MATCH annotations; originating tool/process not specified)",
+    "Claude (Sonnet 4.6) refinement with validator (validate_mentions.py span-overlap/person-id-aware Rule C; fixed 6 Rule B mis-timestamped entries and added ~75 Rule-C-caught misses) plus a full manual read-through of the entire transcript (added ~140 further missed mentions the validator's Rule C could not catch on its own, plus corrected several timestamp errors introduced during this pass)"
+  ],
+  "notes": "This episode required by far the most correction of the series so far, centered on an extended back-and-forth involving Krzysztof Gonciarz, Krzysztof Stanowski, and especially Maja Staśko (184 mentions -- by far the most of any single figure across all processed episodes), whose name appears in dozens of inflected forms, typos, and direct addresses ('Maju', 'Majśko', 'Maja Stezko', 'ma i Saśko', 'majusku', etc.). The naive draft's first validator pass alone produced roughly 75 Rule C misses, almost all of these variants. A subtlety arose partway through: after adding a genuine recurring chant-echo ('Mają wiem, że jesteśmy na...', repeated several times immediately after 'Maja Staśko') as an accepted target, the validator began flagging ~8 wholly unrelated, coincidental uses of the ordinary Polish verb 'mają' ('they have') elsewhere in the transcript. Each was checked in context and confirmed to be the common verb, not the name, and left unmarked -- while one genuine lowercase instance ('kontaktu z mają Staśką') was caught and correctly added. A full line-by-line read of the entire ~2-hour transcript then found roughly 140 further real misses: secondary figures (Dariusz Matecki, Karolina Domaracka, Marcin Kozak, Jakub Dymek, Anna Maria Żukowska, Maria Sadowska, Jaś Kapela, Kryspin Sobczak, Piolo), many multi-line surname splits, and numerous heavily garbled ASR forms resolved from context (e.g. 'Marazka' and 'Maradancka' for 'Domaracka', 'Pczłek' for 'Pączek', 'kozakowi' for 'Kozak'). The three recurring 'nazwijmy go Maciek' placeholder instances were correctly tagged to entity 124 rather than the real 'Maciej' (id 78). One residual false positive is expected and documented: 'Chris' at [58:52] is a substring of 'Christopher' in an unrelated list of real predators (Weinstein, Cosby, R. Kelly), not a reference to Krzysztof Gonciarz's alias.",
+  "source_transcript": "Perseusz_12_transcript_6cBo0o6YGPo.txt",
+  "video_id": "6cBo0o6YGPo",
+  "episode": 12,
+  "mentions": [
+    {
+      "Timestamp": "[00:07]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają"
+    },
+    {
+      "Timestamp": "[00:10]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[00:14]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[00:15]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[00:50]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "mają",
+      "notes": "Missed by naive pass: recurring chant-style echo of 'Maja' ('Pomaga innym ofiarom przemocy w internecie jest to mają wiem')."
+    },
+    {
+      "Timestamp": "[01:07]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Majśko"
+    },
+    {
+      "Timestamp": "[01:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Konciarz"
+    },
+    {
+      "Timestamp": "[01:57]",
+      "person_id": "68",
+      "person_name": "Jerzy Kalina",
+      "exact mention": "Jerzego"
+    },
+    {
+      "Timestamp": "[02:01]",
+      "person_id": "68",
+      "person_name": "Jerzy Kalina",
+      "exact mention": "Kaliny"
+    },
+    {
+      "Timestamp": "[02:25]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[02:25]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśkom"
+    },
+    {
+      "Timestamp": "[02:48]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Krzysztofa Stanowskiego"
+    },
+    {
+      "Timestamp": "[02:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[03:00]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego"
+    },
+    {
+      "Timestamp": "[03:49]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "mają Staśką",
+      "notes": "Missed by naive pass: lowercase instrumental-case form ('nigdy specjalnego kontaktu z mają Staśką') -- genuine reference to the name, distinct from the common verb 'mają' ('they have') that coincidentally recurs elsewhere in this transcript."
+    },
+    {
+      "Timestamp": "[04:02]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[04:05]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[04:05]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają Staśką"
+    },
+    {
+      "Timestamp": "[04:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[04:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[04:17]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wiliczko"
+    },
+    {
+      "Timestamp": "[04:17]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "V"
+    },
+    {
+      "Timestamp": "[04:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[05:00]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Corrected timestamp (was mis-timestamped; actual occurrence is at [05:00])."
+    },
+    {
+      "Timestamp": "[05:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[05:02]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[05:09]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[05:11]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[05:15]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[05:30]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maju",
+      "notes": "Missed by naive pass: vocative-style echo of 'Maja' ('to o nich. Maju, podkreśla')."
+    },
+    {
+      "Timestamp": "[05:50]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[05:56]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maju Staśko"
+    },
+    {
+      "Timestamp": "[06:10]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Stezko"
+    },
+    {
+      "Timestamp": "[06:36]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[06:38]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Ustanowskiego"
+    },
+    {
+      "Timestamp": "[06:40]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maj Staśko"
+    },
+    {
+      "Timestamp": "[06:43]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśka"
+    },
+    {
+      "Timestamp": "[06:53]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[06:53]",
+      "person_id": "36",
+      "person_name": "Laura Klaus",
+      "exact mention": "Laura Klaus"
+    },
+    {
+      "Timestamp": "[06:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii"
+    },
+    {
+      "Timestamp": "[06:56]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olciak"
+    },
+    {
+      "Timestamp": "[07:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[07:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[07:37]",
+      "person_id": "36",
+      "person_name": "Laura Klaus",
+      "exact mention": "Laura"
+    },
+    {
+      "Timestamp": "[07:37]",
+      "person_id": "38",
+      "person_name": "Natalia",
+      "exact mention": "Natalia"
+    },
+    {
+      "Timestamp": "[07:53]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[08:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[08:19]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[08:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[08:28]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[08:38]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannie",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[08:47]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[09:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[09:06]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[09:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[09:16]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[09:16]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "staśko"
+    },
+    {
+      "Timestamp": "[09:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[09:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[09:39]",
+      "person_id": "37",
+      "person_name": "Jakub Chuptyś",
+      "exact mention": "Gargamel"
+    },
+    {
+      "Timestamp": "[09:41]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[09:44]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[09:56]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[09:59]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maję Staśko"
+    },
+    {
+      "Timestamp": "[09:59]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[09:59]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja",
+      "notes": "Missed by naive pass: second 'Maja' on the same line as 'Maję Staśko'; multi-line mention, continues at [10:01] ('Staśko')."
+    },
+    {
+      "Timestamp": "[10:01]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko",
+      "notes": "Multi-line mention: continuation of [10:00] ('Maja')."
+    },
+    {
+      "Timestamp": "[10:05]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[10:19]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "majuste",
+      "notes": "Missed by naive pass: garbled direct address to 'Maju' ('Tak się właśnie czułem przez ciebie, majuste')."
+    },
+    {
+      "Timestamp": "[10:27]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[10:32]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[10:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[10:41]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[11:17]",
+      "person_id": "70",
+      "person_name": "Dariusz Matecki",
+      "exact mention": "pan Matecki"
+    },
+    {
+      "Timestamp": "[11:20]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[11:29]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[11:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[11:33]",
+      "person_id": "70",
+      "person_name": "Dariusz Matecki",
+      "exact mention": "Matecki"
+    },
+    {
+      "Timestamp": "[11:38]",
+      "person_id": "70",
+      "person_name": "Dariusz Matecki",
+      "exact mention": "Dariusz Matecki"
+    },
+    {
+      "Timestamp": "[11:43]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[11:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[11:44]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[12:05]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[12:05]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[12:12]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[12:37]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[12:45]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[12:46]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[12:46]",
+      "person_id": "71",
+      "person_name": "Maria Sadowska",
+      "exact mention": "Marią"
+    },
+    {
+      "Timestamp": "[12:48]",
+      "person_id": "71",
+      "person_name": "Maria Sadowska",
+      "exact mention": "Sadowską"
+    },
+    {
+      "Timestamp": "[13:11]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maju Staśko"
+    },
+    {
+      "Timestamp": "[13:20]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[13:21]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[13:26]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gradkowska"
+    },
+    {
+      "Timestamp": "[13:26]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[13:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[13:47]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Anna Wanna Żukowska"
+    },
+    {
+      "Timestamp": "[13:50]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[13:56]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[13:56]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają",
+      "notes": "Corrected timestamp (was mis-timestamped; actual occurrence is at [13:56])."
+    },
+    {
+      "Timestamp": "[14:03]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[14:10]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[14:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[15:16]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "pani Żukowska"
+    },
+    {
+      "Timestamp": "[15:19]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[15:30]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "pani Żukowska"
+    },
+    {
+      "Timestamp": "[15:34]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[15:37]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staś"
+    },
+    {
+      "Timestamp": "[15:37]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[15:40]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[15:43]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Missed by naive pass: genitive-case inflection ('wzięła screeny Hanny Koczewskiej')."
+    },
+    {
+      "Timestamp": "[16:14]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[16:22]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[16:33]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[16:50]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[17:51]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Corrected timestamp (was mis-timestamped; actual occurrence is at [17:51])."
+    },
+    {
+      "Timestamp": "[17:51]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[17:54]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[18:09]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[18:10]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśka"
+    },
+    {
+      "Timestamp": "[18:12]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[18:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[18:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[18:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[18:51]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[18:56]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Gonciarz' ('jest opisana krzywda. Także gąciarza')."
+    },
+    {
+      "Timestamp": "[18:58]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maju Staśko"
+    },
+    {
+      "Timestamp": "[19:08]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Ma Staśko"
+    },
+    {
+      "Timestamp": "[19:10]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[19:10]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska"
+    },
+    {
+      "Timestamp": "[19:25]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "kąciarza",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Gonciarz' ('skrzywdzone przez kąciarza')."
+    },
+    {
+      "Timestamp": "[19:27]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[19:29]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maju Staśko"
+    },
+    {
+      "Timestamp": "[19:33]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[19:47]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[19:49]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[19:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Myciński"
+    },
+    {
+      "Timestamp": "[19:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyno Meciński"
+    },
+    {
+      "Timestamp": "[20:07]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[20:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[20:11]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[20:28]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[20:30]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny",
+      "notes": "Missed by naive pass: multi-line mention, continues at [20:32] ('Koczewskiej')."
+    },
+    {
+      "Timestamp": "[21:17]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maje Staśko"
+    },
+    {
+      "Timestamp": "[21:27]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśka"
+    },
+    {
+      "Timestamp": "[21:56]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[21:58]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[22:05]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[22:11]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[22:22]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[22:22]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają Staśko"
+    },
+    {
+      "Timestamp": "[22:36]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[22:36]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stano"
+    },
+    {
+      "Timestamp": "[22:45]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[22:45]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stano"
+    },
+    {
+      "Timestamp": "[23:03]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maje",
+      "notes": "Corrected timestamp (was mis-timestamped; actual occurrence is at [23:03])."
+    },
+    {
+      "Timestamp": "[23:03]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego"
+    },
+    {
+      "Timestamp": "[23:05]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[23:17]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[23:17]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowski"
+    },
+    {
+      "Timestamp": "[23:20]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maje Staśko"
+    },
+    {
+      "Timestamp": "[23:24]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego"
+    },
+    {
+      "Timestamp": "[23:29]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowski"
+    },
+    {
+      "Timestamp": "[23:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[24:21]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskim"
+    },
+    {
+      "Timestamp": "[24:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[24:36]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowski"
+    },
+    {
+      "Timestamp": "[24:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Grzysiek",
+      "notes": "Missed by naive pass: typo of alias 'Krzysiek' ('I Grzysiek powiedział, że mam w sobie dużo energii seksualnej')."
+    },
+    {
+      "Timestamp": "[24:59]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego"
+    },
+    {
+      "Timestamp": "[25:08]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowski"
+    },
+    {
+      "Timestamp": "[25:24]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowski"
+    },
+    {
+      "Timestamp": "[25:31]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[25:33]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktor Gwóźdź"
+    },
+    {
+      "Timestamp": "[25:35]",
+      "person_id": "46",
+      "person_name": "Konopski",
+      "exact mention": "Konopski"
+    },
+    {
+      "Timestamp": "[26:06]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[26:17]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktor gwóźdź"
+    },
+    {
+      "Timestamp": "[26:25]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[26:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[27:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[27:34]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[27:41]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Stośko",
+      "notes": "Missed by naive pass: typo of 'Staśko' ('to jeszcze okej Stośko zaczęła się za to coraz bardziej z tego wszystkiego wycofywać')."
+    },
+    {
+      "Timestamp": "[28:06]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[28:24]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[28:28]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[28:36]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Missed by naive pass: multi-line mention, continues at [28:37] ('Zagulskiej')."
+    },
+    {
+      "Timestamp": "[28:37]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[28:37]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staćko"
+    },
+    {
+      "Timestamp": "[28:58]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[29:10]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[29:12]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[29:54]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[29:56]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Paweł",
+      "notes": "Missed by naive pass: multi-line mention, continues at [29:59] ('Pączek Próba')."
+    },
+    {
+      "Timestamp": "[29:59]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Pączek Próba",
+      "notes": "Multi-line mention: continuation of [29:56] ('Paweł')."
+    },
+    {
+      "Timestamp": "[30:01]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[30:01]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "narzeczony Mai Staśko",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[30:12]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[30:31]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[30:46]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[30:46]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[30:46]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannie"
+    },
+    {
+      "Timestamp": "[30:46]",
+      "person_id": "6",
+      "person_name": "V",
+      "exact mention": "V"
+    },
+    {
+      "Timestamp": "[30:52]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[31:03]",
+      "person_id": "74",
+      "person_name": "Marcin Kozak",
+      "exact mention": "kozakowi",
+      "notes": "Missed by naive pass: lowercase dative-case form of 'Kozak' ('Przyłożyliście łapę do niszczenia życia kozakowi')."
+    },
+    {
+      "Timestamp": "[31:11]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Paweł Pączek"
+    },
+    {
+      "Timestamp": "[31:18]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[31:20]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[31:22]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[31:22]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[31:36]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśką",
+      "notes": "Missed by naive pass: instrumental-case, typo of 'Staśko' ('To nie pisał Onet, to pisała Staśką')."
+    },
+    {
+      "Timestamp": "[31:55]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Pączek"
+    },
+    {
+      "Timestamp": "[32:03]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[32:29]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "pączek",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[32:48]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[32:50]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Paweł Pączek"
+    },
+    {
+      "Timestamp": "[33:08]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "pączek",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[33:08]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Paweł",
+      "notes": "Missed by naive pass: separate occurrence on same line as already-marked 'pączek' ('No to jest Paweł pączek. Próba.')."
+    },
+    {
+      "Timestamp": "[33:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Missed by naive pass: genitive-case form of alias 'Krzysiek'."
+    },
+    {
+      "Timestamp": "[33:59]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Pczłek",
+      "notes": "Missed by naive pass: typo of 'Pączek' ('Wtedy Pczłek jeszcze próbował gaslajtować')."
+    },
+    {
+      "Timestamp": "[34:44]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "pączek"
+    },
+    {
+      "Timestamp": "[35:27]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[35:27]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Pączek"
+    },
+    {
+      "Timestamp": "[35:41]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[36:37]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domeracka",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Karolina Domaracka'."
+    },
+    {
+      "Timestamp": "[37:17]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[37:41]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[38:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[38:37]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka",
+      "notes": "Missed by naive pass: phonetic/typo variant of 'Domaracka' ('kiedy pani Domaracka wypuszcza chore słowa')."
+    },
+    {
+      "Timestamp": "[38:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[39:06]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[39:12]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Majśko",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[39:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[39:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[40:06]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[40:11]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[40:17]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[40:28]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Marazka",
+      "notes": "Missed by naive pass: garbled typo of 'Domaracka' ('stała się pani z małej litery do Marazka')."
+    },
+    {
+      "Timestamp": "[40:31]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożką",
+      "notes": "Missed by naive pass: instrumental-case form of alias 'psycholożka'."
+    },
+    {
+      "Timestamp": "[40:44]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maju",
+      "notes": "Missed by naive pass: vocative direct address."
+    },
+    {
+      "Timestamp": "[40:57]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maju",
+      "notes": "Missed by naive pass: vocative direct address."
+    },
+    {
+      "Timestamp": "[41:03]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[41:35]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Maradancka",
+      "notes": "Missed by naive pass: garbled typo of 'Domaracka' ('A do Maradancka się odzywa')."
+    },
+    {
+      "Timestamp": "[41:59]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "majusku",
+      "notes": "Missed by naive pass: garbled vocative form of 'Maju' ('Czy to będzie twoja linia obrony, majusku?')."
+    },
+    {
+      "Timestamp": "[42:02]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Multi-line mention: continues at [42:05] ('Gąciarza')."
+    },
+    {
+      "Timestamp": "[42:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza",
+      "notes": "Missed by naive pass: multi-line mention, continuation of [42:02] ('Krzysztofa')."
+    },
+    {
+      "Timestamp": "[42:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[42:46]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają Staśką",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[43:02]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Steśko"
+    },
+    {
+      "Timestamp": "[43:09]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "pączka",
+      "notes": "Missed by naive pass: genitive-case, lowercase form of 'Pączek' ('bądź ustami pączka')."
+    },
+    {
+      "Timestamp": "[43:42]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Majus",
+      "notes": "Missed by naive pass: typo of vocative 'Maju'; multi-line mention, continues at [43:45] ('Steśko')."
+    },
+    {
+      "Timestamp": "[43:45]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Steśko",
+      "notes": "Missed by naive pass: typo of 'Staśko'; multi-line mention, continuation of [43:42] ('Majus')."
+    },
+    {
+      "Timestamp": "[43:56]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "ma i Saśko",
+      "notes": "Missed by naive pass: garbled typo of 'Maja Staśko' ('Po prostu Quantum State ma i Saśko jest aktywistką')."
+    },
+    {
+      "Timestamp": "[44:24]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[44:26]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[44:29]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[44:40]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[44:51]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "pączka",
+      "notes": "Missed by naive pass: genitive-case, lowercase form of 'Pączek' ('są atakowane przez pączka')."
+    },
+    {
+      "Timestamp": "[44:57]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[45:09]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[45:47]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[46:11]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zegulska",
+      "notes": "Multi-line mention: continues at [46:13] ('Hanny Zegulskiej')."
+    },
+    {
+      "Timestamp": "[46:13]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Missed by naive pass: multi-line mention, continues at [46:15] ('Zegulskiej')."
+    },
+    {
+      "Timestamp": "[46:15]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zegulskiej",
+      "notes": "Missed by naive pass: multi-line mention, continuation of [46:13] ('Hanny')."
+    },
+    {
+      "Timestamp": "[46:15]",
+      "person_id": "62",
+      "person_name": "Jaś Kapela",
+      "exact mention": "Jaś Kapela",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[46:17]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maję Staśko"
+    },
+    {
+      "Timestamp": "[46:17]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[46:19]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[46:22]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Paweł Pączek"
+    },
+    {
+      "Timestamp": "[46:30]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[46:30]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Doma",
+      "notes": "Missed by naive pass: truncated/typo form of 'Domaracka' ('Kapela napisał też Doma i Staśko prywatnie')."
+    },
+    {
+      "Timestamp": "[46:57]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[47:00]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[47:09]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[47:11]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[47:33]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani"
+    },
+    {
+      "Timestamp": "[47:33]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[47:37]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[47:37]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani",
+      "notes": "Second, separate occurrence on same line as 'Hania' ('Hania była trzeźwa. To wie, że Hani w')."
+    },
+    {
+      "Timestamp": "[47:58]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Zbrodnia i Kara"
+    },
+    {
+      "Timestamp": "[48:03]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[48:09]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maje Staśko"
+    },
+    {
+      "Timestamp": "[48:17]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maję Stśko",
+      "notes": "Missed by naive pass: typo of 'Maję Staśko'."
+    },
+    {
+      "Timestamp": "[48:25]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Missed by naive pass: genitive-case form of alias 'Krzysiek'."
+    },
+    {
+      "Timestamp": "[48:34]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[48:37]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[48:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[48:56]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[49:16]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gąciarza",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[49:18]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[49:32]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[49:40]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[50:01]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[50:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[51:01]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[51:18]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[51:32]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Majo Staśko"
+    },
+    {
+      "Timestamp": "[51:41]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[51:43]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[51:47]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[52:22]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[52:33]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[52:40]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[52:45]",
+      "person_id": "73",
+      "person_name": "Jakub Dymek",
+      "exact mention": "Jakuba Dymka",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[52:49]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[52:52]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[52:52]",
+      "person_id": "74",
+      "person_name": "Marcin Kozak",
+      "exact mention": "Marcina Kozaka"
+    },
+    {
+      "Timestamp": "[52:54]",
+      "person_id": "74",
+      "person_name": "Marcin Kozak",
+      "exact mention": "Marcin Kozak"
+    },
+    {
+      "Timestamp": "[52:54]",
+      "person_id": "74",
+      "person_name": "Marcin Kozak",
+      "exact mention": "doktoranta UW",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[53:03]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[53:20]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannę Zegulską"
+    },
+    {
+      "Timestamp": "[53:20]",
+      "person_id": "74",
+      "person_name": "Marcin Kozak",
+      "exact mention": "kozaka"
+    },
+    {
+      "Timestamp": "[53:23]",
+      "person_id": "73",
+      "person_name": "Jakub Dymek",
+      "exact mention": "Dymek"
+    },
+    {
+      "Timestamp": "[53:27]",
+      "person_id": "73",
+      "person_name": "Jakub Dymek",
+      "exact mention": "dymek"
+    },
+    {
+      "Timestamp": "[53:57]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[54:05]",
+      "person_id": "46",
+      "person_name": "Konopski",
+      "exact mention": "Konopskiego"
+    },
+    {
+      "Timestamp": "[55:16]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka Gonciarza"
+    },
+    {
+      "Timestamp": "[55:16]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[56:07]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Pączka"
+    },
+    {
+      "Timestamp": "[56:07]",
+      "person_id": "75",
+      "person_name": "Piolo",
+      "exact mention": "Pioloka"
+    },
+    {
+      "Timestamp": "[56:11]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[56:12]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[56:15]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Stasiu"
+    },
+    {
+      "Timestamp": "[56:19]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[56:19]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Saśko",
+      "notes": "Missed by naive pass: typo of 'Staśko', continuing 'Mai' on the same line ('kto bił Mai Saśko brawo')."
+    },
+    {
+      "Timestamp": "[57:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[57:26]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[57:44]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Saśko"
+    },
+    {
+      "Timestamp": "[01:01:44]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśką"
+    },
+    {
+      "Timestamp": "[01:02:10]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[01:02:24]",
+      "person_id": "74",
+      "person_name": "Marcin Kozak",
+      "exact mention": "Marcin Kozak"
+    },
+    {
+      "Timestamp": "[01:02:33]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[01:03:04]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maje",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:03:18]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Pączka",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:03:28]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:03:30]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[01:04:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:04:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:04:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:04:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Meciński"
+    },
+    {
+      "Timestamp": "[01:05:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:05:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:06:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:06:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:07:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Myciński"
+    },
+    {
+      "Timestamp": "[01:07:16]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "MA Staśką",
+      "notes": "Missed by naive pass: typo of 'Mai Staśko' ('Czy na przykład przekierowałaby te osoby do MA Staśką?')."
+    },
+    {
+      "Timestamp": "[01:07:36]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannę Zagulską",
+      "notes": "Missed by naive pass: accusative-case inflection."
+    },
+    {
+      "Timestamp": "[01:07:47]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Missed by naive pass: multi-line mention, continues at [01:07:50] ('Zagórskiej')."
+    },
+    {
+      "Timestamp": "[01:07:50]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagórskiej",
+      "notes": "Missed by naive pass: multi-line mention, continuation of [01:07:47] ('Hanny')."
+    },
+    {
+      "Timestamp": "[01:07:51]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[01:07:55]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zegulska"
+    },
+    {
+      "Timestamp": "[01:07:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:11:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:11:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:11:11]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "kąciarza",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Gonciarz'."
+    },
+    {
+      "Timestamp": "[01:11:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:11:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:11:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:11:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:12:09]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja",
+      "notes": "Multi-line mention: continues at [01:12:11] ('Saśko')."
+    },
+    {
+      "Timestamp": "[01:12:11]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Saśko",
+      "notes": "Missed by naive pass: typo of 'Staśko'; multi-line mention, continuation of [01:12:09] ('Maja')."
+    },
+    {
+      "Timestamp": "[01:12:29]",
+      "person_id": "124",
+      "person_name": "Nazwijmy go Maciek",
+      "exact mention": "Maciek",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:12:36]",
+      "person_id": "124",
+      "person_name": "Nazwijmy go Maciek",
+      "exact mention": "Maciek",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:12:50]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Konciarz",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:12:56]",
+      "person_id": "124",
+      "person_name": "Nazwijmy go Maciek",
+      "exact mention": "Maciek",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:13:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:13:16]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[01:13:20]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[01:13:20]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[01:13:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Corrected timestamp (was mis-timestamped; actual occurrence is at [01:13:20])."
+    },
+    {
+      "Timestamp": "[01:13:24]",
+      "person_id": "43",
+      "person_name": "Anna Maria Żukowska",
+      "exact mention": "Anna Maria Żukowska"
+    },
+    {
+      "Timestamp": "[01:13:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:13:31]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:13:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:13:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Second occurrence of 'Dari' repeated on the same line ('Nie wiemy co Dari, co Dari')."
+    },
+    {
+      "Timestamp": "[01:13:48]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:13:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gąciarza"
+    },
+    {
+      "Timestamp": "[01:14:09]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Missed by naive pass: genitive-case form of alias 'Krzysiek' ('poznać znajomych Krzyśka')."
+    },
+    {
+      "Timestamp": "[01:14:30]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:14:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:14:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Mycińskiej"
+    },
+    {
+      "Timestamp": "[01:14:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[01:15:02]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[01:15:07]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Paweł Pączek Próba"
+    },
+    {
+      "Timestamp": "[01:15:10]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[01:15:24]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[01:15:31]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai",
+      "notes": "Corrected timestamp (was mis-timestamped; actual occurrence is at [01:15:31])."
+    },
+    {
+      "Timestamp": "[01:15:31]",
+      "person_id": "41",
+      "person_name": "Paweł Pączek",
+      "exact mention": "Paweł Pączek Próba"
+    },
+    {
+      "Timestamp": "[01:15:34]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko"
+    },
+    {
+      "Timestamp": "[01:15:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Missed by naive pass."
+    },
+    {
+      "Timestamp": "[01:16:00]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[01:16:11]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hannę Koczewską"
+    },
+    {
+      "Timestamp": "[01:16:11]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[01:16:17]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej",
+      "notes": "Missed by naive pass: genitive-case inflection."
+    },
+    {
+      "Timestamp": "[01:16:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi Meciński"
+    },
+    {
+      "Timestamp": "[01:16:39]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin Sobczak",
+      "notes": "Missed by naive pass: phonetic mis-transcription of 'Kryspin Sobczak'."
+    },
+    {
+      "Timestamp": "[01:16:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Missed by naive pass: genitive-case form of alias 'Krzysiek'."
+    },
+    {
+      "Timestamp": "[01:16:58]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśka"
+    },
+    {
+      "Timestamp": "[01:18:01]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[01:19:20]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego"
+    }
+  ]
+}
