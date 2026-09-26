@@ -66,7 +66,12 @@ button:hover,.file-btn:hover{border-color:#3a4250;background:var(--bg-elevated-2
 .zoom-ctl input[type=range]{
   width:80px;accent-color:var(--event);cursor:pointer;height:4px;
 }
-.zoom-ctl span[id^="zoomLabel"]{font-family:var(--mono);font-size:10.5px;color:var(--text-dim);min-width:34px;text-align:center;}
+.zoom-ctl .zoom-input{
+  font-family:var(--mono);font-size:10.5px;color:var(--text-dim);width:32px;text-align:center;
+  background:var(--bg-panel,#12161c);border:1px solid var(--border);border-radius:4px;padding:2px 1px;
+}
+.zoom-ctl .zoom-input::-webkit-outer-spin-button,.zoom-ctl .zoom-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+.zoom-ctl .zoom-input{-moz-appearance:textfield;}
 
 /* ---------- Filters ---------- */
 .filters{
@@ -146,6 +151,7 @@ button:hover,.file-btn:hover{border-color:#3a4250;background:var(--bg-elevated-2
 .vblock.collapsed .mini-dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;padding:8px 4px;}
 .mini-dots{display:none;}
 .mini-dot{width:6px;height:6px;border-radius:50%;}
+.mini-dot.emph{width:9px;height:9px;box-shadow:0 0 0 2px rgba(255,255,255,.14);}
 .conn-node{
   position:absolute;top:2px;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;
   background:var(--link);border:2px solid var(--bg-elevated);z-index:6;cursor:default;
@@ -173,21 +179,25 @@ button:hover,.file-btn:hover{border-color:#3a4250;background:var(--bg-elevated-2
 }
 .marker:hover{transform:translate(-50%,-50%) scale(1.5);box-shadow:0 0 0 4px rgba(255,255,255,.06);}
 .marker.dimmed{opacity:.12;pointer-events:none;}
+.marker.emph{width:15px;height:15px;border-width:2px;box-shadow:0 0 0 3px rgba(255,255,255,.14);z-index:3;}
+.marker.emph:hover{transform:translate(-50%,-50%) scale(1.4);}
 
 /* calendar */
-.calendar-inner{position:relative;height:150px;min-width:100%;}
-.cal-axis{position:absolute;left:0;right:0;top:70px;height:1px;background:var(--border);}
-.cal-tick{position:absolute;top:64px;width:1px;height:13px;background:var(--border-soft);}
+.calendar-inner{position:relative;height:270px;min-width:100%;}
+.cal-axis{position:absolute;left:0;right:0;top:130px;height:1px;background:var(--border);}
+.cal-tick{position:absolute;top:124px;width:1px;height:13px;background:var(--border-soft);}
 .cal-tick span{position:absolute;top:16px;left:4px;font-family:var(--mono);font-size:9.5px;color:var(--text-faint);white-space:nowrap;}
-.cal-marker{position:absolute;top:70px;transform:translate(-50%,-50%) rotate(45deg);width:11px;height:11px;cursor:pointer;border:1.5px solid var(--bg);}
+.cal-marker{position:absolute;top:130px;transform:translate(-50%,-50%) rotate(45deg);width:11px;height:11px;cursor:pointer;border:1.5px solid var(--bg);}
 .cal-marker.publish{border-radius:3px;background:var(--publish);}
 .cal-marker.event{border-radius:2px;background:var(--event);}
 .cal-marker.dp{transform:translate(-50%,-50%);border-radius:50%;width:8px;height:8px;background:var(--claim);}
+.cal-marker.dp.emph{width:13px;height:13px;box-shadow:0 0 0 3px rgba(255,255,255,.16);z-index:3;}
 .cal-marker.dimmed{opacity:.12;pointer-events:none;}
 .cal-label{
   position:absolute;font-family:var(--mono);font-size:9.5px;color:var(--text-dim);white-space:nowrap;
-  transform:translateX(-50%);max-width:110px;overflow:hidden;text-overflow:ellipsis;
+  max-width:110px;overflow:hidden;text-overflow:ellipsis;
 }
+.cal-leader{position:absolute;height:1px;background:var(--border-soft);transform-origin:0 50%;pointer-events:none;}
 
 /* ---------- Drawer ---------- */
 .overlay{position:fixed;inset:0;background:rgba(6,8,10,.55);opacity:0;pointer-events:none;transition:.18s opacity;z-index:60;}
@@ -236,6 +246,35 @@ button:hover,.file-btn:hover{border-color:#3a4250;background:var(--bg-elevated-2
 #formatSchema{font-family:var(--mono);font-size:11.5px;line-height:1.6;color:#c9d0da;white-space:pre-wrap;background:var(--bg-elevated);border:1px solid var(--border);border-radius:7px;padding:16px;}
 #formatClose{position:absolute;top:14px;right:14px;}
 
+/* ---------- People aggregate ---------- */
+.people-agg{padding:0 22px 20px;display:flex;flex-direction:column;gap:8px;}
+.person-group{background:var(--bg-panel);border:1px solid var(--border-soft);border-radius:8px;overflow:hidden;}
+.person-group>summary{list-style:none;cursor:pointer;padding:10px 14px;display:flex;align-items:center;gap:10px;background:var(--bg-elevated);user-select:none;}
+.person-group>summary::-webkit-details-marker{display:none;}
+.person-group>summary::marker{content:'';}
+.person-caret{font-family:var(--mono);color:var(--text-faint);width:12px;text-align:center;flex:0 0 auto;}
+.person-swatch{width:10px;height:10px;border-radius:50%;flex:0 0 auto;}
+.person-name{font-weight:600;font-size:13px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.person-count{font-family:var(--mono);font-size:10.5px;color:var(--text-dim);flex:0 0 auto;}
+.person-mentions{padding:6px 10px 10px 14px;display:flex;flex-direction:column;gap:6px;}
+.video-group{background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:7px;overflow:hidden;}
+.video-group>summary{list-style:none;cursor:pointer;padding:7px 10px;display:flex;align-items:center;gap:8px;user-select:none;}
+.video-group>summary::-webkit-details-marker{display:none;}
+.video-group>summary::marker{content:'';}
+.video-group:hover>summary{background:var(--bg-elevated-2);}
+.video-caret{font-family:var(--mono);color:var(--text-faint);width:12px;text-align:center;flex:0 0 auto;font-size:10px;}
+.video-thumb-dot{width:6px;height:6px;border-radius:2px;background:var(--publish);flex:0 0 auto;}
+.video-name{font-size:12px;font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.video-meta{font-family:var(--mono);font-size:9.5px;color:var(--text-faint);flex:0 0 auto;}
+.video-count{font-family:var(--mono);font-size:10px;color:var(--text-dim);flex:0 0 auto;}
+.video-mentions{padding:2px 10px 8px 26px;display:flex;flex-direction:column;gap:2px;}
+.mention-row{display:flex;gap:10px;align-items:baseline;padding:5px 8px;border-radius:6px;cursor:pointer;font-size:12px;}
+.mention-row:hover{background:var(--bg-elevated-2);}
+.mention-time{font-family:var(--mono);color:var(--text-faint);font-size:10.5px;flex:0 0 auto;width:48px;}
+.mention-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mention-row.dimmed{opacity:.32;}
+.people-agg-empty{padding:14px 4px;color:var(--text-faint);font-size:12px;}
+
 footer{padding:14px 22px 26px;font-family:var(--mono);font-size:10.5px;color:var(--text-faint);}
 </style>
 </head>
@@ -264,9 +303,9 @@ footer{padding:14px 22px 26px;font-family:var(--mono);font-size:10.5px;color:var
       <div class="zoom-ctl">
         <button id="btnLayoutToggle" title="Switch between side-by-side and top-to-bottom layout">⇕ Stack top-to-bottom</button>
         <button id="zoomOutN" title="Zoom out">−</button>
-        <input type="range" id="zoomSliderN" min="5" max="200" step="5" value="60">
+        <input type="range" id="zoomSliderN" min="1" max="200" step="1" value="60">
         <button id="zoomInN" title="Zoom in">+</button>
-        <span id="zoomLabelN">60%</span>
+        <input type="number" id="zoomLabelN" class="zoom-input" min="1" max="200" step="1" value="60">%
         <button id="zoomResetN" title="Reset zoom">reset</button>
       </div>
     </div>
@@ -280,15 +319,26 @@ footer{padding:14px 22px 26px;font-family:var(--mono);font-size:10.5px;color:var
       <span>Calendar timeline <span class="hint">— real-world dates, incl. video publish dates</span></span>
       <div class="zoom-ctl">
         <button id="zoomOutC" title="Zoom out">−</button>
-        <input type="range" id="zoomSliderC" min="5" max="200" step="5" value="60">
+        <input type="range" id="zoomSliderC" min="1" max="200" step="1" value="60">
         <button id="zoomInC" title="Zoom in">+</button>
-        <span id="zoomLabelC">60%</span>
+        <input type="number" id="zoomLabelC" class="zoom-input" min="1" max="200" step="1" value="60">%
         <button id="zoomResetC" title="Reset zoom">reset</button>
       </div>
     </div>
     <div class="scroll-x" id="calendarScroll">
       <div class="calendar-inner" id="calendarInner"></div>
     </div>
+  </section>
+
+  <section class="timeline-wrap">
+    <div class="section-label">
+      <span>Mentions by person <span class="hint">— every datapoint aggregated by who's mentioned · sub-lists start collapsed</span></span>
+      <div class="zoom-ctl">
+        <button id="btnExpandAllPeople" title="Expand every person">Expand all</button>
+        <button id="btnCollapseAllPeople" title="Collapse every person">Collapse all</button>
+      </div>
+    </div>
+    <div class="people-agg" id="peopleAggInner"></div>
   </section>
 
   <footer>click any marker, arc, or calendar point to inspect it · scroll horizontally within each panel</footer>
@@ -365,6 +415,9 @@ function laneMarkerColor(lane, dp){
 }
 
 /* ============================= FILTER LOGIC ============================= */
+function anyFilterActive(){
+  return !!(filters.people.size || filters.events.size || filters.media.size || filters.claims.size);
+}
 function dpVisible(dp){
   if(filters.people.size && !(dp.people||[]).some(p=>filters.people.has(p))) return false;
   if(filters.events.size && !(dp.events||[]).some(e=>filters.events.has(e))) return false;
@@ -498,7 +551,7 @@ function renderNarration(){
         LANE_ORDER.forEach(lane=>{
           if((dp[lane]||[]).length){
             const d = document.createElement('div');
-            d.className = 'mini-dot';
+            d.className = 'mini-dot' + (anyFilterActive() ? ' emph' : '');
             d.style.background = laneMarkerColor(lane, dp);
             d.title = dp.label;
             mini.appendChild(d);
@@ -533,7 +586,7 @@ function renderNarration(){
           if(!(dp[lane]||[]).length) return;
           const visible = dpVisible(dp);
           const m = document.createElement('div');
-          m.className = 'marker' + (visible?'':' dimmed');
+          m.className = 'marker' + (visible?'':' dimmed') + (visible && anyFilterActive() ? ' emph' : '');
           m.style.left = (dp.t*pxSec())+'px';
           m.style.background = laneMarkerColor(lane, dp);
           m.dataset.id = dp.id;
@@ -676,8 +729,129 @@ function drawArcsStacked(){
   container.prepend(svg);
 }
 
+/* ============================= MENTIONS BY PERSON ============================= */
+function renderPeopleAggregate(){
+  const wrap = document.getElementById('peopleAggInner');
+  if(!wrap) return;
+
+  // remember which nodes are currently expanded so re-renders (filter changes, etc.) don't collapse them again
+  const openPersonIds = new Set();
+  wrap.querySelectorAll('details.person-group[open]').forEach(d=>openPersonIds.add(d.dataset.personId));
+  const openVideoKeys = new Set();
+  wrap.querySelectorAll('details.video-group[open]').forEach(d=>openVideoKeys.add(d.dataset.videoKey));
+
+  wrap.innerHTML = '';
+
+  const byPerson = {}; // personId -> [{dp, video}]
+  DATA.videos.forEach(v=>v.dataPoints.forEach(dp=>{
+    (dp.people||[]).forEach(pid=>{
+      const key = String(pid);
+      (byPerson[key] = byPerson[key] || []).push({dp, video:v});
+    });
+  }));
+
+  const groups = Object.keys(byPerson).map(pid=>{
+    // bucket this person's mentions by video first
+    const byVideo = {};
+    byPerson[pid].forEach(({dp, video})=>{
+      (byVideo[video.id] = byVideo[video.id] || {video, mentions:[]}).mentions.push(dp);
+    });
+    const videos = Object.values(byVideo).map(vg=>{
+      vg.mentions.sort((a,b)=>a.t-b.t);
+      return vg;
+    }).sort((a,b)=> (a.video.publishedAt||'').localeCompare(b.video.publishedAt||'') || a.video.title.localeCompare(b.video.title));
+    const totalMentions = videos.reduce((n,vg)=>n+vg.mentions.length, 0);
+    return {
+      id: pid,
+      name: entityName('people', pid),
+      color: entityColor('people', pid, CAT_HEX.people),
+      videos,
+      totalMentions
+    };
+  }).sort((a,b)=> b.totalMentions - a.totalMentions || a.name.localeCompare(b.name));
+
+  if(!groups.length){
+    wrap.innerHTML = '<div class="people-agg-empty">no people mentions in the loaded data</div>';
+    return;
+  }
+
+  groups.forEach(g=>{
+    const visibleCount = g.videos.reduce((n,vg)=>n+vg.mentions.filter(dpVisible).length, 0);
+    const details = document.createElement('details');
+    details.className = 'person-group';
+    details.dataset.personId = g.id;
+    details.open = openPersonIds.has(g.id); // collapsed by default
+
+    const summary = document.createElement('summary');
+    summary.innerHTML = `<span class="person-caret">${details.open?'▾':'▸'}</span>`+
+      `<span class="person-swatch" style="background:${g.color}"></span>`+
+      `<span class="person-name">${escapeHtml(g.name)}</span>`+
+      `<span class="person-count">${g.videos.length} video${g.videos.length===1?'':'s'} · ${g.totalMentions} mention${g.totalMentions===1?'':'s'}`+
+      (anyFilterActive() ? ` · ${visibleCount} shown` : '')+`</span>`;
+    details.appendChild(summary);
+
+    // list of mentioning videos first (each a collapsed sub-list of that person's mentions in it)
+    const body = document.createElement('div');
+    body.className = 'person-mentions';
+    g.videos.forEach(vg=>{
+      const videoKey = g.id+'::'+vg.video.id;
+      const visibleInVideo = vg.mentions.filter(dpVisible).length;
+
+      const vDetails = document.createElement('details');
+      vDetails.className = 'video-group';
+      vDetails.dataset.videoKey = videoKey;
+      vDetails.open = openVideoKeys.has(videoKey); // collapsed by default
+
+      const vSummary = document.createElement('summary');
+      vSummary.innerHTML = `<span class="video-caret">${vDetails.open?'▾':'▸'}</span>`+
+        `<span class="video-thumb-dot"></span>`+
+        `<span class="video-name">${escapeHtml(vg.video.title)}</span>`+
+        `<span class="video-meta">${escapeHtml(vg.video.publishedAt||'')}</span>`+
+        `<span class="video-count">${vg.mentions.length} mention${vg.mentions.length===1?'':'s'}`+
+        (anyFilterActive() ? ` · ${visibleInVideo} shown` : '')+`</span>`;
+      vSummary.onclick = (e)=>{ /* let native <details> toggle handle open/close */ };
+      vDetails.appendChild(vSummary);
+
+      const vBody = document.createElement('div');
+      vBody.className = 'video-mentions';
+      vg.mentions.forEach(dp=>{
+        const visible = dpVisible(dp);
+        const row = document.createElement('div');
+        row.className = 'mention-row' + (visible ? '' : ' dimmed');
+        row.innerHTML = `<span class="mention-time">${fmtTime(dp.t)}</span>`+
+          `<span class="mention-label">${escapeHtml(dp.label)}</span>`;
+        row.onclick = (e)=>{ e.stopPropagation(); openDrawer('datapoint', dp.id); };
+        vBody.appendChild(row);
+      });
+      vDetails.appendChild(vBody);
+
+      vDetails.addEventListener('toggle', ()=>{
+        vSummary.querySelector('.video-caret').textContent = vDetails.open ? '▾' : '▸';
+      });
+
+      body.appendChild(vDetails);
+    });
+    details.appendChild(body);
+
+    details.addEventListener('toggle', ()=>{
+      summary.querySelector('.person-caret').textContent = details.open ? '▾' : '▸';
+    });
+
+    wrap.appendChild(details);
+  });
+}
+document.getElementById('btnExpandAllPeople').onclick = ()=>{
+  document.querySelectorAll('#peopleAggInner details.person-group').forEach(d=>{ d.open = true; });
+  document.querySelectorAll('#peopleAggInner details.video-group').forEach(d=>{ d.open = true; });
+};
+document.getElementById('btnCollapseAllPeople').onclick = ()=>{
+  document.querySelectorAll('#peopleAggInner details.video-group').forEach(d=>{ d.open = false; });
+  document.querySelectorAll('#peopleAggInner details.person-group').forEach(d=>{ d.open = false; });
+};
+
 /* ============================= CALENDAR TIMELINE ============================= */
 function renderCalendar(){
+  const CAL_AXIS_Y = 130; // must match .cal-axis/.cal-marker top in CSS
   const inner = document.getElementById('calendarInner');
   inner.innerHTML = '';
 
@@ -718,14 +892,23 @@ function renderCalendar(){
     inner.appendChild(tick);
   }
 
-  const rows = [ -22, -40, 92, 110 ]; // stagger labels above/below to reduce overlap
+  // Fixed-distance, 45° label placement: every label sits the same diagonal
+  // distance up-right or down-right of its marker (never crowded arbitrarily
+  // close), alternating direction by chronological order so adjacent-in-time
+  // points don't collide.
+  const LBL_OFFSET = 26; // px, equal in x and y => exactly 45°
+  const chronological = points.map((p,i)=>({p,i,t:new Date(p.date+'T00:00:00Z').getTime()})).sort((a,b)=>a.t-b.t);
+  const dirByIndex = {};
+  chronological.forEach((entry, idx)=>{ dirByIndex[entry.i] = (idx%2===0) ? -1 : 1; }); // -1 = up-right, +1 = down-right
+
   points.forEach((p, i)=>{
     const dTime = new Date(p.date+'T00:00:00Z').getTime();
     const x = (dTime-minD)/dayMs*pxDay();
     const visible = p.type!=='dp' || dpVisible(p.dp);
+    const emph = p.type==='dp' && visible && anyFilterActive();
 
     const m = document.createElement('div');
-    m.className = 'cal-marker ' + p.type + (visible?'':' dimmed');
+    m.className = 'cal-marker ' + p.type + (visible?'':' dimmed') + (emph?' emph':'');
     m.style.left = x+'px';
     m.title = p.date+' — '+p.label;
     m.onclick = (e)=>{
@@ -736,15 +919,28 @@ function renderCalendar(){
     };
     inner.appendChild(m);
 
-    const lbl = document.createElement('div');
-    lbl.className = 'cal-label';
-    lbl.style.left = x+'px';
-    lbl.style.top = (rows[i % rows.length] + 70)+'px';
-    lbl.textContent = (p.type==='publish'?'▶ ':'') + p.label;
-    if(visible) inner.appendChild(lbl);
+    if(visible){
+      const dir = dirByIndex[i];
+      const leader = document.createElement('div');
+      leader.className = 'cal-leader';
+      leader.style.left = x+'px';
+      leader.style.top = CAL_AXIS_Y+'px';
+      leader.style.width = (LBL_OFFSET*Math.SQRT2)+'px';
+      leader.style.transform = `rotate(${dir<0?-45:45}deg)`;
+      inner.appendChild(leader);
+
+      const lbl = document.createElement('div');
+      lbl.className = 'cal-label';
+      lbl.style.left = (x+LBL_OFFSET+4)+'px';
+      lbl.style.top = (CAL_AXIS_Y + dir*LBL_OFFSET)+'px';
+      lbl.style.transformOrigin = '0 50%';
+      lbl.style.transform = `translateY(-50%) rotate(${dir<0?-45:45}deg)`;
+      lbl.textContent = (p.type==='publish'?'▶ ':'') + p.label;
+      inner.appendChild(lbl);
+    }
   });
 
-  inner.style.minHeight = '150px';
+  inner.style.minHeight = '270px';
 }
 
 /* ============================= DRAWER ============================= */
@@ -1093,13 +1289,16 @@ function wireZoom(sliderId, labelId, outId, inId, resetId, getSet, onChange){
   const slider = document.getElementById(sliderId);
   const label = document.getElementById(labelId);
   function apply(pct){
-    pct = Math.max(5, Math.min(200, pct));
+    if(isNaN(pct)) pct = parseInt(slider.value,10);
+    pct = Math.max(1, Math.min(200, Math.round(pct)));
     slider.value = pct;
-    label.textContent = pct+'%';
+    label.value = pct;
     getSet(pct/100);
     onChange();
   }
   slider.addEventListener('input', (e)=>apply(parseInt(e.target.value,10)));
+  label.addEventListener('change', (e)=>apply(parseInt(e.target.value,10)));
+  label.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ apply(parseInt(e.target.value,10)); e.target.blur(); } });
   document.getElementById(inId).onclick = ()=>apply(parseInt(slider.value,10)+15);
   document.getElementById(outId).onclick = ()=>apply(parseInt(slider.value,10)-15);
   document.getElementById(resetId).onclick = ()=>apply(60);
@@ -1260,6 +1459,7 @@ function render(){
   updateFilterCounts();
   renderNarration();
   renderCalendar();
+  renderPeopleAggregate();
 }
 buildFilters();
 render();
