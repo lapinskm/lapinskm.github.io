@@ -1,0 +1,178 @@
+{
+  "processing steps": [
+    "naive generator (generate_mentions.py, max_edit_distance=3, bare name-segment matching enabled) pass against mentioned_people_with_ids.json -- produced ~400 candidate matches, the overwhelming majority fuzzy/segment/ambiguous false positives by the generator's own labeling (e.g. common Polish words like 'Kilka', 'taka', 'ludzi', 'jak', 'ale' matching names at edit-distance <=3).",
+    "Claude Sonnet 5 refinement: given the transcript's short length (~8.5 min) and the naive file's very low signal-to-noise ratio, performed a full manual line-by-line read of the transcript against the entity list instead of trying to salvage individual fuzzy candidates. Kept the naive generator's 4 high-confidence literal (non-fuzzy) matches as a cross-check (all confirmed correct), discarded all fuzzy/segment/ambiguous entries as false positives, resolved several multi-line mentions split across timestamp boundaries (e.g. 'Daria Dąbrowska, Hanna [Zagulska] / Hanna [Koczewska] / Lucy [Wieliczko]' at [01:23]-[01:30]), and added two mentions ('Dymkowi'/id73, 'Kozakowi'/id74) that the naive generator missed entirely. Iterated with validate_mentions.py until Rule A, Rule B, and Rule C all passed.",
+    "User-flagged correction: the [05:41] 'psycholożka' passage, initially left unmarked as purely descriptive, was identified by the user as Ewa Racławska (id29, alias 'psycholoszka') and added accordingly."
+  ],
+  "source_transcript": "Perseusz_00_transcript_uLNsHa2n6k0.txt",
+  "video_id": "uLNsHa2n6k0",
+  "episode": 0,
+  "notes": "This short episode is the host's opening monologue; he never names himself (Krzysztof Gonciarz) in this clip, so id1 has no mentions here. Most named people are accusers/critics he's rebutting (Daria Dąbrowska, Hanna Zagulska, Hanna Koczewska, Julia Wieliczko/'Lucy', Maja Staśko, Rienka Kasperowicz) plus Justyna Sukanek and Stuart Burton ('Pandora Gate') and two men (Jakub Dymek, Marcin Kozak) mentioned as other people caught up in the same cancel-culture wave. The passage at [05:41]-[06:04] describing an unnamed 'psycholożka' (self-styled psychologist/manipulator who defended Stuart Burton during Pandora Gate) is Ewa Racławska (id29, alias 'psycholoszka'), per user correction; the remaining generic descriptive words in that passage ('psychologiczną', 'psychologa') were left unmarked as elaboration rather than repeated name mentions.",
+  "mentions": [
+    {
+      "Timestamp": "[01:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:23]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "Multi-line mention, continues at [01:26] 'Zagulska'."
+    },
+    {
+      "Timestamp": "[01:26]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "Second half of multi-line mention started at [01:23]."
+    },
+    {
+      "Timestamp": "[01:26]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanna",
+      "notes": "Second, distinct 'Hanna' on this line (first refers to Zagulska above); multi-line mention continuing at [01:28] 'Koczewska'."
+    },
+    {
+      "Timestamp": "[01:28]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewska",
+      "notes": "Second half of multi-line mention started at [01:26]."
+    },
+    {
+      "Timestamp": "[01:28]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy",
+      "notes": "Alias 'Lucy'; multi-line mention, continues at [01:30] 'Wieliczko'."
+    },
+    {
+      "Timestamp": "[01:30]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Wieliczko",
+      "notes": "Second half of multi-line mention started at [01:28]."
+    },
+    {
+      "Timestamp": "[02:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "Multi-line mention, continues at [02:03] 'Zagulska'."
+    },
+    {
+      "Timestamp": "[02:03]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "Second half of multi-line mention started at [02:01]."
+    },
+    {
+      "Timestamp": "[02:07]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[02:50]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja",
+      "notes": "Multi-line mention, continues at [02:52] 'Staśko'."
+    },
+    {
+      "Timestamp": "[02:52]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Staśko",
+      "notes": "Second half of multi-line mention started at [02:50]."
+    },
+    {
+      "Timestamp": "[02:52]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Rienka Kasperowicz"
+    },
+    {
+      "Timestamp": "[02:52]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "Multi-line mention, continues at [02:54] 'Zagulska'."
+    },
+    {
+      "Timestamp": "[02:54]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska",
+      "notes": "Second half of multi-line mention started at [02:52]."
+    },
+    {
+      "Timestamp": "[04:42]",
+      "person_id": "73",
+      "person_name": "Jakub Dymek",
+      "exact mention": "Dymkowi",
+      "notes": "Dative form of surname 'Dymek'; entity had zero prior coverage. Naive fuzzy generator missed this entirely (only produced unrelated fuzzy garbage for this line)."
+    },
+    {
+      "Timestamp": "[04:45]",
+      "person_id": "74",
+      "person_name": "Marcin Kozak",
+      "exact mention": "Kozakowi",
+      "notes": "Dative form of surname 'Kozak'; entity had zero prior coverage. Naive fuzzy generator missed this entirely."
+    },
+    {
+      "Timestamp": "[05:41]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożka",
+      "notes": "Matches alias 'psycholoszka' (entity list has a typo'd 'sz'; transcript uses the correct 'ż' spelling). Initially left unmarked as a purely descriptive/generic term, but the entity list's alias for Ewa Racławska is literally this word, and the surrounding description (defended Stuart Burton during Pandora Gate, poses as a psychological authority online) matches her alias 'żona Naruciaka' context from other episodes — reassigned per user correction."
+    },
+    {
+      "Timestamp": "[06:06]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuarta Bartona",
+      "notes": "ASR typo of 'Stuarta Burtona' (Stuart Burton)."
+    },
+    {
+      "Timestamp": "[06:10]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stewarta Bartona",
+      "notes": "ASR typo variant 'Stewarta Bartona' of 'Stuart Burton'."
+    },
+    {
+      "Timestamp": "[07:22]",
+      "person_id": "60",
+      "person_name": "Justyna Sukanek",
+      "exact mention": "Justynię",
+      "notes": "Multi-line mention, continues at [07:27] 'Sukek' (typo of 'Sukanek')."
+    },
+    {
+      "Timestamp": "[07:27]",
+      "person_id": "60",
+      "person_name": "Justyna Sukanek",
+      "exact mention": "Sukek",
+      "notes": "ASR typo of 'Sukanek'; second half of multi-line mention started at [07:22]."
+    },
+    {
+      "Timestamp": "[07:27]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stuarta Bartona",
+      "notes": "ASR typo of 'Stuart Burton'."
+    },
+    {
+      "Timestamp": "[07:40]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stewarta",
+      "notes": "Bare first-name typo variant referring back to Stuart Burton."
+    }
+  ]
+}

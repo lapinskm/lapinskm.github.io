@@ -1,0 +1,1533 @@
+{
+  "processing steps": [
+    "Ran naive LLM-based mention generator over transcript against entity list (baseline: Perseusz_22_people_mentions_qhzrhOMi1Ps.json, 250 mentions).",
+    "Ran validate_mentions.py against naive output; identified 2 Rule B timestamp misalignments and 2 Rule C unmarked matches.",
+    "Aggregated all knowledge from transcript context to resolve identity/aliasing judgement calls (e.g. Paulina T = Paulina W = Paula Czerwińska = Alicja Namęcka = Lord King sockpuppet identities, per entity id 5 aliases).",
+    "Corrected timestamps for 2 multi-word mentions that were stamped one caption line early (\"Katarzyny Meciński\" -> [41:17]; \"pani Magdalena Gwóźdź\" -> [41:59]).",
+    "Added 2 mentions missed by the naive generator, surfaced by validator Rule C: \"Paulina\" at [31:29] and multi-line \"redaktorka ... pani Gwóźdź\" at [35:24]/[35:26], both confirmed correct via transcript context.",
+    "Manually swept the transcript for all other entity names/aliases/typo variants (stemmed + literal greps) to check for additional naive-generator misses; no further genuine person mentions were found beyond a documented ambiguous case (see notes).",
+    "Re-ran validate_mentions.py on the revised mention set: Rule A, Rule B, and Rule C all pass.",
+    "Claude Sonnet 5 refinement with naive generator and validator."
+  ],
+  "source_transcript": "Perseusz_22_transcript_qhzrhOMi1Ps.txt",
+  "video_id": "qhzrhOMi1Ps",
+  "notes": "One ambiguous case was deliberately excluded: at [30:23], [30:56] and [36:58] the transcript refers to a real person named \"Alicja\" (\"jedna moja obserwatorka\", a viewer/fan who mediated between Krzysztof and Paulina and is interviewed on camera). This is a different, real individual from the \"Alicja Namęcka\"/\"Alicja na męcka\" alias, which the entity list (id 5) documents as one of Paulina T's sockpuppet identities. Since this mediator \"Alicja\" has no corresponding entry of her own in mentioned_people_with_ids.json, no mention entry was created for her to avoid misattributing her to Paulina T's alias; she would need her own entity id if she should be tracked in future passes.",
+  "mentions": [
+    {
+      "Timestamp": "[00:05]",
+      "person_id": "49",
+      "person_name": "Jarosław Jabrzyk",
+      "exact mention": "redaktora naczelnego"
+    },
+    {
+      "Timestamp": "[00:07]",
+      "person_id": "49",
+      "person_name": "Jarosław Jabrzyk",
+      "exact mention": "superwizjera Jarosława Jabrzyka"
+    },
+    {
+      "Timestamp": "[00:22]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[00:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[00:54]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[00:54]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[01:02]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktor"
+    },
+    {
+      "Timestamp": "[01:04]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny Gwóźdź"
+    },
+    {
+      "Timestamp": "[01:04]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzu"
+    },
+    {
+      "Timestamp": "[01:25]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stewartecie Bartonie"
+    },
+    {
+      "Timestamp": "[01:31]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena gwóźdź"
+    },
+    {
+      "Timestamp": "[01:34]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:38]",
+      "person_id": "62",
+      "person_name": "Jaś Kapela",
+      "exact mention": "Jasiem"
+    },
+    {
+      "Timestamp": "[01:40]",
+      "person_id": "62",
+      "person_name": "Jaś Kapela",
+      "exact mention": "Kapelą"
+    },
+    {
+      "Timestamp": "[01:40]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:58]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zygulska"
+    },
+    {
+      "Timestamp": "[02:00]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gciarza"
+    },
+    {
+      "Timestamp": "[03:23]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[03:25]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina T"
+    },
+    {
+      "Timestamp": "[03:25]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliną"
+    },
+    {
+      "Timestamp": "[04:07]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[04:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[05:38]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny T"
+    },
+    {
+      "Timestamp": "[05:57]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[07:14]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "gwóźdź"
+    },
+    {
+      "Timestamp": "[07:14]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóźdź"
+    },
+    {
+      "Timestamp": "[07:18]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóźdź"
+    },
+    {
+      "Timestamp": "[07:57]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina T"
+    },
+    {
+      "Timestamp": "[08:08]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani gwóźdź"
+    },
+    {
+      "Timestamp": "[08:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[08:45]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina T"
+    },
+    {
+      "Timestamp": "[09:56]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulinę T"
+    },
+    {
+      "Timestamp": "[10:01]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[10:04]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[10:27]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina T"
+    },
+    {
+      "Timestamp": "[10:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[11:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[11:21]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulinę te"
+    },
+    {
+      "Timestamp": "[11:21]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[11:29]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulinę w"
+    },
+    {
+      "Timestamp": "[11:32]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[11:37]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulę"
+    },
+    {
+      "Timestamp": "[11:40]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Czerwińską"
+    },
+    {
+      "Timestamp": "[11:43]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paula Czerwińska"
+    },
+    {
+      "Timestamp": "[11:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gesz"
+    },
+    {
+      "Timestamp": "[11:56]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[12:05]",
+      "person_id": "109",
+      "person_name": "Amelia Wiśniewska",
+      "exact mention": "Amelia Wiśniewska"
+    },
+    {
+      "Timestamp": "[12:13]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[12:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[12:15]",
+      "person_id": "109",
+      "person_name": "Amelia Wiśniewska",
+      "exact mention": "Amelia Wiśniewska"
+    },
+    {
+      "Timestamp": "[12:24]",
+      "person_id": "109",
+      "person_name": "Amelia Wiśniewska",
+      "exact mention": "Amia Wiśniewska"
+    },
+    {
+      "Timestamp": "[12:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[12:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[13:14]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paula"
+    },
+    {
+      "Timestamp": "[13:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Czerwińska"
+    },
+    {
+      "Timestamp": "[13:22]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[13:26]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paula Czerwińska"
+    },
+    {
+      "Timestamp": "[13:38]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paula Czerwińska"
+    },
+    {
+      "Timestamp": "[13:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[14:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[14:09]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[14:13]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej"
+    },
+    {
+      "Timestamp": "[14:13]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paul"
+    },
+    {
+      "Timestamp": "[14:14]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Czerwińska"
+    },
+    {
+      "Timestamp": "[14:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysia"
+    },
+    {
+      "Timestamp": "[14:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[14:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[14:51]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paula Czerwińska"
+    },
+    {
+      "Timestamp": "[15:19]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauli Czerwińskiej"
+    },
+    {
+      "Timestamp": "[15:48]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauli Czerwińskiej"
+    },
+    {
+      "Timestamp": "[16:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord"
+    },
+    {
+      "Timestamp": "[16:19]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "King"
+    },
+    {
+      "Timestamp": "[16:35]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[16:53]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja na męcka"
+    },
+    {
+      "Timestamp": "[16:59]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewy"
+    },
+    {
+      "Timestamp": "[17:01]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczółkowskiej"
+    },
+    {
+      "Timestamp": "[17:08]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicję"
+    },
+    {
+      "Timestamp": "[17:11]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "na męcką"
+    },
+    {
+      "Timestamp": "[17:13]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewą Wyczółkowską"
+    },
+    {
+      "Timestamp": "[17:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicję"
+    },
+    {
+      "Timestamp": "[17:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja"
+    },
+    {
+      "Timestamp": "[17:26]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicję na męską"
+    },
+    {
+      "Timestamp": "[17:26]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord"
+    },
+    {
+      "Timestamp": "[17:28]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "King"
+    },
+    {
+      "Timestamp": "[17:33]",
+      "person_id": "115",
+      "person_name": "Liter Kara",
+      "exact mention": "Liter kara"
+    },
+    {
+      "Timestamp": "[17:36]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwester Wardenga"
+    },
+    {
+      "Timestamp": "[17:38]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwestrze"
+    },
+    {
+      "Timestamp": "[17:40]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardengo"
+    },
+    {
+      "Timestamp": "[17:40]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicji na męskiej"
+    },
+    {
+      "Timestamp": "[17:42]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[18:48]",
+      "person_id": "115",
+      "person_name": "Liter Kara",
+      "exact mention": "literkara"
+    },
+    {
+      "Timestamp": "[18:53]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[18:53]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny Gwóźdź"
+    },
+    {
+      "Timestamp": "[18:55]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord Kings"
+    },
+    {
+      "Timestamp": "[18:58]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny Gwóźdź"
+    },
+    {
+      "Timestamp": "[19:02]",
+      "person_id": "49",
+      "person_name": "Jarosław Jabrzyk",
+      "exact mention": "Pan Jabrzyk"
+    },
+    {
+      "Timestamp": "[19:14]",
+      "person_id": "18",
+      "person_name": "Stuart Burton",
+      "exact mention": "Stewarcie"
+    },
+    {
+      "Timestamp": "[19:21]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[19:24]",
+      "person_id": "49",
+      "person_name": "Jarosław Jabrzyk",
+      "exact mention": "Panie Jabrzyku"
+    },
+    {
+      "Timestamp": "[19:24]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja na"
+    },
+    {
+      "Timestamp": "[19:27]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "męska"
+    },
+    {
+      "Timestamp": "[19:27]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[19:45]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóźdź"
+    },
+    {
+      "Timestamp": "[19:50]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[19:52]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóź"
+    },
+    {
+      "Timestamp": "[20:03]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalenę Gwóźdź"
+    },
+    {
+      "Timestamp": "[20:13]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóźdź"
+    },
+    {
+      "Timestamp": "[20:38]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny T"
+    },
+    {
+      "Timestamp": "[20:41]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina T"
+    },
+    {
+      "Timestamp": "[21:01]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[21:04]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "T"
+    },
+    {
+      "Timestamp": "[21:04]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina W"
+    },
+    {
+      "Timestamp": "[21:08]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paula Czerwińska"
+    },
+    {
+      "Timestamp": "[21:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[21:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paula Czerwińska"
+    },
+    {
+      "Timestamp": "[21:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina T"
+    },
+    {
+      "Timestamp": "[21:18]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina W"
+    },
+    {
+      "Timestamp": "[21:18]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja na męska"
+    },
+    {
+      "Timestamp": "[21:32]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicję na męską"
+    },
+    {
+      "Timestamp": "[21:46]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Paweł z kanału"
+    },
+    {
+      "Timestamp": "[21:48]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Zbrodnia i Kara"
+    },
+    {
+      "Timestamp": "[21:48]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny T"
+    },
+    {
+      "Timestamp": "[21:54]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliną w"
+    },
+    {
+      "Timestamp": "[22:00]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem Gąciarzem"
+    },
+    {
+      "Timestamp": "[22:04]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[22:09]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[22:11]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny te"
+    },
+    {
+      "Timestamp": "[22:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[22:52]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paolina T"
+    },
+    {
+      "Timestamp": "[23:01]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja Namęska"
+    },
+    {
+      "Timestamp": "[23:01]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Lord King"
+    },
+    {
+      "Timestamp": "[23:12]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauli Czerwińskiej"
+    },
+    {
+      "Timestamp": "[23:25]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja na Męska"
+    },
+    {
+      "Timestamp": "[23:25]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina T"
+    },
+    {
+      "Timestamp": "[23:25]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina W"
+    },
+    {
+      "Timestamp": "[23:29]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paula Czerwińska"
+    },
+    {
+      "Timestamp": "[24:01]",
+      "person_id": "109",
+      "person_name": "Amelia Wiśniewska",
+      "exact mention": "Emelia Wiśniewska"
+    },
+    {
+      "Timestamp": "[24:03]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[24:10]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "gwóźdź"
+    },
+    {
+      "Timestamp": "[24:11]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja Nemamcka"
+    },
+    {
+      "Timestamp": "[24:32]",
+      "person_id": "97",
+      "person_name": "Marcin Dubiel",
+      "exact mention": "Dubiela"
+    },
+    {
+      "Timestamp": "[24:41]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja"
+    },
+    {
+      "Timestamp": "[24:44]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Męcka"
+    },
+    {
+      "Timestamp": "[24:58]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulin"
+    },
+    {
+      "Timestamp": "[25:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja na męcka"
+    },
+    {
+      "Timestamp": "[25:21]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina T"
+    },
+    {
+      "Timestamp": "[25:23]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "nazwiska w"
+    },
+    {
+      "Timestamp": "[25:31]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Alicja Nemęska"
+    },
+    {
+      "Timestamp": "[25:32]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulinę"
+    },
+    {
+      "Timestamp": "[25:37]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[25:42]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewie Wyczółkowskiej"
+    },
+    {
+      "Timestamp": "[25:54]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[27:16]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliną"
+    },
+    {
+      "Timestamp": "[27:18]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[27:32]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliną"
+    },
+    {
+      "Timestamp": "[27:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[27:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[27:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem"
+    },
+    {
+      "Timestamp": "[27:49]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[27:58]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[28:07]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny"
+    },
+    {
+      "Timestamp": "[28:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[28:24]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny"
+    },
+    {
+      "Timestamp": "[28:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[28:54]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[29:26]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "gwóźdź"
+    },
+    {
+      "Timestamp": "[29:26]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[29:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[29:37]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[29:40]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "gwóźdź"
+    },
+    {
+      "Timestamp": "[29:48]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny"
+    },
+    {
+      "Timestamp": "[30:18]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[30:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "kąciarza"
+    },
+    {
+      "Timestamp": "[30:56]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[31:15]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani gwóźdź"
+    },
+    {
+      "Timestamp": "[31:20]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani gwóźdź"
+    },
+    {
+      "Timestamp": "[31:23]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani gwóźdź"
+    },
+    {
+      "Timestamp": "[31:29]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina",
+      "notes": "Missed by naive generator; found via validator Rule C sweep. Refers to Paulina T continuing to recount her side of the story in this passage."
+    },
+    {
+      "Timestamp": "[31:43]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[32:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[32:51]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[33:43]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[34:36]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[35:04]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarzu"
+    },
+    {
+      "Timestamp": "[35:09]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[35:24]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktorka",
+      "notes": "Missed by naive generator; found via validator Rule C sweep. Multi-line mention: \"sama redaktorka, czyli pani Gwóźdź\" continues onto [35:26] where \"pani Gwóźdź\" is already marked, confirming identity."
+    },
+    {
+      "Timestamp": "[35:26]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani Gwóźdź"
+    },
+    {
+      "Timestamp": "[35:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[35:41]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mają Staśko"
+    },
+    {
+      "Timestamp": "[35:43]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja"
+    },
+    {
+      "Timestamp": "[35:48]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdaleny Gwóźdź"
+    },
+    {
+      "Timestamp": "[35:48]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóźdź"
+    },
+    {
+      "Timestamp": "[36:03]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliną"
+    },
+    {
+      "Timestamp": "[36:11]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Redaktor Gwóźdź"
+    },
+    {
+      "Timestamp": "[36:11]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny"
+    },
+    {
+      "Timestamp": "[36:54]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[37:34]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[37:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[38:32]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[38:58]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[39:22]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny"
+    },
+    {
+      "Timestamp": "[39:27]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[39:45]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[39:46]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[39:49]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Crispin"
+    },
+    {
+      "Timestamp": "[39:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[40:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[40:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[40:33]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dario Dąbrowska"
+    },
+    {
+      "Timestamp": "[40:41]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[40:55]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin Sobczak"
+    },
+    {
+      "Timestamp": "[41:05]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani Magdaleny Gwóźdź"
+    },
+    {
+      "Timestamp": "[41:09]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin"
+    },
+    {
+      "Timestamp": "[41:13]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani redaktor"
+    },
+    {
+      "Timestamp": "[41:15]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Gwóźdź"
+    },
+    {
+      "Timestamp": "[41:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Meciński",
+      "notes": "Timestamp corrected from naive pass: exact phrase actually appears on the [41:17] caption line (\"Katarzyny Meciński. Katarzyna odniosła\"), not [41:15]."
+    },
+    {
+      "Timestamp": "[41:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[41:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[41:23]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktor superwizjera"
+    },
+    {
+      "Timestamp": "[41:26]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktor superwizjera"
+    },
+    {
+      "Timestamp": "[41:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[41:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "kąciarza"
+    },
+    {
+      "Timestamp": "[41:59]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani Magdalena Gwóźdź",
+      "notes": "Timestamp corrected from naive pass: exact phrase actually appears on the [41:59] caption line (\"którego pani Magdalena Gwóźdź nie\"), not [41:58]."
+    },
+    {
+      "Timestamp": "[42:07]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "pani Gwóźdź"
+    },
+    {
+      "Timestamp": "[42:14]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliną"
+    },
+    {
+      "Timestamp": "[42:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[42:41]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[43:23]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[44:00]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliną"
+    },
+    {
+      "Timestamp": "[44:07]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[44:43]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[44:49]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[46:48]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliny"
+    },
+    {
+      "Timestamp": "[46:48]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Pani"
+    },
+    {
+      "Timestamp": "[46:51]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktor Magdalena Gwóźdź"
+    },
+    {
+      "Timestamp": "[47:15]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[47:19]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Magdalena Gwóźdź"
+    },
+    {
+      "Timestamp": "[47:29]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "gwóźdź"
+    },
+    {
+      "Timestamp": "[47:44]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Paulina"
+    },
+    {
+      "Timestamp": "[47:48]",
+      "person_id": "49",
+      "person_name": "Jarosław Jabrzyk",
+      "exact mention": "Panie redaktorze naczelny Jarosławie"
+    },
+    {
+      "Timestamp": "[47:51]",
+      "person_id": "49",
+      "person_name": "Jarosław Jabrzyk",
+      "exact mention": "Jabrzyku"
+    },
+    {
+      "Timestamp": "[48:03]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktor Magdalenę Gwóźdź"
+    },
+    {
+      "Timestamp": "[48:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[48:53]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "gwóźdź"
+    },
+    {
+      "Timestamp": "[49:00]",
+      "person_id": "5",
+      "person_name": "Paulina T",
+      "exact mention": "Pauliną"
+    },
+    {
+      "Timestamp": "[49:30]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[49:32]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską"
+    },
+    {
+      "Timestamp": "[49:32]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolinę Domaracką"
+    },
+    {
+      "Timestamp": "[49:32]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewę"
+    },
+    {
+      "Timestamp": "[49:35]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczółkowską"
+    },
+    {
+      "Timestamp": "[49:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[49:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    }
+  ]
+}

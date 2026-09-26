@@ -1,0 +1,6344 @@
+{
+  "processing steps": [
+    "Ran naive fuzzy-match generator (generate_mentions.py, max_edit_distance=3, bare name-segment matching enabled) against mentioned_people_with_ids.json, producing a 6,468-entry draft: 286 exact literal alias matches (no notes field) plus 6,182 lower-confidence FUZZY MATCH / SEGMENT MATCH / AMBIGUOUS candidates flagged for manual review.",
+    "Ran validate_mentions.py on the raw naive draft: Rule A and Rule B passed with zero errors; Rule C (unmarked literal matches) returned ~1,054 warnings, almost entirely single 3-4 letter Polish stopword fragments (e.g. \"ani\", \"jaki\", \"przy\") produced by the fuzzy/segment matcher, not real name mentions.",
+    "Since only 18 unique text strings accounted for all 286 exact matches, built a custom stem-based scanner (diacritic-insensitive, word-boundary-anchored name-prefix matching, tuned per name length) over the full transcript against every entity name/alias to recover genuine grammatical/typo variants the naive generator's pure edit-distance approach missed or buried in noise. This produced 290 unique matched surface forms across 2,076 raw hits.",
+    "Manually reviewed all 290 unique surface forms with transcript context (grouped by token, with example lines) to classify each as: (a) a genuine mention of a specific entity - accepted for every occurrence (e.g. Angela/Aniela/Anieli -> Aniela Olszewska id 77; Wąsik/Kuba -> Jakub Łysiak id 8; Meciński/Kaśka/Katarzyna(ciński) typo family -> Katarzyna Meciński id 7; Gonciarz/Krzysztof/Krzysiek -> Krzysztof Gonciarz id 1); (b) a genuine mention only in specific instances where the surface form is ambiguous or coincides with a common Polish word (e.g. \"Hanny\"/\"Karoliny\"/\"Kasie\"/\"Julia\"/\"Maciek\"/\"sylwester\" - resolved case-by-case using surrounding lines, especially multi-line continuations onto a surname); or (c) pure noise from stem collisions with common Polish words or unrelated entities and discarded entirely (e.g. \"ale\", \"dziewczyna\", \"pani\", \"Superwizjer\" [the TV show, not Jarosław Jabrzyk], \"Sobczak\" [a different real person, Zofia Sobczak, not Kryspin Sobczak], \"stalkerem/stalkingu\" [generic accusation vocabulary], \"Stanów\" [\"United States\", not Krzysztof Stanowski]).",
+    "Cross-checked the full entity list against the transcript by literal grep for ~40 additional less-central names (Kryspin Sobczak, Ewa Wyczółkowska, Justyna Mazur, Paulina T, Jaś Kapela, Maja Staśko, etc.) to confirm none of them silently appear in this episode beyond what was already captured.",
+    "Re-ran validate_mentions.py on the reconciled set: Rule A and Rule B both pass. Investigated all remaining Rule C flags individually; found and added 4 further genuine typo'd forms of \"Wardenga\" (\"Wartenga\", \"Wardęga\", \"Wartęga\", \"Wardęi\"). The remaining 5 Rule C flags are confirmed false positives (documented in notes) and were deliberately left unmarked.",
+    "Final validator run: Rule A (Name/ID Consistency) passed, Rule B (Transcript Alignment) passed, Rule C shows only the 5 documented/reviewed non-issues.",
+    "Claude Sonnet 5 refinement with naive generator and validator."
+  ],
+  "source_transcript": "Perseusz_31_transcript_WQ53dWPEvdk.txt",
+  "video_id": "WQ53dWPEvdk",
+  "notes": "This episode's naive draft used a different (fuzzy edit-distance) generator than prior episodes and was extremely noisy (6,468 raw candidates, of which only 286 were literal exact matches); most of the raw draft was discarded as false positives rather than fixed in place. Five reviewed Rule C flags were deliberately left unmarked as false positives: (1) [07:20] \"Sylwestra\" is \"Sylwestra 2015 roku\" (New Year's Eve 2015), not a reference to Sylwester Wardenga; (2) [30:05] and (3) [01:55:50] \"olał\" are substrings inside the unrelated verb forms \"Wolałbym\"/\"wolałabyś\" (\"I would prefer\"), not the alias \"Olał\"/Ola (Olciak, id 35); (4) [01:56:56] and (5) [01:57:21] \"Kasie\" both mean \"at the cash register\" (\"Pracowałem na Kasie\"), not the person Katarzyna Meciński. One mention was flagged AMBIGUOUS and resolved by judgement call rather than certainty: at [02:08:58] \"Julia jego była powinna go pozwać\" was assigned to Julia Wieliczko (id 3) rather than Julia Bojaruniec (id 27) based on the personal/relationship context, but this is a judgement call rather than a certainty and is flagged in that mention's own notes field.",
+  "mentions": [
+    {
+      "Timestamp": "[00:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[00:14]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[00:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[04:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[04:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[05:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[05:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[05:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną"
+    },
+    {
+      "Timestamp": "[06:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[07:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[07:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[07:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[07:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[07:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[07:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[07:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[08:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[08:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[08:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[08:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[08:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[09:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[09:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[09:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[10:55]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[10:55]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[10:57]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewska"
+    },
+    {
+      "Timestamp": "[11:01]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[11:01]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Wąsik"
+    },
+    {
+      "Timestamp": "[11:01]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[11:05]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[11:05]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Wąsik"
+    },
+    {
+      "Timestamp": "[11:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[11:05]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[11:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[11:08]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[11:13]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[11:13]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Wąsik"
+    },
+    {
+      "Timestamp": "[11:13]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[11:15]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[11:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[11:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[11:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[11:21]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[11:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[11:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[11:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[11:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[12:11]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[12:17]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[12:24]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[12:34]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[12:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[13:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[13:04]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[13:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[13:48]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[14:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[14:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[14:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[14:16]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[14:25]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[14:28]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsikowi"
+    },
+    {
+      "Timestamp": "[14:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[14:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[14:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[14:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem"
+    },
+    {
+      "Timestamp": "[15:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkiem"
+    },
+    {
+      "Timestamp": "[15:29]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[15:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[15:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[15:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[15:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[15:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[15:53]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[16:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[16:13]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsikiem"
+    },
+    {
+      "Timestamp": "[16:18]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[16:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[16:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[16:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[16:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[16:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[16:46]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[16:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[16:58]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "olana"
+    },
+    {
+      "Timestamp": "[17:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[17:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[17:42]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[17:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[18:02]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[19:57]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[20:21]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[21:00]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[21:12]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[21:33]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[22:19]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[22:25]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[22:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[22:53]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[22:53]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[23:20]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[23:26]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[23:38]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubie"
+    },
+    {
+      "Timestamp": "[23:43]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[25:03]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[25:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[25:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[26:02]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[26:30]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[26:35]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[27:14]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[27:28]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[27:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[27:31]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[27:33]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[27:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną"
+    },
+    {
+      "Timestamp": "[27:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[27:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[28:21]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[28:21]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[28:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką"
+    },
+    {
+      "Timestamp": "[28:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[28:26]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[28:37]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[28:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[28:48]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[28:48]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[29:05]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[29:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[29:09]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[29:12]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[29:12]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewską"
+    },
+    {
+      "Timestamp": "[29:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[29:21]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[29:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[29:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[29:27]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[29:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[29:32]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[29:35]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[29:48]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[29:58]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[30:08]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[30:37]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[30:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką"
+    },
+    {
+      "Timestamp": "[30:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[30:51]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[31:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[31:07]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[31:11]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[31:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[33:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[33:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[33:23]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[33:30]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[33:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną"
+    },
+    {
+      "Timestamp": "[33:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[33:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[33:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[34:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[34:58]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[35:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynaciński"
+    },
+    {
+      "Timestamp": "[35:10]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[35:19]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[35:21]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[35:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[35:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[35:43]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[35:43]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewską"
+    },
+    {
+      "Timestamp": "[35:55]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[36:16]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[36:23]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[36:30]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[36:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[36:43]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[36:45]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[37:08]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[37:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[37:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[37:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[37:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[37:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[37:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[37:44]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[37:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[37:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[37:54]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[38:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynański"
+    },
+    {
+      "Timestamp": "[38:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[38:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[38:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[39:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[39:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[39:10]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[39:16]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsiku"
+    },
+    {
+      "Timestamp": "[39:25]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsika"
+    },
+    {
+      "Timestamp": "[39:25]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[39:43]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[40:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[40:16]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[40:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[40:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[40:28]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[43:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[43:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[43:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[43:39]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[43:47]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[43:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[44:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynaciński"
+    },
+    {
+      "Timestamp": "[44:06]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsikiem"
+    },
+    {
+      "Timestamp": "[44:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną"
+    },
+    {
+      "Timestamp": "[44:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[44:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę"
+    },
+    {
+      "Timestamp": "[44:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[44:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[44:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[44:34]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[44:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską"
+    },
+    {
+      "Timestamp": "[44:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[44:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[44:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[44:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[44:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską"
+    },
+    {
+      "Timestamp": "[45:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[45:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[45:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[45:21]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsiku"
+    },
+    {
+      "Timestamp": "[45:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[45:33]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[45:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[46:08]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsie"
+    },
+    {
+      "Timestamp": "[46:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[46:25]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsikowi"
+    },
+    {
+      "Timestamp": "[46:47]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[46:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[46:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[46:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela Olszewska"
+    },
+    {
+      "Timestamp": "[46:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewska"
+    },
+    {
+      "Timestamp": "[47:07]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[47:07]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela Olszewska"
+    },
+    {
+      "Timestamp": "[47:07]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[47:07]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewska"
+    },
+    {
+      "Timestamp": "[47:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[47:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[47:18]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[47:18]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[47:21]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[47:21]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[47:26]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[47:26]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[47:30]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[47:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[47:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[48:02]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniele"
+    },
+    {
+      "Timestamp": "[48:33]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[48:33]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Wąsik"
+    },
+    {
+      "Timestamp": "[48:33]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[48:35]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[48:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[48:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[48:47]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[48:53]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[49:00]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[49:03]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[49:03]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[49:08]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[49:08]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[49:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[49:11]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[49:13]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[49:13]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[49:23]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[49:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[49:35]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[49:48]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[49:52]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "anieli"
+    },
+    {
+      "Timestamp": "[49:52]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[49:57]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[49:57]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[50:02]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[50:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[50:09]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[50:09]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[50:11]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[50:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[50:15]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[50:17]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[50:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[50:51]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[50:58]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsikiem"
+    },
+    {
+      "Timestamp": "[51:07]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[51:09]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubie"
+    },
+    {
+      "Timestamp": "[51:19]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[51:49]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[52:18]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[52:31]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubie"
+    },
+    {
+      "Timestamp": "[52:37]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[52:47]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angeli"
+    },
+    {
+      "Timestamp": "[52:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[52:58]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[53:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[53:10]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[53:43]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[53:43]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "aniele"
+    },
+    {
+      "Timestamp": "[53:59]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[54:09]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[54:09]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[54:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[54:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[54:22]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[54:28]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[54:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[54:32]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[54:43]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[54:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką"
+    },
+    {
+      "Timestamp": "[54:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[54:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[54:57]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[55:18]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[55:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[56:16]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[56:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[56:34]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[56:42]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[56:50]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubie"
+    },
+    {
+      "Timestamp": "[56:58]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubie"
+    },
+    {
+      "Timestamp": "[56:58]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[57:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasie"
+    },
+    {
+      "Timestamp": "[57:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[57:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[57:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[57:35]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[57:44]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubie"
+    },
+    {
+      "Timestamp": "[57:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[57:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[57:56]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielę"
+    },
+    {
+      "Timestamp": "[58:05]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[58:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[58:33]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniele"
+    },
+    {
+      "Timestamp": "[58:33]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[58:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[58:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[58:43]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[58:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[59:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[59:06]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[59:08]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[59:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[59:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[59:15]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[59:18]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[59:18]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelę"
+    },
+    {
+      "Timestamp": "[59:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[59:27]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[59:35]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[59:44]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[59:57]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[59:57]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[59:59]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:00:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:00:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:00:16]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsiku"
+    },
+    {
+      "Timestamp": "[01:00:31]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:00:31]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[01:00:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:00:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:00:55]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[01:00:55]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[01:01:24]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[01:01:36]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:01:43]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:02:44]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:02:54]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:02:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:03:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:03:03]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:03:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:03:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:03:20]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:03:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:03:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:03:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:03:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:03:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelę"
+    },
+    {
+      "Timestamp": "[01:03:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewską"
+    },
+    {
+      "Timestamp": "[01:04:21]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelę"
+    },
+    {
+      "Timestamp": "[01:04:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:04:49]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:05:10]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:05:19]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:06:28]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:06:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:06:34]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:06:37]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[01:06:37]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielki"
+    },
+    {
+      "Timestamp": "[01:06:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:06:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:06:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:07:05]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[01:07:10]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:07:14]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:07:26]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[01:07:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:07:33]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielką"
+    },
+    {
+      "Timestamp": "[01:07:46]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:07:48]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:07:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:08:09]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:08:26]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[01:08:42]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:08:58]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:09:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:09:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:09:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:10:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:10:20]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:10:22]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:10:31]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniele"
+    },
+    {
+      "Timestamp": "[01:10:35]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[01:10:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:11:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:11:00]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[01:11:05]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniele"
+    },
+    {
+      "Timestamp": "[01:11:14]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:11:49]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:12:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:12:41]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniele"
+    },
+    {
+      "Timestamp": "[01:12:44]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsiku"
+    },
+    {
+      "Timestamp": "[01:13:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:13:29]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[01:13:37]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:13:37]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Wąsik"
+    },
+    {
+      "Timestamp": "[01:13:37]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:13:43]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelii"
+    },
+    {
+      "Timestamp": "[01:13:43]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[01:13:45]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angeli"
+    },
+    {
+      "Timestamp": "[01:14:06]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:14:08]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:14:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:14:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Wąsik"
+    },
+    {
+      "Timestamp": "[01:14:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:15:17]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:15:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:15:32]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[01:15:36]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:15:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[01:15:48]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[01:16:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:16:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:16:10]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:16:25]",
+      "person_id": "76",
+      "person_name": "Luiza Działowska",
+      "exact mention": "Luiza"
+    },
+    {
+      "Timestamp": "[01:16:34]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelii"
+    },
+    {
+      "Timestamp": "[01:16:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:16:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:16:56]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[01:16:56]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelę"
+    },
+    {
+      "Timestamp": "[01:16:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:17:14]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:17:16]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[01:17:22]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angeli"
+    },
+    {
+      "Timestamp": "[01:17:32]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubie"
+    },
+    {
+      "Timestamp": "[01:18:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[01:18:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśkowi"
+    },
+    {
+      "Timestamp": "[01:19:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:19:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:19:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:19:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:19:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:19:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[01:19:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:19:19]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[01:19:24]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsikiem"
+    },
+    {
+      "Timestamp": "[01:19:33]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[01:20:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:21:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:21:40]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:21:45]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:21:50]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[01:21:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:21:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:22:02]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego"
+    },
+    {
+      "Timestamp": "[01:22:05]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[01:22:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:22:24]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:22:46]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angeli"
+    },
+    {
+      "Timestamp": "[01:23:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:23:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:23:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:23:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:23:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:23:54]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego"
+    },
+    {
+      "Timestamp": "[01:24:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:24:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:24:06]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Konradem"
+    },
+    {
+      "Timestamp": "[01:25:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyn"
+    },
+    {
+      "Timestamp": "[01:25:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:25:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:25:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:25:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:25:48]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[01:25:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[01:25:54]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:26:38]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:27:03]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[01:27:13]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[01:27:19]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angeli"
+    },
+    {
+      "Timestamp": "[01:28:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:28:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:28:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:28:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:29:34]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[01:29:34]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[01:30:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynaciński"
+    },
+    {
+      "Timestamp": "[01:30:04]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[01:30:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[01:30:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[01:30:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską"
+    },
+    {
+      "Timestamp": "[01:30:29]",
+      "person_id": "80",
+      "person_name": "Michał Sińczak",
+      "exact mention": "przyjacielem bezdomnym pelikanem",
+      "notes": "Refers to Krzysztof's friend by his nickname alias \"Bezdomny Pelikan\" (Michał Sińczak, id 80)."
+    },
+    {
+      "Timestamp": "[01:30:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:31:01]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciar"
+    },
+    {
+      "Timestamp": "[01:31:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:31:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:31:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:32:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:32:25]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:32:30]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:32:32]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:32:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:33:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:33:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:33:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:33:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:33:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:34:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:34:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:34:05]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:34:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:34:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:34:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:34:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:34:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:34:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:34:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:34:23]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[01:34:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:34:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:34:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:34:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[01:34:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:34:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:34:34]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:34:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:34:45]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:34:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką"
+    },
+    {
+      "Timestamp": "[01:34:51]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:35:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:35:18]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[01:35:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką"
+    },
+    {
+      "Timestamp": "[01:35:25]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[01:35:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:36:57]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka"
+    },
+    {
+      "Timestamp": "[01:37:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:37:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:37:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:38:03]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:38:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:38:19]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:38:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:38:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:39:47]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:40:04]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:40:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:40:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:41:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[01:41:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:41:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Wąsik"
+    },
+    {
+      "Timestamp": "[01:41:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:41:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:41:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:42:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[01:42:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:42:19]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[01:42:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari"
+    },
+    {
+      "Timestamp": "[01:42:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[01:42:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:43:07]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[01:43:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii"
+    },
+    {
+      "Timestamp": "[01:43:37]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[01:43:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:43:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:44:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:44:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:44:46]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsikiem"
+    },
+    {
+      "Timestamp": "[01:44:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:44:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:44:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:44:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:44:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[01:44:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:44:59]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:45:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[01:45:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:45:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią"
+    },
+    {
+      "Timestamp": "[01:45:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską"
+    },
+    {
+      "Timestamp": "[01:45:24]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[01:45:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[01:45:37]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[01:45:54]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:45:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:46:06]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:47:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[01:47:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskino"
+    },
+    {
+      "Timestamp": "[01:47:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:47:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:47:42]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:47:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:47:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:47:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:47:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:47:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:47:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:48:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:48:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyno"
+    },
+    {
+      "Timestamp": "[01:48:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:48:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:48:33]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:48:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:48:33]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:48:33]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:48:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:49:00]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:49:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:49:09]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:49:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:49:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:49:30]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[01:49:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:50:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:50:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:50:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:50:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[01:51:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:51:06]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[01:51:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[01:51:09]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[01:51:16]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:51:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:52:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:52:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyciński"
+    },
+    {
+      "Timestamp": "[01:53:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:53:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:53:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[01:53:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:53:42]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:53:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:53:46]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[01:53:53]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[01:53:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:54:05]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:54:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[01:54:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:54:20]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsika"
+    },
+    {
+      "Timestamp": "[01:54:25]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:54:32]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:54:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:54:36]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:54:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:54:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[01:55:31]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[01:56:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:56:18]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[01:56:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:56:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[01:56:44]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelę"
+    },
+    {
+      "Timestamp": "[01:56:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[01:57:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:57:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:57:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:58:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:58:33]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimperowi"
+    },
+    {
+      "Timestamp": "[01:58:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:58:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:58:47]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:59:08]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[01:59:13]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:59:28]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[01:59:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[01:59:38]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsikartwiał"
+    },
+    {
+      "Timestamp": "[01:59:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynie"
+    },
+    {
+      "Timestamp": "[01:59:48]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsiek"
+    },
+    {
+      "Timestamp": "[02:00:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:00:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:00:30]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:00:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:00:47]",
+      "person_id": "83",
+      "person_name": "Joanna Okuniewska",
+      "exact mention": "Joannę",
+      "notes": "Multi-line mention: \"Joannę\" continues onto [02:00:49] where \"Okuniewską\" is already marked."
+    },
+    {
+      "Timestamp": "[02:00:52]",
+      "person_id": "124",
+      "person_name": "Nazwijmy go Maciek",
+      "exact mention": "nazwijmy go Maciek"
+    },
+    {
+      "Timestamp": "[02:01:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[02:01:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[02:01:12]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "redaktor",
+      "notes": "Multi-line mention: \"pani redaktor\" continues onto [02:01:13] where \"Gwóźdź\" is already marked, confirming id 23 (Magdalena Gwóźdź), consistent with her being called \"pani redaktor\"/\"redaktor Gwóźdź\" in earlier episodes."
+    },
+    {
+      "Timestamp": "[02:01:13]",
+      "person_id": "23",
+      "person_name": "Magdalena Gwóźdź",
+      "exact mention": "Gwóźdź"
+    },
+    {
+      "Timestamp": "[02:01:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę"
+    },
+    {
+      "Timestamp": "[02:01:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:01:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:01:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:01:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:01:51]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny",
+      "notes": "Multi-line mention: \"Hanny / Zagulskiej\" continues onto [02:01:53] where \"Zagulskiej\" is already marked, confirming id 10 (Hanna Zagulska), not id 4."
+    },
+    {
+      "Timestamp": "[02:01:53]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[02:02:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:02:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:02:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:02:14]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[02:02:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:02:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:02:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:03:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[02:03:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:03:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:03:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:04:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:04:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:04:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:04:39]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsika"
+    },
+    {
+      "Timestamp": "[02:04:39]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[02:04:53]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[02:05:08]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olał"
+    },
+    {
+      "Timestamp": "[02:05:12]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:05:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[02:05:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[02:05:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:05:25]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsikowi"
+    },
+    {
+      "Timestamp": "[02:05:50]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśfu"
+    },
+    {
+      "Timestamp": "[02:06:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę"
+    },
+    {
+      "Timestamp": "[02:06:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:06:10]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:06:13]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:06:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:06:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[02:06:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:06:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:06:57]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie"
+    },
+    {
+      "Timestamp": "[02:07:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:08:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę"
+    },
+    {
+      "Timestamp": "[02:08:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:08:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:08:58]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Julia",
+      "notes": "AMBIGUOUS: could refer to Julia Wieliczko (id 3) or Julia Bojaruniec (id 27), both literal name matches in the entity list. Assigned to id 3 based on context (a personal/relationship reference to someone described as \"his ex\" with financial troubles), matching Julia Wieliczko's established storyline rather than Julia Bojaruniec (a public commentator/activist unrelated to this narrative). Manual review recommended."
+    },
+    {
+      "Timestamp": "[02:09:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:09:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:09:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[02:09:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:09:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną"
+    },
+    {
+      "Timestamp": "[02:09:48]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińsk"
+    },
+    {
+      "Timestamp": "[02:09:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[02:09:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[02:10:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:10:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:10:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:10:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:10:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[02:11:02]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:11:05]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewską"
+    },
+    {
+      "Timestamp": "[02:11:12]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[02:11:19]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:11:30]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:11:45]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:12:28]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "aniele"
+    },
+    {
+      "Timestamp": "[02:12:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką"
+    },
+    {
+      "Timestamp": "[02:12:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:12:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:13:02]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:13:02]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowski"
+    },
+    {
+      "Timestamp": "[02:13:02]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:13:10]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[02:13:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:13:21]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:13:38]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wartenga"
+    },
+    {
+      "Timestamp": "[02:13:41]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskim"
+    },
+    {
+      "Timestamp": "[02:14:19]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniele"
+    },
+    {
+      "Timestamp": "[02:14:47]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardęga"
+    },
+    {
+      "Timestamp": "[02:14:56]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[02:15:02]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:15:05]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wartęga"
+    },
+    {
+      "Timestamp": "[02:15:07]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:15:14]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:15:40]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "aniele"
+    },
+    {
+      "Timestamp": "[02:15:43]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardęi"
+    },
+    {
+      "Timestamp": "[02:16:00]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "sylwestra",
+      "notes": "Multi-line mention: \"sylwestra\" continues onto [02:16:02] (\"Wardę\"), an informal accusative nickname form referring to Sylwester Wardenga."
+    },
+    {
+      "Timestamp": "[02:16:02]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardę",
+      "notes": "Multi-line mention continuing from [02:16:00] (\"sylwestra Wardę\"); informal accusative nickname form referring to Sylwester Wardenga."
+    },
+    {
+      "Timestamp": "[02:16:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:16:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:16:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:16:10]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimpera"
+    },
+    {
+      "Timestamp": "[02:16:16]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela Olszewska"
+    },
+    {
+      "Timestamp": "[02:16:16]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:16:16]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewska"
+    },
+    {
+      "Timestamp": "[02:16:19]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardengi"
+    },
+    {
+      "Timestamp": "[02:16:19]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwestra",
+      "notes": "Part of \"Sylwestra Wardengi\" (genitive form of Sylwester Wardenga) on the same line as the already-marked \"Wardengi\"."
+    },
+    {
+      "Timestamp": "[02:16:25]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:16:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:16:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:16:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[02:16:53]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardenga"
+    },
+    {
+      "Timestamp": "[02:16:59]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardenga"
+    },
+    {
+      "Timestamp": "[02:17:09]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarzowe"
+    },
+    {
+      "Timestamp": "[02:17:13]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:17:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:17:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:17:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:17:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[02:17:46]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:17:50]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:17:52]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:17:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:17:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:18:01]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:18:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:18:41]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Wardenga"
+    },
+    {
+      "Timestamp": "[02:18:50]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:18:55]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:18:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:19:45]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:19:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[02:19:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:19:49]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasie"
+    },
+    {
+      "Timestamp": "[02:19:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:19:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:19:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:19:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:19:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[02:20:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[02:20:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasiu"
+    },
+    {
+      "Timestamp": "[02:20:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[02:20:29]",
+      "person_id": "16",
+      "person_name": "Sylwester Wardenga",
+      "exact mention": "Sylwek"
+    },
+    {
+      "Timestamp": "[02:20:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gońcia"
+    },
+    {
+      "Timestamp": "[02:20:34]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[02:20:49]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[02:20:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[02:20:59]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsika"
+    },
+    {
+      "Timestamp": "[02:21:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:21:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:21:12]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:21:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[02:21:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[02:21:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:21:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:22:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:22:27]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:22:30]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[02:22:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[02:22:46]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[02:22:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[02:23:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:23:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:23:27]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:23:36]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:23:38]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[02:24:12]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[02:24:26]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:24:39]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[02:24:53]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:24:57]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:25:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[02:25:08]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[02:25:22]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[02:25:25]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[02:25:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[02:25:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[02:25:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:25:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:25:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:25:43]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angeli"
+    },
+    {
+      "Timestamp": "[02:25:48]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:25:50]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:25:50]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:26:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:26:59]",
+      "person_id": "107",
+      "person_name": "Oskar",
+      "exact mention": "Oskar"
+    },
+    {
+      "Timestamp": "[02:28:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:28:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:28:27]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[02:28:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[02:28:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:29:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę"
+    },
+    {
+      "Timestamp": "[02:29:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:29:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:29:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:29:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:29:15]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:29:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:29:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:29:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:29:21]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelii"
+    },
+    {
+      "Timestamp": "[02:29:21]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[02:29:46]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[02:29:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[02:29:57]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:29:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:29:59]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubą"
+    },
+    {
+      "Timestamp": "[02:30:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:30:07]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:30:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:30:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:30:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:30:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:30:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[02:30:21]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:30:23]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[02:30:23]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[02:30:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:30:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:30:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:30:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii"
+    },
+    {
+      "Timestamp": "[02:30:36]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[02:30:41]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny"
+    },
+    {
+      "Timestamp": "[02:31:00]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[02:31:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Męciński"
+    },
+    {
+      "Timestamp": "[02:31:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:31:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:31:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:32:21]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[02:32:26]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:32:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:32:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:32:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:32:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:32:45]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelę"
+    },
+    {
+      "Timestamp": "[02:32:49]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[02:32:55]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:33:06]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:33:06]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:33:30]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[02:33:38]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angeli"
+    },
+    {
+      "Timestamp": "[02:33:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:33:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:33:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:33:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę"
+    },
+    {
+      "Timestamp": "[02:33:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:34:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:34:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:34:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:34:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:34:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "katarzyńskiej"
+    },
+    {
+      "Timestamp": "[02:34:57]",
+      "person_id": "76",
+      "person_name": "Luiza Działowska",
+      "exact mention": "Luizą"
+    },
+    {
+      "Timestamp": "[02:35:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:35:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:35:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:35:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:35:11]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:35:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:35:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[02:36:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:36:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:36:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:36:24]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:36:57]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:37:03]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:37:11]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny",
+      "notes": "Multi-line mention: \"Hanny / Koczewskiej\" continues onto [02:37:13] where \"Koczewskiej\" is already marked, confirming id 4 (Hanna Koczewska), not id 10."
+    },
+    {
+      "Timestamp": "[02:37:13]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:37:13]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej"
+    },
+    {
+      "Timestamp": "[02:37:28]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:37:30]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewską"
+    },
+    {
+      "Timestamp": "[02:37:30]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanną"
+    },
+    {
+      "Timestamp": "[02:37:51]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:38:20]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Olą"
+    },
+    {
+      "Timestamp": "[02:38:20]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angelą"
+    },
+    {
+      "Timestamp": "[02:39:42]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:40:42]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[02:41:15]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:41:37]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:41:39]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik"
+    },
+    {
+      "Timestamp": "[02:41:43]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:41:50]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "anieli"
+    },
+    {
+      "Timestamp": "[02:41:58]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[02:42:19]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[02:42:32]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:42:39]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:42:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[02:43:34]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[02:43:34]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:43:34]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[02:43:37]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:43:49]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:43:49]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Wąsik"
+    },
+    {
+      "Timestamp": "[02:43:49]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:43:54]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:43:56]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:43:56]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[02:44:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuby"
+    },
+    {
+      "Timestamp": "[02:44:09]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśką"
+    },
+    {
+      "Timestamp": "[02:44:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[02:44:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:44:31]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:45:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:45:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[02:45:41]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:45:43]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:45:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:45:46]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:45:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:45:56]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:45:58]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimperowi"
+    },
+    {
+      "Timestamp": "[02:46:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:46:12]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsika"
+    },
+    {
+      "Timestamp": "[02:46:14]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimper"
+    },
+    {
+      "Timestamp": "[02:46:14]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "olał"
+    },
+    {
+      "Timestamp": "[02:46:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[02:46:25]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniele"
+    },
+    {
+      "Timestamp": "[02:46:28]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniele"
+    },
+    {
+      "Timestamp": "[02:46:32]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angeli"
+    },
+    {
+      "Timestamp": "[02:46:57]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anieli"
+    },
+    {
+      "Timestamp": "[02:46:59]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Olszewskiej"
+    },
+    {
+      "Timestamp": "[02:47:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[02:47:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:47:34]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielą"
+    },
+    {
+      "Timestamp": "[02:47:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:47:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:47:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:47:46]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[02:47:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[02:47:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[02:47:58]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:48:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:48:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Meciński"
+    },
+    {
+      "Timestamp": "[02:48:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:48:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:48:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:48:14]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:48:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:48:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasie"
+    },
+    {
+      "Timestamp": "[02:48:29]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Chris"
+    },
+    {
+      "Timestamp": "[02:48:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:49:08]",
+      "person_id": "35",
+      "person_name": "Olciak",
+      "exact mention": "Ola"
+    },
+    {
+      "Timestamp": "[02:49:11]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Anielę"
+    },
+    {
+      "Timestamp": "[02:49:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:49:14]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:49:14]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[02:49:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:49:25]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:49:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:49:31]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę"
+    },
+    {
+      "Timestamp": "[02:49:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[02:49:40]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[02:50:11]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[02:50:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[02:50:16]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Goncia"
+    },
+    {
+      "Timestamp": "[02:50:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyn"
+    }
+  ]
+}

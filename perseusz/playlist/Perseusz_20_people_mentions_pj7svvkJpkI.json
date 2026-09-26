@@ -1,0 +1,3525 @@
+{
+  "processing steps": [
+    "Naive generator produced initial candidate mentions via alias/name string matching against transcript timestamps.",
+    "Claude Sonnet 5 refinement with naive generator and validator: ran validate_mentions.py to surface Rule A/B/C issues, then performed an extensive manual/contextual audit of the full transcript beyond what the regex-based validator could detect (case-sensitive and spelling mismatches with entity aliases, multi-line mentions split across timestamp boundaries, ASR typos with no matching alias string, and a semantic misassignment between two same-named entities). Corrected one existing mismarked entry ([01:46:58], reassigned id1->id102), added ~85 missed mentions, flagged one likely conflict in the source entity list's alias ownership (id13 vs id88 for 'Boska Matka Szmatka'), and flagged one genuinely ambiguous mention ([01:25:05]) and one uncertain typo identification ([01:43:17], 'Konrad Klasski'). Iterated with validate_mentions.py until Rule A, Rule B, and Rule C passed (aside from a small number of accepted false-positive Rule C warnings from generic Polish words that coincidentally match name fragments, e.g. 'Oskara' meaning the Oscar award, 'przerażona' containing 'żona', 'wynika' containing 'nika' — these are intentionally left unmarked). A second validator pass surfaced a handful of new Rule C flags caused by the round-1 additions themselves (e.g. adding 'Dari' as a target string surfaced other unmarked 'Dari'/'Darią'/'Dario' occurrences elsewhere in the transcript); these were resolved in a round-2 pass, including the previously-decided but accidentally-omitted ambiguous 'Maciek' mention at [01:05:57].",
+    "Two Rule C warnings remain intentionally unresolved after review: [54:02] 'Oskara' refers to accepting an Oscar (Academy Award) as a joke/metaphor, not the person 'Oskar' (id107); [01:54:27] 'Zagulska, Matko Boska.' uses the common Polish exclamation 'Matko Boska' ('Mother of God!'), not the alias 'Boska Matka Szmatka' (id88/id13). Both were confirmed as false positives via transcript context and deliberately left unmarked."
+  ],
+  "source_transcript": "Perseusz_20_transcript_pj7svvkJpkI.txt",
+  "video_id": "pj7svvkJpkI",
+  "episode": 20,
+  "notes": "This episode is dominated by references to Krzysztof Gonciarz (often bare first-name or diminutive forms: Krzysztof/Krzysiu/Krzysiek/Krzyś) and Karolina Domaracka (many ASR typo variants: Domaraszka/Domaraska/domoracka/domorackie). A separate, shorter storyline (~01:22:00-01:29:30, and again ~01:46:30-01:47:00) discusses an alleged impersonation account for 'Krzysztof Adamczyk' (id102)/'prawdziwy Krzychu' (id108); mentions there required careful disambiguation from the host's own name, with one instance ([01:25:05]) left genuinely ambiguous (see per-mention note) and one existing naive-generator misassignment corrected ([01:46:58]). A likely data conflict was found between the source entity list and the transcript: the alias 'Boska Matka Szmatka' is assigned to id88 (Ewa Jarzyna) in the entity list, but the transcript explicitly attributes it to Ewa Wyczółkowska (id13), who is the only one of the two ever mentioned in this episode; mentions of that alias here were assigned to id13 (see note at [01:16:10]).",
+  "mentions": [
+    {
+      "Timestamp": "[01:14]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:26]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[01:26]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[02:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[02:28]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej"
+    },
+    {
+      "Timestamp": "[02:34]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanny Koczewskiej"
+    },
+    {
+      "Timestamp": "[02:34]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej"
+    },
+    {
+      "Timestamp": "[03:02]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hanieę"
+    },
+    {
+      "Timestamp": "[03:28]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani"
+    },
+    {
+      "Timestamp": "[05:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[05:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[05:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "pani Karolina"
+    },
+    {
+      "Timestamp": "[05:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[05:41]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Dumarska"
+    },
+    {
+      "Timestamp": "[05:41]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[06:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka"
+    },
+    {
+      "Timestamp": "[06:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[06:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Pani Karolina"
+    },
+    {
+      "Timestamp": "[06:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[06:24]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaradzka"
+    },
+    {
+      "Timestamp": "[06:24]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[07:12]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[07:12]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[07:12]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[07:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[08:31]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[08:31]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[08:31]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[08:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[09:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[09:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[09:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[09:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[09:33]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[09:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[09:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[10:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[10:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[10:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[10:50]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka"
+    },
+    {
+      "Timestamp": "[10:50]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[10:50]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[10:52]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[10:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[11:14]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domorackie",
+      "notes": "ASR typo of 'Domaracka' (adjectival form 'domorackie' from 'profil domorackie')."
+    },
+    {
+      "Timestamp": "[11:59]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[12:57]",
+      "person_id": "98",
+      "person_name": "Bartek Fetysz",
+      "exact mention": "Bartek Fetysz"
+    },
+    {
+      "Timestamp": "[12:57]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[13:00]",
+      "person_id": "99",
+      "person_name": "Suzy Menkes",
+      "exact mention": "Suzy Menkesz"
+    },
+    {
+      "Timestamp": "[13:20]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[13:22]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[14:36]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[14:38]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[14:45]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[14:47]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[15:53]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[16:02]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[16:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[17:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[17:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[17:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[17:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Missed by naive generator; host referred to by first name."
+    },
+    {
+      "Timestamp": "[17:20]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[18:15]",
+      "person_id": "100",
+      "person_name": "Gośka Rozenek Majdan",
+      "exact mention": "Rozenek Majdan"
+    },
+    {
+      "Timestamp": "[20:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[20:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[20:26]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[20:26]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[20:28]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[20:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[20:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[20:35]",
+      "person_id": "37",
+      "person_name": "Jakub Chuptyś",
+      "exact mention": "Gargamela",
+      "notes": "Inflected form of alias 'Gargamel'."
+    },
+    {
+      "Timestamp": "[20:53]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[20:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[21:07]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie",
+      "notes": "Self-referential third-person usage (host discussing a video about himself)."
+    },
+    {
+      "Timestamp": "[21:43]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarska"
+    },
+    {
+      "Timestamp": "[21:43]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[21:57]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[21:57]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[21:57]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[22:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[22:11]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[22:16]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolinie Domarackiej"
+    },
+    {
+      "Timestamp": "[22:16]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[22:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Nickname form, missed in round 1."
+    },
+    {
+      "Timestamp": "[22:45]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[23:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[23:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[23:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[23:25]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[24:53]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Krispin Sobczak"
+    },
+    {
+      "Timestamp": "[25:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaradka"
+    },
+    {
+      "Timestamp": "[25:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[25:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[26:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[26:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[26:21]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[26:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[26:26]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[26:28]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[26:59]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarza"
+    },
+    {
+      "Timestamp": "[26:59]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gąciarza",
+      "notes": "ASR mishearing/typo of 'Krzysztofa Gonciarza'."
+    },
+    {
+      "Timestamp": "[27:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka"
+    },
+    {
+      "Timestamp": "[27:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[27:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[27:29]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarzka"
+    },
+    {
+      "Timestamp": "[27:29]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[27:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[28:06]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[28:06]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[28:06]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[28:15]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[28:46]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[28:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[28:58]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[29:09]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[29:25]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[29:42]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[29:52]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja Staśko"
+    },
+    {
+      "Timestamp": "[29:55]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolinie Domarackiej"
+    },
+    {
+      "Timestamp": "[29:55]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[29:55]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maja z Taśką",
+      "notes": "Wordplay/pun rendering of 'Maja Staśko' as 'Maja z Taśką' ('Maja with Taśka')."
+    },
+    {
+      "Timestamp": "[30:10]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaratka"
+    },
+    {
+      "Timestamp": "[30:10]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[31:04]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[31:16]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna",
+      "notes": "Multi-line mention: continues at [31:20] 'Meciński' (already present in naive list)."
+    },
+    {
+      "Timestamp": "[31:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[31:34]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[33:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka"
+    },
+    {
+      "Timestamp": "[33:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[33:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[34:00]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[34:09]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[34:36]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domarcka"
+    },
+    {
+      "Timestamp": "[34:56]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[35:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[35:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[35:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[36:21]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[36:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domoracka",
+      "notes": "Lowercase/informal typo variant of 'Domaracka'."
+    },
+    {
+      "Timestamp": "[37:10]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[38:01]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[38:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[38:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[38:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[38:40]",
+      "person_id": "30",
+      "person_name": "Matylda Kozakiewicz",
+      "exact mention": "Matyldą Kozakiewicz",
+      "notes": "Entity had zero prior coverage in this episode despite appearing."
+    },
+    {
+      "Timestamp": "[39:05]",
+      "person_id": "30",
+      "person_name": "Matylda Kozakiewicz",
+      "exact mention": "Matylda"
+    },
+    {
+      "Timestamp": "[40:17]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[40:47]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[40:47]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[40:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[40:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[40:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[40:56]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[41:01]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[41:04]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[41:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof Gonciarz"
+    },
+    {
+      "Timestamp": "[41:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[41:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[42:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzowi"
+    },
+    {
+      "Timestamp": "[42:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[43:00]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[43:09]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[43:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Diminutive 'Krzyś' (not in alias list) referring to the host; missed by naive generator."
+    },
+    {
+      "Timestamp": "[44:05]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[44:38]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[44:38]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[44:41]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[44:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[44:58]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[45:01]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[45:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[46:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "First of two Daria nicknames on this line ('Darwo i Dari, czyli Dario')."
+    },
+    {
+      "Timestamp": "[46:06]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dario",
+      "notes": "Second Daria nickname on the same line, vocative case."
+    },
+    {
+      "Timestamp": "[46:26]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[46:45]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[46:45]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[46:45]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[46:55]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracką"
+    },
+    {
+      "Timestamp": "[47:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzu"
+    },
+    {
+      "Timestamp": "[47:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie",
+      "notes": "Same line as already-marked 'Gonciarzu' ('Krzysztofie Gonciarzu'); naive generator only caught the surname half."
+    },
+    {
+      "Timestamp": "[47:38]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[47:48]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[47:48]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[47:48]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagórska"
+    },
+    {
+      "Timestamp": "[47:48]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[47:56]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[48:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[48:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[48:14]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[48:30]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[48:32]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[49:03]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka"
+    },
+    {
+      "Timestamp": "[49:03]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[49:03]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[49:14]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[49:19]",
+      "person_id": "103",
+      "person_name": "Mateusz",
+      "exact mention": "fotografem Mateuszem"
+    },
+    {
+      "Timestamp": "[49:19]",
+      "person_id": "103",
+      "person_name": "Mateusz",
+      "exact mention": "Mateuszem"
+    },
+    {
+      "Timestamp": "[49:28]",
+      "person_id": "103",
+      "person_name": "Mateusz",
+      "exact mention": "Mateuszowi"
+    },
+    {
+      "Timestamp": "[49:31]",
+      "person_id": "103",
+      "person_name": "Mateusz",
+      "exact mention": "Mateusz"
+    },
+    {
+      "Timestamp": "[49:40]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[49:40]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[49:40]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[49:46]",
+      "person_id": "103",
+      "person_name": "Mateusz",
+      "exact mention": "Mateuszem"
+    },
+    {
+      "Timestamp": "[49:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[50:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Diminutive 'Krzyś' referring to the host."
+    },
+    {
+      "Timestamp": "[51:06]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "Multi-line mention, continues at [51:08] 'Zegulska' (typo)."
+    },
+    {
+      "Timestamp": "[51:08]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zegulska",
+      "notes": "ASR typo of 'Zagulska'; second half of multi-line mention from [51:06]."
+    },
+    {
+      "Timestamp": "[51:22]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaraszka",
+      "notes": "ASR mishearing/typo of 'Domaracka' as 'Domaraszka'."
+    },
+    {
+      "Timestamp": "[51:25]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagórska"
+    },
+    {
+      "Timestamp": "[51:34]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[51:37]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[51:38]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari",
+      "notes": "Short/nickname form in a list of victims' names."
+    },
+    {
+      "Timestamp": "[51:41]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani"
+    },
+    {
+      "Timestamp": "[51:41]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hani",
+      "notes": "Second occurrence of 'Hani' on this line (naive generator only caught the first)."
+    },
+    {
+      "Timestamp": "[51:41]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Julki",
+      "notes": "Inflected form of alias 'Julka'."
+    },
+    {
+      "Timestamp": "[51:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi",
+      "notes": "Inflected form of alias 'Kasia'."
+    },
+    {
+      "Timestamp": "[52:11]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[52:13]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[52:13]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dari Dąbrowskiej",
+      "notes": "Genitive nickname form."
+    },
+    {
+      "Timestamp": "[52:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[52:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[52:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[52:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[53:16]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[53:22]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[53:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[53:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[53:22]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[53:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[54:20]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[54:20]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[54:42]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[55:12]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewską"
+    },
+    {
+      "Timestamp": "[55:15]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[55:31]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[55:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa",
+      "notes": "'matka Krzysztofa' = the host's mother."
+    },
+    {
+      "Timestamp": "[56:03]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[56:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[57:24]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[57:34]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[58:10]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[58:11]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[58:15]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[58:18]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[58:20]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka"
+    },
+    {
+      "Timestamp": "[58:20]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[58:20]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[58:23]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny Zagulskiej"
+    },
+    {
+      "Timestamp": "[58:23]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[58:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyną Myciński",
+      "notes": "ASR mishearing/typo of 'Meciński' as 'Myciński'."
+    },
+    {
+      "Timestamp": "[59:05]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:00:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka"
+    },
+    {
+      "Timestamp": "[01:00:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[01:00:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:01:06]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:01:13]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[01:01:13]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy"
+    },
+    {
+      "Timestamp": "[01:01:20]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:01:50]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:01:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darią",
+      "notes": "Instrumental case of 'Daria'."
+    },
+    {
+      "Timestamp": "[01:02:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:02:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:02:25]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:02:28]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:03:21]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:05:21]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[01:05:21]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:05:57]",
+      "person_id": "124",
+      "person_name": "Nazwijmy go Maciek",
+      "exact mention": "Maciek",
+      "notes": "Ambiguous: could refer to person_id 78 (Maciej/alias 'Maciek') or person_id 124 ('Nazwijmy go Maciek', alias 'Maciek'). Comes right after an English-language quote describing trauma symptoms, suggesting an anonymized quoted source, which fits the 'let's call him Maciek' framing of id124 slightly better than id78; assigned to id124 with this reasoning noted, but genuinely uncertain."
+    },
+    {
+      "Timestamp": "[01:06:02]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:06:11]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:06:14]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:06:31]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:06:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:06:36]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:06:40]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:07:44]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:07:46]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:08:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[01:08:11]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:08:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:09:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domaracka"
+    },
+    {
+      "Timestamp": "[01:09:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domarcka"
+    },
+    {
+      "Timestamp": "[01:09:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[01:09:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:09:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:09:52]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia Myciński",
+      "notes": "ASR mishearing/typo of 'Meciński' as 'Myciński'."
+    },
+    {
+      "Timestamp": "[01:09:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:09:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:09:54]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[01:09:54]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[01:09:54]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:10:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:10:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:10:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:10:59]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:11:47]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:12:00]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej"
+    },
+    {
+      "Timestamp": "[01:12:04]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewską"
+    },
+    {
+      "Timestamp": "[01:12:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem"
+    },
+    {
+      "Timestamp": "[01:13:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:13:45]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:13:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[01:13:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:13:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:14:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz"
+    },
+    {
+      "Timestamp": "[01:14:54]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską"
+    },
+    {
+      "Timestamp": "[01:14:54]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaraszka",
+      "notes": "ASR mishearing/typo of 'Domaracka' as 'Domaraszka'."
+    },
+    {
+      "Timestamp": "[01:15:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską"
+    },
+    {
+      "Timestamp": "[01:15:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:15:15]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:15:22]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:15:32]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[01:15:32]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:16:10]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewa Wyczółkowska"
+    },
+    {
+      "Timestamp": "[01:16:10]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Boska",
+      "notes": "Multi-line mention, continues at [01:16:12] 'Matka Szmatka'. NOTE: the entity list assigns alias 'Boska Matka Szmatka' to id 88 (Ewa Jarzyna), but this transcript explicitly states 'Ewa Wyczółkowska, znana wtedy jako Boska Matka Szmatka' (Ewa Wyczółkowska, known then as Boska Matka Szmatka); Ewa Jarzyna/id88 never appears anywhere else in this episode. Assigned to id 13 based on this explicit in-transcript attribution — flagging a likely conflict/overlap in the entity list's alias ownership."
+    },
+    {
+      "Timestamp": "[01:16:12]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Matka Szmatka",
+      "notes": "Second half of multi-line mention from [01:16:10]. See note there re: alias conflict with id 88."
+    },
+    {
+      "Timestamp": "[01:16:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracką"
+    },
+    {
+      "Timestamp": "[01:16:54]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:17:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaradka"
+    },
+    {
+      "Timestamp": "[01:17:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:17:42]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:18:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[01:18:22]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowskiej"
+    },
+    {
+      "Timestamp": "[01:19:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:19:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:19:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:19:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[01:19:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:19:23]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[01:19:23]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:19:23]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:19:28]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[01:19:52]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracką"
+    },
+    {
+      "Timestamp": "[01:19:57]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:20:25]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewy Wyczółkowskiej"
+    },
+    {
+      "Timestamp": "[01:20:25]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczółkowskiej"
+    },
+    {
+      "Timestamp": "[01:20:35]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:21:05]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[01:21:05]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:21:05]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:22:14]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztofa Adamczyka"
+    },
+    {
+      "Timestamp": "[01:22:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:22:23]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:22:52]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztofie Adamczyku"
+    },
+    {
+      "Timestamp": "[01:23:07]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:23:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:23:26]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Krzychu"
+    },
+    {
+      "Timestamp": "[01:23:32]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:23:37]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztofa",
+      "notes": "'prawdziwego Krzysztofa' (the real Krzysztof) in the Adamczyk impersonation-account storyline."
+    },
+    {
+      "Timestamp": "[01:23:51]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "prawdziwy Krzychu"
+    },
+    {
+      "Timestamp": "[01:23:51]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Krzychu"
+    },
+    {
+      "Timestamp": "[01:23:51]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:23:51]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztof",
+      "notes": "Same line as already-marked 'prawdziwy Krzychu' (id108); bare 'Krzysztof' here taken as coreferential with Krzysztof Adamczyk rather than the separately-tracked 'Krzychu' persona. Ambiguous convention call."
+    },
+    {
+      "Timestamp": "[01:24:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaradzka"
+    },
+    {
+      "Timestamp": "[01:24:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:24:13]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:24:17]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztofa",
+      "notes": "'tego Krzysztofa, który interweniuje' — continues the Adamczyk 'real vs fake' storyline."
+    },
+    {
+      "Timestamp": "[01:24:25]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztofa",
+      "notes": "'prawdziwości Krzysztofa' — continues the Adamczyk storyline."
+    },
+    {
+      "Timestamp": "[01:24:28]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Krzychu"
+    },
+    {
+      "Timestamp": "[01:24:40]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:24:52]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin Sobczak"
+    },
+    {
+      "Timestamp": "[01:24:56]",
+      "person_id": "11",
+      "person_name": "Kryspin Sobczak",
+      "exact mention": "Kryspin Sobczak"
+    },
+    {
+      "Timestamp": "[01:25:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofem",
+      "notes": "Genuinely ambiguous: line reads '...nie jestem osobą, która miałaby jakiekolwiek relacje... z Krzysztofem...' amid a passage about accusations of grooming Kryspin Sobczak (id 11). Could be (a) the host referring to himself in third person (pattern used elsewhere, e.g. [21:07]), (b) an ASR mis-transcription of 'Kryspinem' (id 11), or (c) a reference to Krzysztof Adamczyk (id 102). Assigned to id 1 as the most consistent with the host's recurring third-person self-reference habit; flagged here for review."
+    },
+    {
+      "Timestamp": "[01:25:34]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[01:25:34]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:25:34]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:26:44]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[01:26:44]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:26:51]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:27:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:27:14]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:27:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[01:27:32]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:27:33]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:27:36]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[01:27:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:27:43]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasia"
+    },
+    {
+      "Timestamp": "[01:27:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:27:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[01:28:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:28:03]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[01:28:38]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Myciński",
+      "notes": "ASR mishearing/typo of 'Meciński' as 'Myciński'."
+    },
+    {
+      "Timestamp": "[01:28:40]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:29:23]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie Gąciarzu",
+      "notes": "ASR mishearing/typo of 'Krzysztofie Gonciarzu'."
+    },
+    {
+      "Timestamp": "[01:29:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gąciarz"
+    },
+    {
+      "Timestamp": "[01:29:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:30:15]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:30:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:30:53]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[01:31:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzu"
+    },
+    {
+      "Timestamp": "[01:31:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie",
+      "notes": "Same line as already-marked 'Gonciarzu'."
+    },
+    {
+      "Timestamp": "[01:31:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzu"
+    },
+    {
+      "Timestamp": "[01:31:18]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie",
+      "notes": "Same line as already-marked 'Gonciarzu'."
+    },
+    {
+      "Timestamp": "[01:31:23]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaradka"
+    },
+    {
+      "Timestamp": "[01:31:23]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:31:54]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:32:21]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:32:31]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:32:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:33:17]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domaracka"
+    },
+    {
+      "Timestamp": "[01:33:42]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską"
+    },
+    {
+      "Timestamp": "[01:33:50]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domaracką"
+    },
+    {
+      "Timestamp": "[01:33:51]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:34:03]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Rienkę",
+      "notes": "Multi-line mention, continues at [01:34:06] 'Kasperowicz'. Whole cluster missed by naive generator; not caught by validator's Rule C due to case/spelling mismatches with the entity list."
+    },
+    {
+      "Timestamp": "[01:34:06]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Kasperowicz",
+      "notes": "Second half of multi-line mention started at [01:34:03]."
+    },
+    {
+      "Timestamp": "[01:34:06]",
+      "person_id": "27",
+      "person_name": "Julia Bojaruniec",
+      "exact mention": "prostrację",
+      "notes": "Inflected, lowercase form of alias 'Prostracja'; case-sensitive matching in the validator missed this."
+    },
+    {
+      "Timestamp": "[01:34:09]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaka",
+      "notes": "Inflected form of alias 'Naruciak'."
+    },
+    {
+      "Timestamp": "[01:34:09]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożkę",
+      "notes": "Correctly-spelled inflected form of alias 'psycholoszka' (entity list has a typo'd 'sz'); missed due to spelling mismatch."
+    },
+    {
+      "Timestamp": "[01:34:11]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Rienka",
+      "notes": "Multi-line mention (second occurrence in this passage), continues at [01:34:14] 'Kasperowicz'."
+    },
+    {
+      "Timestamp": "[01:34:14]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Kasperowicz",
+      "notes": "Second half of multi-line mention started at [01:34:11]."
+    },
+    {
+      "Timestamp": "[01:34:42]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:35:38]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Diminutive 'Krzyś' referring to the host."
+    },
+    {
+      "Timestamp": "[01:35:55]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiek"
+    },
+    {
+      "Timestamp": "[01:36:40]",
+      "person_id": "27",
+      "person_name": "Julia Bojaruniec",
+      "exact mention": "prostracji",
+      "notes": "Inflected, lowercase form of alias 'Prostracja'."
+    },
+    {
+      "Timestamp": "[01:36:40]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożki",
+      "notes": "Inflected form of alias 'psycholoszka' (correct spelling)."
+    },
+    {
+      "Timestamp": "[01:36:43]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[01:36:43]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:37:12]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Mai Staśko"
+    },
+    {
+      "Timestamp": "[01:37:33]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[01:37:47]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:37:48]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarza"
+    },
+    {
+      "Timestamp": "[01:38:24]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarza"
+    },
+    {
+      "Timestamp": "[01:38:41]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:39:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi",
+      "notes": "Inflected form of alias 'Kasia'."
+    },
+    {
+      "Timestamp": "[01:39:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:39:37]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domaracka"
+    },
+    {
+      "Timestamp": "[01:39:47]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "Multi-line mention, continues at [01:39:49] 'Zagulska' (already present in naive list)."
+    },
+    {
+      "Timestamp": "[01:39:49]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[01:39:55]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[01:39:57]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:39:59]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna",
+      "notes": "Multi-line mention, continues at [01:40:01] 'Zagulska' (already present in naive list)."
+    },
+    {
+      "Timestamp": "[01:40:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[01:40:06]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[01:40:06]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[01:40:11]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:40:42]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:40:44]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:40:58]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[01:40:58]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:40:58]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:41:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[01:41:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[01:41:46]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[01:41:46]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:43:00]",
+      "person_id": "69",
+      "person_name": "Krzysztof Stanowski",
+      "exact mention": "Stanowskiego",
+      "notes": "'u Stanowskiego' — host guested on Krzysztof Stanowski's show. Entity id 69 had zero prior coverage."
+    },
+    {
+      "Timestamp": "[01:43:08]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:43:17]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Konrad Klasski",
+      "notes": "Likely ASR mishearing/typo of 'Konrad Krasuski' (only 'Konrad' in the transcript); flagged as uncertain since the surname is quite different from the listed name."
+    },
+    {
+      "Timestamp": "[01:43:24]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:43:26]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:43:37]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "odrienki Kasperowicz",
+      "notes": "ASR merged 'od' + 'Rienki' into 'odrienki'; genitive form of 'Rienka Kasperowicz'."
+    },
+    {
+      "Timestamp": "[01:43:38]",
+      "person_id": "17",
+      "person_name": "Adam Robert Zimmermann",
+      "exact mention": "Naruciaka",
+      "notes": "Inflected form of alias 'Naruciak'."
+    },
+    {
+      "Timestamp": "[01:43:38]",
+      "person_id": "29",
+      "person_name": "Ewa Racławska",
+      "exact mention": "psycholożki",
+      "notes": "Inflected form of alias 'psycholoszka'."
+    },
+    {
+      "Timestamp": "[01:43:38]",
+      "person_id": "40",
+      "person_name": "Maja Staśko",
+      "exact mention": "Maj Staśko",
+      "notes": "Truncated/typo'd form of 'Maja Staśko' (missing final 'a')."
+    },
+    {
+      "Timestamp": "[01:43:41]",
+      "person_id": "27",
+      "person_name": "Julia Bojaruniec",
+      "exact mention": "Prostracji",
+      "notes": "Genitive form of alias 'Prostracja', correct capitalization this time."
+    },
+    {
+      "Timestamp": "[01:43:46]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:43:47]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka"
+    },
+    {
+      "Timestamp": "[01:43:57]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:44:22]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolinie Domarackiej"
+    },
+    {
+      "Timestamp": "[01:44:22]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:45:26]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarzem"
+    },
+    {
+      "Timestamp": "[01:45:45]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Pawłem z kanału Zbrodnia i Kara",
+      "notes": "Inflected form of alias 'Paweł z kanału Zbrodnia i Kara'."
+    },
+    {
+      "Timestamp": "[01:45:52]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[01:46:32]",
+      "person_id": "101",
+      "person_name": "Adam Malarski",
+      "exact mention": "Adam Malarski"
+    },
+    {
+      "Timestamp": "[01:46:39]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztof Adamczyk"
+    },
+    {
+      "Timestamp": "[01:46:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:46:42]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztofa Adamczyka"
+    },
+    {
+      "Timestamp": "[01:46:58]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztof",
+      "notes": "Reassigned from id 1 to id 102: context ('Ten Krzysztof jest jednak nieprawdziwy' / 'this Krzysztof turns out to be fake') refers to the fake Krzysztof Adamczyk persona discussed in this segment, not the host."
+    },
+    {
+      "Timestamp": "[01:47:04]",
+      "person_id": "102",
+      "person_name": "Krzysztof Adamczyk",
+      "exact mention": "Krzysztof Adamczyk"
+    },
+    {
+      "Timestamp": "[01:47:04]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:47:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:47:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi",
+      "notes": "Inflected form of alias 'Kasia'."
+    },
+    {
+      "Timestamp": "[01:47:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:47:29]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Aniela"
+    },
+    {
+      "Timestamp": "[01:47:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:47:35]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[01:48:02]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:48:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:48:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Diminutive 'Krzyś' referring to the host; surrounding text is garbled/hard to parse."
+    },
+    {
+      "Timestamp": "[01:48:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:49:51]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:49:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[01:50:02]",
+      "person_id": "14",
+      "person_name": "Manuela Gretkowska",
+      "exact mention": "Manuela Gretkowska"
+    },
+    {
+      "Timestamp": "[01:50:33]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Krzychu"
+    },
+    {
+      "Timestamp": "[01:50:37]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaraska",
+      "notes": "ASR mishearing/typo of 'Domaracka' as 'Domaraska'."
+    },
+    {
+      "Timestamp": "[01:50:44]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Paweł z kanału",
+      "notes": "Multi-line mention, continues at [01:50:47] 'Zbrodnia i Kara'."
+    },
+    {
+      "Timestamp": "[01:50:47]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Zbrodnia i Kara",
+      "notes": "Second half of multi-line mention from [01:50:44]."
+    },
+    {
+      "Timestamp": "[01:52:08]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domaracka"
+    },
+    {
+      "Timestamp": "[01:52:31]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:53:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "pani Karolina"
+    },
+    {
+      "Timestamp": "[01:53:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:53:15]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:53:29]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "pani Karolina"
+    },
+    {
+      "Timestamp": "[01:53:29]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:53:32]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Pani Karolina"
+    },
+    {
+      "Timestamp": "[01:53:32]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:54:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofowi"
+    },
+    {
+      "Timestamp": "[01:54:27]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[01:54:30]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Hania"
+    },
+    {
+      "Timestamp": "[01:54:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:54:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[01:54:35]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[01:55:14]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Krzychu"
+    },
+    {
+      "Timestamp": "[01:55:32]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:55:40]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Krzychu"
+    },
+    {
+      "Timestamp": "[01:56:00]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:56:00]",
+      "person_id": "103",
+      "person_name": "Mateusz",
+      "exact mention": "Mateusza"
+    },
+    {
+      "Timestamp": "[01:56:02]",
+      "person_id": "103",
+      "person_name": "Mateusz",
+      "exact mention": "Fotograf Mateusz",
+      "notes": "Matches alias 'fotograf Mateusz'."
+    },
+    {
+      "Timestamp": "[01:56:04]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarzowi"
+    },
+    {
+      "Timestamp": "[01:56:13]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:56:26]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:56:38]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:56:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gonciarza"
+    },
+    {
+      "Timestamp": "[01:56:43]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[01:56:46]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:57:01]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:57:17]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[01:57:57]",
+      "person_id": "4",
+      "person_name": "Hanna Koczewska",
+      "exact mention": "Koczewskiej"
+    },
+    {
+      "Timestamp": "[01:59:02]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[01:59:02]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[01:59:02]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[01:59:12]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzyśka",
+      "notes": "Diminutive 'Krzyś' referring to the host."
+    },
+    {
+      "Timestamp": "[01:59:13]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[01:59:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi",
+      "notes": "Inflected form of alias 'Kasia'."
+    },
+    {
+      "Timestamp": "[02:02:28]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domaracka"
+    },
+    {
+      "Timestamp": "[02:02:30]",
+      "person_id": "104",
+      "person_name": "Dominik Więcek",
+      "exact mention": "Dominika",
+      "notes": "Multi-line mention, continues at [02:02:32] 'Więcka'."
+    },
+    {
+      "Timestamp": "[02:02:32]",
+      "person_id": "104",
+      "person_name": "Dominik Więcek",
+      "exact mention": "Więcka",
+      "notes": "Second half of multi-line mention from [02:02:30]."
+    },
+    {
+      "Timestamp": "[02:02:39]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaraszka",
+      "notes": "ASR mishearing/typo of 'Domaracka' as 'Domaraszka'."
+    },
+    {
+      "Timestamp": "[02:02:57]",
+      "person_id": "104",
+      "person_name": "Dominik Więcek",
+      "exact mention": "Dominik"
+    },
+    {
+      "Timestamp": "[02:03:04]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "domaracka"
+    },
+    {
+      "Timestamp": "[02:03:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[02:03:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[02:03:40]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[02:04:08]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[02:04:30]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Prawdziwy Krzychu"
+    },
+    {
+      "Timestamp": "[02:04:30]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Krzychu"
+    },
+    {
+      "Timestamp": "[02:04:51]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:06:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[02:06:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[02:06:18]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:06:27]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:06:59]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewa Wyczółkowska"
+    },
+    {
+      "Timestamp": "[02:07:28]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[02:07:28]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[02:07:28]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:07:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:07:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:07:58]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:08:01]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracką"
+    },
+    {
+      "Timestamp": "[02:08:06]",
+      "person_id": "105",
+      "person_name": "Aleksandra Herzyk",
+      "exact mention": "Aleksandra Herzyk"
+    },
+    {
+      "Timestamp": "[02:08:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:08:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowska"
+    },
+    {
+      "Timestamp": "[02:08:09]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria"
+    },
+    {
+      "Timestamp": "[02:08:12]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "prawdziwy Krzychu"
+    },
+    {
+      "Timestamp": "[02:08:12]",
+      "person_id": "108",
+      "person_name": "Krzychu",
+      "exact mention": "Krzychu"
+    },
+    {
+      "Timestamp": "[02:08:13]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:11:17]",
+      "person_id": "107",
+      "person_name": "Oskar",
+      "exact mention": "Oskar"
+    },
+    {
+      "Timestamp": "[02:11:25]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:11:33]",
+      "person_id": "107",
+      "person_name": "Oskar",
+      "exact mention": "Oskar"
+    },
+    {
+      "Timestamp": "[02:11:49]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:12:03]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karoliny Domarackiej"
+    },
+    {
+      "Timestamp": "[02:12:03]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarackiej"
+    },
+    {
+      "Timestamp": "[02:12:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[02:12:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[02:12:33]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:12:36]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewa Wyczółkowska"
+    },
+    {
+      "Timestamp": "[02:12:39]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczółkowska",
+      "notes": "Bare-surname repeat of the mention already marked at [02:12:36]."
+    },
+    {
+      "Timestamp": "[02:13:28]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[02:13:33]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[02:13:43]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina Domaracka"
+    },
+    {
+      "Timestamp": "[02:13:43]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    },
+    {
+      "Timestamp": "[02:13:43]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolina"
+    },
+    {
+      "Timestamp": "[02:15:34]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domaracka"
+    }
+  ]
+}

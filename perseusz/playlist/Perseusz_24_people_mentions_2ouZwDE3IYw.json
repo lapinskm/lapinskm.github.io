@@ -1,0 +1,1155 @@
+{
+  "processing steps": [
+    "naive generator pass against mentioned_people_with_ids.json (produced a smaller, already fairly precise 182-row candidate list, unlike episode 17's noisier fuzzy/segment output)",
+    "Claude refinement with naive generator and validator: normalized person_id types to strings, fixed two mis-timestamped mentions ('Andrzeja Wajdę' and a 'Katarzyna Meciński' row), dropped one redundant/risky stutter fragment ('zag', already covered seconds later by 'Zagulską'/'Zagulska' and prone to false Rule C hits against unrelated words like 'zagaduje'/'zagrożenie'/'zagra'/'zagadki'), added one real mention the generator had missed ('Kaśka' at [15:17]), resolved one first-name ambiguity via context ('Ewa N' -> Ewa Nowakowska, not Ewa Wyczółkowska, based on the 'z Tofu' alias), and added notes for ASR/caption typos and grammatical inflections, then validated the result with validate_mentions.py"
+  ],
+  "source_transcript": "Perseusz_24_transcript_2ouZwDE3IYw.txt",
+  "video_id": "2ouZwDE3IYw",
+  "episode": 24,
+  "notes": "This episode's naive-generated candidate list was already fairly precise (no FUZZY/SEGMENT/AMBIGUOUS noise), so refinement mainly involved timestamp fixes, one dropped noisy fragment, and one added miss.",
+  "mentions": [
+    {
+      "Timestamp": "[01:40]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[02:54]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Maciński",
+      "notes": "ASR/caption misspelling of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[03:07]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśce"
+    },
+    {
+      "Timestamp": "[03:13]",
+      "person_id": "25",
+      "person_name": "Ewa Nowakowska",
+      "exact mention": "Ewa N",
+      "notes": "Bare initial 'Ewa N' followed by a garbled 'z Tofu' caption ('Stofu'); resolved via the alias 'menedżerka z Tofu' to Ewa Nowakowska, not Ewa Wyczółkowska (also mentioned elsewhere in this episode)."
+    },
+    {
+      "Timestamp": "[03:18]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[03:21]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Lucy Wieliczko"
+    },
+    {
+      "Timestamp": "[03:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[03:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[03:44]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[03:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[03:49]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba Łysiek",
+      "notes": "ASR/caption misspelling of 'Kuba Łysiak' (Jakub Łysiak, alias Wąsik)."
+    },
+    {
+      "Timestamp": "[04:03]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[04:05]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[04:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyno Meciński",
+      "notes": "ASR/caption case misspelling of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[04:35]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśki"
+    },
+    {
+      "Timestamp": "[05:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej"
+    },
+    {
+      "Timestamp": "[05:21]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[05:21]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[05:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[05:49]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannę Zagulską"
+    },
+    {
+      "Timestamp": "[05:51]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Ewę Wyczółkowską"
+    },
+    {
+      "Timestamp": "[05:51]",
+      "person_id": "89",
+      "person_name": "Ola Łomsza",
+      "exact mention": "Olę",
+      "notes": "Inflected (accusative) diminutive form ('Ola') referring to Ola Łomsza."
+    },
+    {
+      "Timestamp": "[05:51]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Karolinę Domarcką",
+      "notes": "ASR/caption misspelling of 'Karolinę Domaracką'."
+    },
+    {
+      "Timestamp": "[05:53]",
+      "person_id": "89",
+      "person_name": "Ola Łomsza",
+      "exact mention": "Łomszę",
+      "notes": "Inflected (accusative) form of surname 'Łomsza'."
+    },
+    {
+      "Timestamp": "[07:28]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarz",
+      "notes": "ASR/caption misspelling of surname 'Gonciarz'."
+    },
+    {
+      "Timestamp": "[07:34]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztof"
+    },
+    {
+      "Timestamp": "[09:20]",
+      "person_id": "111",
+      "person_name": "Andrzej Wajda",
+      "exact mention": "Andrzeja Wajdę"
+    },
+    {
+      "Timestamp": "[09:39]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[09:41]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "ASR/caption misspelling of surname 'Meciński'."
+    },
+    {
+      "Timestamp": "[10:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasztarzyna Meciński",
+      "notes": "ASR/caption misspelling of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[10:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[11:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[11:11]",
+      "person_id": "112",
+      "person_name": "Konrad Krasuski",
+      "exact mention": "Konrada Krasuskiego"
+    },
+    {
+      "Timestamp": "[11:19]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarza"
+    },
+    {
+      "Timestamp": "[11:22]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[11:46]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[11:46]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[11:55]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny"
+    },
+    {
+      "Timestamp": "[11:57]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa"
+    },
+    {
+      "Timestamp": "[12:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[12:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[12:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[12:47]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[12:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Daria Dąbrowska"
+    },
+    {
+      "Timestamp": "[12:49]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Dąbrowską"
+    },
+    {
+      "Timestamp": "[13:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[13:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[13:23]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarz",
+      "notes": "Caption lowercased 'Gonciarz'."
+    },
+    {
+      "Timestamp": "[13:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[13:30]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[15:17]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka",
+      "notes": "Missed by naive generator. Diminutive alias 'Kaśka' referring to Katarzyna Meciński."
+    },
+    {
+      "Timestamp": "[16:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[16:49]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gonciarzem",
+      "notes": "Caption lowercased inflected form of 'Gonciarzem'."
+    },
+    {
+      "Timestamp": "[17:18]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[18:11]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik",
+      "notes": "Lowercase caption form of alias 'Wąsik'."
+    },
+    {
+      "Timestamp": "[18:15]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[18:15]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik",
+      "notes": "Lowercase caption form of alias 'Wąsik'."
+    },
+    {
+      "Timestamp": "[18:29]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[18:32]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[18:32]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczółkowska"
+    },
+    {
+      "Timestamp": "[18:32]",
+      "person_id": "9",
+      "person_name": "Karolina Domaracka",
+      "exact mention": "Domarcka",
+      "notes": "ASR/caption misspelling of surname 'Domaracka'."
+    },
+    {
+      "Timestamp": "[19:37]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Męciński",
+      "notes": "ASR/caption misspelling of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[19:44]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Zmeciński",
+      "notes": "ASR/caption misspelling/truncation of 'Meciński'."
+    },
+    {
+      "Timestamp": "[20:51]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Julią"
+    },
+    {
+      "Timestamp": "[20:52]",
+      "person_id": "3",
+      "person_name": "Julia Wieliczko",
+      "exact mention": "Julkę"
+    },
+    {
+      "Timestamp": "[20:59]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[21:01]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[21:03]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimpera"
+    },
+    {
+      "Timestamp": "[21:03]",
+      "person_id": "26",
+      "person_name": "Tomasz Działowy",
+      "exact mention": "Gimperowi"
+    },
+    {
+      "Timestamp": "[21:32]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[21:37]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Aredhell 999"
+    },
+    {
+      "Timestamp": "[21:40]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "A Redell 999",
+      "notes": "ASR/caption misspelling of stalking-account alias 'Aredhell 999' (Hanna Zagulska)."
+    },
+    {
+      "Timestamp": "[21:44]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską"
+    },
+    {
+      "Timestamp": "[21:53]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[21:53]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską"
+    },
+    {
+      "Timestamp": "[22:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[22:05]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny"
+    },
+    {
+      "Timestamp": "[22:07]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[22:48]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[22:56]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej"
+    },
+    {
+      "Timestamp": "[23:05]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanno Zagulsko",
+      "notes": "ASR/caption misspelling (vocative-like case ending) of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[23:07]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[23:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasi"
+    },
+    {
+      "Timestamp": "[23:12]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[23:18]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hannę Zagulską"
+    },
+    {
+      "Timestamp": "[23:23]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[23:38]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie Gonciarzu",
+      "notes": "Inflected (vocative) form referring to Krzysztof Gonciarz."
+    },
+    {
+      "Timestamp": "[23:51]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Myciński",
+      "notes": "ASR/caption misspelling of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[24:18]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Paweł Fomiczewski"
+    },
+    {
+      "Timestamp": "[24:20]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Zbrodnia i Kara"
+    },
+    {
+      "Timestamp": "[24:25]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny Zagulskiej"
+    },
+    {
+      "Timestamp": "[24:37]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[25:05]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny"
+    },
+    {
+      "Timestamp": "[25:07]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[25:14]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "A Redel 999",
+      "notes": "ASR/caption misspelling of stalking-account alias 'Aredhell 999' (Hanna Zagulska)."
+    },
+    {
+      "Timestamp": "[25:32]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanka",
+      "notes": "Diminutive form referring to Hanna Zagulska."
+    },
+    {
+      "Timestamp": "[25:36]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny Zagulskiej"
+    },
+    {
+      "Timestamp": "[25:48]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[25:52]",
+      "person_id": "115",
+      "person_name": "Liter Kara",
+      "exact mention": "literk",
+      "notes": "Truncated/garbled caption form of 'Liter Kara' (id 115), used here as an online alias in a sentence about Hanna Zagulska's stalking behavior."
+    },
+    {
+      "Timestamp": "[26:13]",
+      "person_id": "62",
+      "person_name": "Jaś Kapela",
+      "exact mention": "Jasiem Kapelą"
+    },
+    {
+      "Timestamp": "[26:21]",
+      "person_id": "90",
+      "person_name": "Karolina Korwin Piotrowska",
+      "exact mention": "Korwin Piotrowska"
+    },
+    {
+      "Timestamp": "[26:23]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[26:23]",
+      "person_id": "39",
+      "person_name": "Rienka Kasperowicz",
+      "exact mention": "Arienka",
+      "notes": "ASR/caption misspelling of first name 'Rienka' (Kasperowicz)."
+    },
+    {
+      "Timestamp": "[26:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasię"
+    },
+    {
+      "Timestamp": "[26:23]",
+      "person_id": "77",
+      "person_name": "Aniela Olszewska",
+      "exact mention": "Angela"
+    },
+    {
+      "Timestamp": "[26:29]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[26:29]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[26:39]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofie"
+    },
+    {
+      "Timestamp": "[26:50]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[27:01]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Anna Zagulska",
+      "notes": "ASR/caption misspelling of first name 'Hanna' (Zagulska)."
+    },
+    {
+      "Timestamp": "[27:06]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysiu"
+    },
+    {
+      "Timestamp": "[27:11]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanią",
+      "notes": "Inflected (instrumental) diminutive form ('Hania') referring to Hanna Zagulska."
+    },
+    {
+      "Timestamp": "[27:16]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[27:16]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[27:29]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[27:31]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[27:43]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[27:43]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[27:54]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Krzysztofa Gąciarza",
+      "notes": "ASR/caption misspelling of 'Krzysztofa Gonciarza'."
+    },
+    {
+      "Timestamp": "[27:57]",
+      "person_id": "62",
+      "person_name": "Jaś Kapela",
+      "exact mention": "Jasiek",
+      "notes": "Diminutive form referring to Jaś Kapela."
+    },
+    {
+      "Timestamp": "[27:57]",
+      "person_id": "72",
+      "person_name": "Paweł Fomiczewski",
+      "exact mention": "Pawła Fłumiczewskiego",
+      "notes": "ASR/caption misspelling of 'Pawła Fomiczewskiego'."
+    },
+    {
+      "Timestamp": "[28:00]",
+      "person_id": "62",
+      "person_name": "Jaś Kapela",
+      "exact mention": "Kapeli",
+      "notes": "Inflected (genitive) form of surname 'Kapela'."
+    },
+    {
+      "Timestamp": "[28:36]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[29:13]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[29:39]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[29:55]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulską"
+    },
+    {
+      "Timestamp": "[29:57]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulskiej"
+    },
+    {
+      "Timestamp": "[29:59]",
+      "person_id": "13",
+      "person_name": "Ewa Wyczółkowska",
+      "exact mention": "Wyczułkowską",
+      "notes": "ASR/caption misspelling of surname 'Wyczółkowska'."
+    },
+    {
+      "Timestamp": "[29:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśkę"
+    },
+    {
+      "Timestamp": "[30:02]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darię"
+    },
+    {
+      "Timestamp": "[30:04]",
+      "person_id": "2",
+      "person_name": "Daria Dąbrowska",
+      "exact mention": "Darii"
+    },
+    {
+      "Timestamp": "[30:07]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[30:09]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[30:18]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Stalker Satan"
+    },
+    {
+      "Timestamp": "[30:48]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Arethel 999",
+      "notes": "Spelling variant of stalking-account alias 'Aredhell 999' (Hanna Zagulska)."
+    },
+    {
+      "Timestamp": "[30:48]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[30:54]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Redel 999",
+      "notes": "ASR/caption misspelling/truncation of 'Aredhell 999' (Hanna Zagulska)."
+    },
+    {
+      "Timestamp": "[30:59]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny Zagórskiej",
+      "notes": "ASR/caption misspelling of 'Hanny Zagulskiej'."
+    },
+    {
+      "Timestamp": "[31:08]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny Zagulskiej"
+    },
+    {
+      "Timestamp": "[31:18]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny Zagulskiej"
+    },
+    {
+      "Timestamp": "[31:32]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna"
+    },
+    {
+      "Timestamp": "[31:34]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Zagulska"
+    },
+    {
+      "Timestamp": "[31:39]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanny Zagulskiej"
+    },
+    {
+      "Timestamp": "[31:46]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Arethel 91",
+      "notes": "ASR/caption misspelling of stalking-account alias 'Aredhell 999'/'Arethel 999' (Hanna Zagulska)."
+    },
+    {
+      "Timestamp": "[31:48]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Arethel 999",
+      "notes": "Spelling variant of stalking-account alias 'Aredhell 999' (Hanna Zagulska)."
+    },
+    {
+      "Timestamp": "[31:48]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zagulska"
+    },
+    {
+      "Timestamp": "[32:09]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zegulska",
+      "notes": "ASR/caption misspelling of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[32:15]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Hanna Zogulska",
+      "notes": "ASR/caption misspelling of 'Hanna Zagulska'."
+    },
+    {
+      "Timestamp": "[33:04]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Bellschnickel"
+    },
+    {
+      "Timestamp": "[33:07]",
+      "person_id": "10",
+      "person_name": "Hanna Zagulska",
+      "exact mention": "Stalker Satan"
+    },
+    {
+      "Timestamp": "[33:20]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna"
+    },
+    {
+      "Timestamp": "[33:23]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Myciński",
+      "notes": "ASR/caption misspelling of surname 'Meciński'."
+    },
+    {
+      "Timestamp": "[33:27]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik",
+      "notes": "Lowercase caption form of alias 'Wąsik'."
+    },
+    {
+      "Timestamp": "[33:40]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[33:42]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Mecińskiej"
+    },
+    {
+      "Timestamp": "[33:54]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik",
+      "notes": "Lowercase caption form of alias 'Wąsik'."
+    },
+    {
+      "Timestamp": "[33:58]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[33:58]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik",
+      "notes": "Lowercase caption form of alias 'Wąsik'."
+    },
+    {
+      "Timestamp": "[34:24]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[34:26]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[34:45]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kaśka"
+    },
+    {
+      "Timestamp": "[34:58]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik",
+      "notes": "Lowercase caption form of alias 'Wąsik'."
+    },
+    {
+      "Timestamp": "[35:15]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Meciński"
+    },
+    {
+      "Timestamp": "[35:23]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsikiem",
+      "notes": "Lowercase inflected (instrumental) form of alias 'Wąsik'."
+    },
+    {
+      "Timestamp": "[35:39]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[35:47]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[35:59]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej"
+    },
+    {
+      "Timestamp": "[36:10]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyny Mecińskiej"
+    },
+    {
+      "Timestamp": "[36:12]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kubę Łysiaka",
+      "notes": "Inflected (accusative) form referring to Jakub Łysiak."
+    },
+    {
+      "Timestamp": "[36:43]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[36:57]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[37:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Kasią"
+    },
+    {
+      "Timestamp": "[37:25]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzyna Mysiński",
+      "notes": "ASR/caption misspelling of 'Katarzyna Meciński'."
+    },
+    {
+      "Timestamp": "[37:54]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[37:54]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik"
+    },
+    {
+      "Timestamp": "[38:11]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "wąsik",
+      "notes": "Lowercase caption form of alias 'Wąsik'."
+    },
+    {
+      "Timestamp": "[38:27]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "Gonciarz"
+    },
+    {
+      "Timestamp": "[39:00]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Katarzynę"
+    },
+    {
+      "Timestamp": "[39:02]",
+      "person_id": "7",
+      "person_name": "Katarzyna Meciński",
+      "exact mention": "Meciński"
+    },
+    {
+      "Timestamp": "[39:04]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Kuba"
+    },
+    {
+      "Timestamp": "[39:07]",
+      "person_id": "8",
+      "person_name": "Jakub Łysiak",
+      "exact mention": "Wąsik Łysiak",
+      "notes": "Reordered form of 'Kuba Łysiak Wąsik' referring to Jakub Łysiak."
+    },
+    {
+      "Timestamp": "[39:30]",
+      "person_id": "1",
+      "person_name": "Krzysztof Gonciarz",
+      "exact mention": "gąciarz",
+      "notes": "ASR/caption misspelling of surname 'Gonciarz'."
+    }
+  ]
+}
